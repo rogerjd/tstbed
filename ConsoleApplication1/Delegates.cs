@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    public delegate int MyDel(string s);
+
+    class Delegates
+    {
+        public Delegates()
+        {
+            tst(Tst.md);
+            tst(Tst.DelMeth2);
+
+            MyDel x = Tst.DelMeth;
+            x("qwe");
+        }
+
+        private void tst(MyDel md)
+        {
+            md("anv");
+        }
+    }
+
+
+    static class Tst
+    {
+        static public readonly MyDel md = DelMeth;
+
+        public static int DelMeth(string s)
+        {
+            Console.WriteLine(s);
+            return 1;
+        }
+
+        public static int DelMeth2(string s)
+        {
+            s = s.ToUpper();
+            Console.WriteLine(s);
+            return 1;
+        }
+    }
+}
