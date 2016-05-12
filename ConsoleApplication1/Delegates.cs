@@ -17,11 +17,14 @@ namespace ConsoleApplication1
 
             MyDel x = Tst.DelMeth;
             x("qwe");
+
+            tst(z => 3); //lambda
         }
 
         private void tst(MyDel md)
         {
-            md("anv");
+            int n = md("anv");
+            Console.WriteLine("Delegate return value: {0}", n);
         }
     }
 
@@ -40,7 +43,7 @@ namespace ConsoleApplication1
         {
             s = s.ToUpper();
             Console.WriteLine(s);
-            return 1;
+            return 2;
         }
     }
 }

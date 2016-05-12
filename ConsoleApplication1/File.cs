@@ -14,6 +14,7 @@ namespace ConsoleApplication1
         static File()
         {
             Create();
+            Delete();
             Write();
             Read();
             Delete();
