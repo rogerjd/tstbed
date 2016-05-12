@@ -31,6 +31,8 @@ namespace ConsoleApplication1
 
             Conditional.Test();
 
+            Method.Test();
+
             Console.ReadKey();
         }
     }
