@@ -11,6 +11,28 @@ namespace ConsoleApplication1
         static public void Test()
         {
             ForTst();
+            WhileTst();
+            DoTst();
+        }
+
+        private static void DoTst()
+        {
+            int n = 0;
+            do
+            {
+                Console.WriteLine("Do: {0}", n);
+                n++;
+            } while (n < 5);
+        }
+
+        private static void WhileTst()
+        {
+            int n = 0;
+            while (n < 5)
+            {
+                Console.WriteLine("While: {0}", n);
+                n++;
+            }
         }
 
         private static void ForTst()
