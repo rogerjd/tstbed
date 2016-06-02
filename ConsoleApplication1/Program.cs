@@ -33,6 +33,8 @@ namespace ConsoleApplication1
 
             Method.Test();
 
+            Interface.Test();
+
             Console.ReadKey();
         }
     }
