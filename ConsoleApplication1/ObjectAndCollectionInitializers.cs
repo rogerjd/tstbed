@@ -8,10 +8,10 @@ namespace ConsoleApplication1
 {
     class ObjectAndCollectionInitializers
     {
-        //w/the initializer, the () after new is optional; else required
+        //w/the initializer {}, the () after new is optional; else required
         Product prod = new Product() { ProductID = 100 };
 
-        string[] stringArray = { "apple", "orange", "plum" };  //array initializer, doesnt need new()
+        string[] stringArray = { "apple", "orange", "plum" };  //array initializer, doesnt need (optional) new()
 
         List<int> intList = new List<int> { 10, 20, 30, 40 };
 

@@ -48,6 +48,7 @@
     <Compile Include="Delegates.cs" />
     <Compile Include="Dict.cs" />
     <Compile Include="Enum.cs" />
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="File.cs" />
     <Compile Include="Interface.cs" />
     <Compile Include="Linq.cs" />

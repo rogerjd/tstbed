@@ -21,6 +21,10 @@ namespace ConsoleApplication1
 
             MyClass2 mc2 = new MyClass2();
             mc2.Tst1();
+
+            //only interface methods are available through the interface
+            //Tster t = mc;
+            //t.AnotherMethod();
         }
     }
 
@@ -29,6 +33,11 @@ namespace ConsoleApplication1
         public void Tst1()
         {
             System.Console.WriteLine("Interface: MyClass.Tst1");
+        }
+
+        public void AnotherMethod()
+        {
+            Console.WriteLine("AnotherMethod()");
         }
     }
 
