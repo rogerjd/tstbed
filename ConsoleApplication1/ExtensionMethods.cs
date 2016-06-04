@@ -40,6 +40,18 @@ namespace ConsoleApplication1
                 }
             }
         }
+
+        public static IEnumerable<Product> Filter(this IEnumerable<Product> productEnum,
+            Func<Product, bool> selectorParam)
+        {
+            foreach (Product prod in productEnum)
+            {
+                if (selectorParam(prod))
+                {
+                    yield return prod;
+                }
+            }
+        }
     }
 
     class ExtensionMenthods
@@ -81,6 +93,22 @@ namespace ConsoleApplication1
             //              returns IEnumerable
             decimal total = cart.FilterByCategory("Soccer").TotalPricesWithIEnumerable();
             Console.WriteLine("Total: {0} for Soccer items", total);
+
+
+            foreach (Product p in cart.Filter((p) => p.Category == "Soccer"))
+            {
+                Console.WriteLine(p.Description);
+            }
+
+
+            //automatic type inference
+            //anonymous types
+            //an array of new types (dont need to declare type of data structure in advance)
+            var x = new[]
+            {
+                new {n = "a"},
+                new {n = "b" },
+            };
         }
     }
 }
