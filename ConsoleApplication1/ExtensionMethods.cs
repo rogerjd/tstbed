@@ -104,11 +104,18 @@ namespace ConsoleApplication1
             //automatic type inference
             //anonymous types
             //an array of new types (dont need to declare type of data structure in advance)
+
             var x = new[]
             {
                 new {n = "a"},
                 new {n = "b" },
             };
+
+            IEnumerable tst = cart as IEnumerable;
+            foreach (Product item in tst)
+            {
+                Console.WriteLine(item.Description);
+            }
         }
     }
 }
