@@ -37,6 +37,8 @@ namespace ConsoleApplication1
 
             ExtensionMenthods.Test();
 
+            DependencyInjection.Test();
+
             Console.ReadKey();
         }
     }
