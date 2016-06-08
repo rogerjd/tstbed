@@ -23,9 +23,36 @@ namespace ConsoleApplication1
 
     class LinqValueCalculator : IIValueCalculator
     {
+        IDiscountHelper discounter;
+
+        public LinqValueCalculator(IDiscountHelper disoucntParam)
+        {
+            discounter = disoucntParam;
+        }
+
         public decimal ValueProducts(params Product[] products)
         {
-            return products.Sum(p => p.Price);
+            return discounter.ApplyDiscount(products.Sum(p => p.Price));
+        }
+    }
+
+    interface IDiscountHelper
+    {
+        decimal ApplyDiscount(decimal totalParam);
+    }
+
+    class DefaultDiscountHelper : IDiscountHelper
+    {
+        decimal DiscountRate { get; set; }  //ref: can use property injection (must be public)
+
+        public DefaultDiscountHelper(decimal discountParam)
+        {
+            DiscountRate = discountParam;
+        }
+
+        public decimal ApplyDiscount(decimal totalParam)
+        {
+            return (totalParam - (DiscountRate / 100M * totalParam));
         }
     }
 
