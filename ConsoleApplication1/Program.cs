@@ -21,7 +21,7 @@ namespace ConsoleApplication1
 
             new Dir();
 
-            new Enum();
+            new MyEnum();
 
             new String();
 

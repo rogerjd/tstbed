@@ -16,6 +16,65 @@ namespace ConsoleApplication1
         public string Category { get; set; }
     }
 
+    public interface IProductRepository
+    {
+        IEnumerable<Product> GetProducts();
+        void UpdateProduct(Product product);
+    }
+
+    interface IPriceReducer
+    {
+        void ReducePrices(decimal priceReduction);
+    }
+
+    public class FakeRepository : IProductRepository
+    {
+        Product[] products = ProductData.Get();
+
+        public int UpdateProductCallCount { get; private set; }
+
+        public IEnumerable<Product> GetProducts()
+        {
+            return products;
+        }
+
+        public void UpdateProduct(Product productParam)
+        {
+            foreach (Product p in products
+                .Where(e => e.Name == productParam.Name)
+                .Select(e => e))
+            {
+                p.Price = productParam.Price;
+            }
+            UpdateProductCallCount++;
+        }
+
+        public decimal GetTotalValue()
+        {
+            return products.Sum(p => p.Price);
+        }
+    }
+
+    public class MyPriceReducer : IPriceReducer
+    {
+        IProductRepository repository;
+
+        public MyPriceReducer(IProductRepository repo)
+        {
+            repository = repo;
+        }
+
+        public void ReducePrices(decimal priceReduction)
+        {
+            foreach (Product p in repository.GetProducts())
+            {
+                p.Price = Math.Max(1, p.Price - priceReduction);
+                
+                //repository.UpdateProduct(p); //i dont think this is necessary for price
+            }
+        }
+    }
+
     public interface IIValueCalculator
     {
         decimal ValueProducts(params Product[] products);
@@ -66,20 +125,16 @@ namespace ConsoleApplication1
             calculator = calcParam;
         }
 
-        public ShoppingCart()
-        {
+        /*
+                public ShoppingCart()
+                {
 
-        }
+                }
+        */
 
         public decimal CalculateStockValue()
         {
-            Product[] products =
-            {
-                new Product {Name="Kayak", Price=275M },
-                new Product {Name="Lifejacket", Price=48.95M },
-                new Product {Name="Soccer ball", Price=19.50M },
-                new Product {Name="Stadium", Price=79500M}
-            };
+            Product[] products = ProductData.Get();
             decimal totalValue = calculator.ValueProducts(products);
             return totalValue;
         }
@@ -92,6 +147,22 @@ namespace ConsoleApplication1
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+    }
+
+
+    static class ProductData
+    {
+        public static Product[] Get()
+        {
+            Product[] products =
+{
+                new Product {Name="Kayak", Price=275M },
+                new Product {Name="Lifejacket", Price=48.95M },
+                new Product {Name="Soccer ball", Price=19.50M },
+                new Product {Name="Stadium", Price=79500M}
+            };
+            return products;
         }
     }
 }

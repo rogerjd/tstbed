@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//ref: extension methods only work on instances (not types)
+
 namespace ConsoleApplication1
 {
     static class MyExtensionMethods
@@ -58,7 +60,7 @@ namespace ConsoleApplication1
     {
         public static void Test()
         {
-            ShoppingCart cart = new ShoppingCart()
+            ShoppingCart cart = new ShoppingCart(null)
             {
                 Products = new List<Product>
                 {

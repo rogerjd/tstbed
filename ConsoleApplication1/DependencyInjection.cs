@@ -19,5 +19,15 @@ namespace ConsoleApplication1
             ShoppingCart cart = new ShoppingCart(calcImpl);
             Console.WriteLine("Total: {0:C2}", cart.CalculateStockValue());
         }
+
+        static void SelfBinding()
+        {
+            IKernel ninjectKernel = new StandardKernel();
+            ninjectKernel.Bind<IDiscountHelper>().To<DefaultDiscountHelper>().WithConstructorArgument("discountParam", 50M);
+            ninjectKernel.Bind<IIValueCalculator>().To<LinqValueCalculator>();
+            ShoppingCart cart = ninjectKernel.Get<ShoppingCart>();
+            Console.WriteLine("Total: {0:C2}", cart.CalculateStockValue());
+
+        }
     }
 }

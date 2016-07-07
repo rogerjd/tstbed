@@ -14,6 +14,17 @@ namespace ConsoleApplication1
             Contains();
             IndexOf();
             SubStr();
+            Compare();
+        }
+
+        //ref: word sort rules, not ordinal
+        private static void Compare()
+        {
+            string s1 = "abc";
+            string s2 = "ABC";
+            int result;
+            result = string.Compare(s1, s2);
+            Console.WriteLine("Result {0}", result);
         }
 
         static void Contains()
