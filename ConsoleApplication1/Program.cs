@@ -39,6 +39,8 @@ namespace ConsoleApplication1
 
             DependencyInjection.Test();
 
+            HashSet.Test();
+
             Console.ReadKey();
         }
     }
