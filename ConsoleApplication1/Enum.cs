@@ -35,6 +35,20 @@ namespace ConsoleApplication1
             CountOfElements(md);
             LoopThruElements();
             ZeroElement();
+            CastToEnum();
+        }
+
+        private static void CastToEnum()
+        {
+            Console.WriteLine("Cast to enum");
+
+            //out of range, no error
+            noZeroEnum n = (noZeroEnum)5; //5
+            Console.WriteLine(n);
+
+            //in range
+            n = (noZeroEnum)1;
+            Console.WriteLine(n);  //a
         }
 
         private static void LoopThruElements()
