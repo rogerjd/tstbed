@@ -6,17 +6,26 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Dict
+    static class Dict
     {
-        Dictionary<string, string> d = new Dictionary<string, string> { ["abc"] = "123" }; //ref: or {{"k", "v"}}
+        static Dictionary<string, string> d = new Dictionary<string, string> { ["abc"] = "123" }; //ref: or {{"k", "v"}}
 
-        public Dict()
+        public static void Test()
         {
-            tst();
+            Console.WriteLine("Dictionary ****");
+            Loop();
+            count();
         }
 
-        void tst()
+        private static void count()
         {
+            Console.WriteLine("count **");
+            Console.WriteLine(d.Count);
+        }
+
+        static void Loop()
+        {
+            Console.WriteLine("Loop **");
             foreach (var item in d)
             {
                 Console.WriteLine(item);

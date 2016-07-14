@@ -62,9 +62,13 @@ namespace ConsoleApplication1
         //ref: returns Array, use Length prop
         private static void CountOfElements(Enum e)
         {
-            Enum.GetValues(typeof(ConsoleApplication1.MyEnum.MyDaysOfWeek));
-            var a = Enum.GetValues(e.GetType());
+            Console.WriteLine("Count of elements **");
+            var a = Enum.GetValues(typeof(ConsoleApplication1.MyEnum.MyDaysOfWeek));
+            Console.WriteLine(a.Length);
+            a = Enum.GetValues(e.GetType());
+            Console.WriteLine(a.Length);
             a = Enum.GetNames(e.GetType());
+            Console.WriteLine(a.Length);
         }
 
 

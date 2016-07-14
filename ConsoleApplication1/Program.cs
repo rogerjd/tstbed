@@ -13,7 +13,7 @@ namespace ConsoleApplication1
             Console.WriteLine("{0} {1}", args[0], args[1]);
             new Delegates();
 
-            new Dict();
+            Dict.Test();
 
             Linq.Test();
 
