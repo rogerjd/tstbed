@@ -41,6 +41,8 @@ namespace ConsoleApplication1
 
             HashSet.Test();
 
+            List.Test();
+
             Console.ReadKey();
         }
     }

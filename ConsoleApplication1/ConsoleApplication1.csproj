@@ -76,6 +76,7 @@
     <Compile Include="Interface.cs" />
     <Compile Include="Lambda.cs" />
     <Compile Include="Linq.cs" />
+    <Compile Include="List.cs" />
     <Compile Include="Loop.cs" />
     <Compile Include="Method.cs" />
     <Compile Include="ObjectAndCollectionInitializers.cs" />
