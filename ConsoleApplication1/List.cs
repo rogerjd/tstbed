@@ -24,9 +24,21 @@ namespace ConsoleApplication1
         private static void Find()
         {
             Console.WriteLine("Find **");
-            //            l.Find
             Console.WriteLine(l.Contains("a"));
             Console.WriteLine(l.Contains("z"));
+
+            //ref: predicate
+            //      return is not bool, but the item
+            Console.WriteLine(l.Find(List.finder));
+            string res = l.Find(s => { return s == "a"; });
+            Console.WriteLine(res);
+            res = "wqwq";
+            Foreach();
+        }
+
+        static bool finder(string s)
+        {
+            return s == "zx";
         }
 
         private static void Indexer()

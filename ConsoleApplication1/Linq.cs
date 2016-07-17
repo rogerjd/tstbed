@@ -16,7 +16,7 @@ namespace ConsoleApplication1
         {
             Console.WriteLine("Linq");
             zipTst();
-            DB();
+//            DB();
         }
 
         static private void zipTst()

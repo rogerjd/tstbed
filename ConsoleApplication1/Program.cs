@@ -27,7 +27,7 @@ namespace ConsoleApplication1
 
             Loop.Test();
 
-            DB.Test();
+//            DB.Test();
 
             Conditional.Test();
 
@@ -42,6 +42,8 @@ namespace ConsoleApplication1
             HashSet.Test();
 
             List.Test();
+
+            Array.Test();
 
             Console.ReadKey();
         }
