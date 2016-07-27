@@ -8,7 +8,10 @@ namespace ConsoleApplication1
 {
 
     /*
-     *  declare: namespace, class or struct
+     *  - declare: namespace, class or struct
+     *  - should define a zero val. else, will be init'd to zero (class fld), and thus
+     *    hold invalid val
+     *  - cast of an out of range int, is not a prob/err, just returns the int
     */
     class MyEnum
     {

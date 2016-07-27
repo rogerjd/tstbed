@@ -21,5 +21,11 @@ namespace ConsoleApplication1
             {"orange", 20 },
             {"plum", 30 }
         };
+
+        Dictionary<string, int> myNewDict = new Dictionary<string, int>()
+        {
+            ["abc"] = 123,
+            ["def"] = 789 
+        };
     }
 }

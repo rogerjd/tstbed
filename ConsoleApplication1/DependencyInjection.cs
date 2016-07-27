@@ -7,6 +7,12 @@ using Ninject;
 
 namespace ConsoleApplication1
 {
+    /* types
+     *   - ctor
+     *   - property/setter
+     *   - interface
+     */
+
     //i don't know how to use MS DI. use NInject instead
     static class DependencyInjection
     {

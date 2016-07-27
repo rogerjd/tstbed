@@ -16,6 +16,8 @@ namespace ConsoleApplication1
 
         static public void Test()
         {
+            Console.WriteLine("Interface ****");
+
             MyClass mc = new MyClass();
             mc.Tst1();
 
@@ -25,6 +27,20 @@ namespace ConsoleApplication1
             //only interface methods are available through the interface
             //Tster t = mc;
             //t.AnotherMethod();
+
+            PassToInterfaceParameter();
+        }
+
+        private static void PassToInterfaceParameter()
+        {
+            Console.WriteLine("Parameter **");
+            List<int> l = new List<int> { 1, 2, 3, 4, 5 };
+            DoSomething(l);
+        }
+
+        private static void DoSomething(IList<int> l)
+        {
+            Console.WriteLine(l.Count);
         }
     }
 

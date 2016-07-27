@@ -43,6 +43,12 @@ namespace ConsoleApplication1
             {
                 Console.WriteLine("Value at index {0} is {1}", i, n[i]);
             }
+
+
+            for (int i = 0; i < 0; i++)
+            {
+                Console.WriteLine("This should not execute");
+            }
         }
     }
 }
