@@ -45,6 +45,8 @@ namespace ConsoleApplication1
 
             Array.Test();
 
+            Struct.Test();
+
             Console.ReadKey();
         }
     }
