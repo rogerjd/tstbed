@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleApplication1.TestEvents;
 
 namespace ConsoleApplication1
 {
@@ -46,6 +47,8 @@ namespace ConsoleApplication1
             Array.Test();
 
             Struct.Test();
+
+            Event.Test();
 
             Console.ReadKey();
         }

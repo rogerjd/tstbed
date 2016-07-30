@@ -71,6 +71,7 @@
     <Compile Include="DependencyInjection.cs" />
     <Compile Include="Dict.cs" />
     <Compile Include="Enum.cs" />
+    <Compile Include="Event.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="File.cs" />
     <Compile Include="HashSet.cs" />
