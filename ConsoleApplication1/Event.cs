@@ -8,7 +8,7 @@ namespace ConsoleApplication1
 {
     namespace MyCollections
     {
-        public delegate void ChangeDel();
+        public delegate void ChangeDel(Object sender, EventArgs args);
         class Changer
         {
             public event ChangeDel OnChange;
@@ -17,7 +17,7 @@ namespace ConsoleApplication1
             {
                 if (OnChange != null)
                 {
-                    OnChange(); //todo: args ?
+                    OnChange(this, null); //todo: args ?
                 }
             }
         }
@@ -35,9 +35,18 @@ namespace ConsoleApplication1
                 Changer c = new Changer();
                 c.OnChange += DoChange;
                 c.Change();
+
+                Console.WriteLine("  remv handler");
+                c.OnChange -= DoChange;
+                c.Change();
+
+                Console.WriteLine("  multicast");
+                c.OnChange += DoChange;
+                c.OnChange += DoChange;
+                c.Change();
             }
 
-            static void DoChange()
+            static void DoChange(Object sender, EventArgs args)
             {
                 Console.WriteLine("its changed");
             }
