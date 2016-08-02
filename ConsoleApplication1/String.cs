@@ -23,6 +23,7 @@ namespace ConsoleApplication1
         }
 
         //array, convert to
+        //note:  For strings delimited by a pattern(ie: any number of spaces) rather than a value, RegEx is a great (well, the only) option
         private static void SplitIntoArray()
         {
             Console.WriteLine("split into array **");
@@ -34,6 +35,15 @@ namespace ConsoleApplication1
             {
                 Console.WriteLine("{0} {1}", i, i.Length);
             }
+
+            //use string, not char
+            string[] res2 = s.Split(new string[] {"def"}, StringSplitOptions.None);
+            foreach (string i in res2)
+            {
+                Console.WriteLine("{0} {1}", i, i.Length);
+            }
+
+
         }
 
         //ref: replace all occurrences
