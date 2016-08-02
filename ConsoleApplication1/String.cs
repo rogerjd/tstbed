@@ -19,6 +19,21 @@ namespace ConsoleApplication1
             Compare();
             Concatenate();
             Replace();
+            SplitIntoArray();
+        }
+
+        //array, convert to
+        private static void SplitIntoArray()
+        {
+            Console.WriteLine("split into array **");
+
+            //ref: leading/trailing delims will result in an empty string added to the array
+            string s = "abc def ghi";
+            string[] res = s.Split(' ');
+            foreach (string i in res)
+            {
+                Console.WriteLine("{0} {1}", i, i.Length);
+            }
         }
 
         //ref: replace all occurrences
