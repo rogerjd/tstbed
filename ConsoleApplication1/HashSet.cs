@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
+    //it is not a dictionary (key/value), only one value/item
     static class HashSet
     {
         public static void Test()

@@ -14,14 +14,26 @@ namespace ConsoleApplication1
 
         public static void Test()
         {
-            Console.WriteLine("Linq");
+            Console.WriteLine("Linq ****");
             zipTst();
-//            DB();
+            //            DB();
+            Any();
+        }
+
+        private static void Any()
+        {
+            Console.WriteLine("any **");
+            ICollection<int> c = new List<int> { 1, 2, 3, 4, 5 };
+            bool b = c.Any(i => i > 10);
+            Console.WriteLine("  " + b);
+
+            b = c.Any(i => i > 1);
+            Console.WriteLine("  {0}", b);
         }
 
         static private void zipTst()
         {
-            Console.WriteLine("zip");
+            Console.WriteLine("zip **");
             List<string> l1 = new List<string> { "a", "b", "c" };
             List<string> l2 = new List<string> { "1", "2", "3" };
 

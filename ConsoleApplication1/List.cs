@@ -19,6 +19,19 @@ namespace ConsoleApplication1
             Modify();
             Indexer();
             Find();
+            Dups();
+        }
+
+        private static void Dups()
+        {
+            //must do yourself
+            /*
+            public static bool AreAnyDuplicates<T>(this IEnumerable<T> list)
+            {
+                var hashset = new HashSet<T>();
+                return list.Any(e => !hashset.Add(e));
+            }
+            */
         }
 
         private static void Find()
