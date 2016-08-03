@@ -25,6 +25,26 @@ namespace ConsoleApplication1
             Console.WriteLine("Array ****");
             Contains();
             ModifyInMethod();
+
+            Clone(); //shallow
+            Copy();  //deep
+        }
+
+        //deep
+        //AgrumentException: if number of elements to copy is greater than that contained
+        // in the source array
+        private static void Copy()
+        {
+            Console.WriteLine("  copy ****");
+            int[] b = new int[5];
+            Console.WriteLine("    " + string.Join(" ", b));
+            System.Array.Copy(ary, b, 5); 
+            Console.WriteLine("    " + string.Join(" ", b));
+        }
+
+        //shallow
+        private static void Clone()
+        {
         }
 
         private static void ModifyInMethod()

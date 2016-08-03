@@ -77,6 +77,7 @@
     <Compile Include="HashSet.cs" />
     <Compile Include="Interface.cs" />
     <Compile Include="Lambda.cs" />
+    <Compile Include="lang.cs" />
     <Compile Include="Linq.cs" />
     <Compile Include="List.cs" />
     <Compile Include="Loop.cs" />

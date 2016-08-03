@@ -8,6 +8,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
+    /*
+     *   var/IEnumerable = 
+     *      from range_variable in datasource
+     *      select(projection) can be r_v, r_v.field, or new anonymous type
+     */
+     
     static class Linq
     {
         public static object DataContext { get; private set; }
@@ -18,6 +24,20 @@ namespace ConsoleApplication1
             zipTst();
             //            DB();
             Any();
+            Where();
+        }
+
+        private static void Where()
+        {
+            Console.WriteLine("where **");
+            string s = "abcabcabc";
+            var r = from c in s
+                    where c == 'c'
+                    select c;
+            foreach (char c in r)
+            {
+                Console.WriteLine("  " + c);
+            }
         }
 
         private static void Any()

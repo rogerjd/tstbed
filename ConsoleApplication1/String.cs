@@ -26,14 +26,14 @@ namespace ConsoleApplication1
         //note:  For strings delimited by a pattern(ie: any number of spaces) rather than a value, RegEx is a great (well, the only) option
         private static void SplitIntoArray()
         {
-            Console.WriteLine("split into array **");
+            Console.WriteLine("  split into array **");
 
             //ref: leading/trailing delims will result in an empty string added to the array
             string s = "abc def ghi";
             string[] res = s.Split(' ');
             foreach (string i in res)
             {
-                Console.WriteLine("{0} {1}", i, i.Length);
+                Console.WriteLine("    {0} {1}", i, i.Length);
             }
 
             //use string, not char
@@ -42,8 +42,6 @@ namespace ConsoleApplication1
             {
                 Console.WriteLine("{0} {1}", i, i.Length);
             }
-
-
         }
 
         //ref: replace all occurrences
@@ -92,7 +90,7 @@ namespace ConsoleApplication1
         static void IndexOf()
         {
             string s = "now it the time";
-            Console.WriteLine("the appears in: {0} at pos: {1}", s, s.IndexOf("the"));
+            Console.WriteLine("'the' appears in: {0} at pos: {1}", s, s.IndexOf("the"));
         }
 
         static void SubStr()
