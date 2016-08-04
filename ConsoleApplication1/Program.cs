@@ -50,6 +50,8 @@ namespace ConsoleApplication1
 
             Event.Test();
 
+            DateTimeTst.Test();
+
             Console.ReadKey();
         }
     }

@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Array.cs" />
     <Compile Include="Conditional.cs" />
+    <Compile Include="DateTime.cs" />
     <Compile Include="Delegates.cs" />
     <Compile Include="DependencyInjection.cs" />
     <Compile Include="Dict.cs" />
