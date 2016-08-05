@@ -50,7 +50,7 @@ namespace ConsoleApplication1
 
             Event.Test();
 
-            DateTimeTst.Test();
+            DateTimeTimeSpan.Test();
 
             Console.ReadKey();
         }
