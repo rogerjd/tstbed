@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array.cs" />
+    <Compile Include="Attribute.cs" />
     <Compile Include="Conditional.cs" />
     <Compile Include="DateTimeTimeSpan.cs" />
     <Compile Include="Delegates.cs" />

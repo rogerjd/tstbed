@@ -24,10 +24,26 @@ namespace ConsoleApplication1
         {
             Console.WriteLine("Array ****");
             Contains();
-            ModifyInMethod();
+            ModifyMethodParam();
 
             Clone(); //shallow
             Copy();  //deep
+
+            SortIt();
+        }
+
+        //ref: see List (there are also Linq methods)
+        private static void SortIt()
+        {
+            Console.WriteLine("  Sort ***");
+
+            int[] a = (int[])ary.Clone();
+
+            System.Array.Sort(a);
+            Console.WriteLine("    " + string.Join(" ", a));
+
+            System.Array.Reverse(a);
+            Console.WriteLine("    " + string.Join(" ", a));
         }
 
         //deep
@@ -47,7 +63,7 @@ namespace ConsoleApplication1
         {
         }
 
-        private static void ModifyInMethod()
+        private static void ModifyMethodParam()
         {
             Console.WriteLine("Modify in Method **");
             int[] n = { 7, 8, 9 };
@@ -69,7 +85,6 @@ namespace ConsoleApplication1
             Console.WriteLine("Contains **");
             bool b = ary.Contains(3);
             Console.WriteLine(b);
-
 
             b = ary.Contains(99);
             Console.WriteLine(b);

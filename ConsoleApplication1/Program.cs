@@ -28,7 +28,7 @@ namespace ConsoleApplication1
 
             Loop.Test();
 
-//            DB.Test();
+            //            DB.Test();
 
             Conditional.Test();
 

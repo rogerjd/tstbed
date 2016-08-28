@@ -25,7 +25,7 @@ namespace ConsoleApplication1
         Dictionary<string, int> myNewDict = new Dictionary<string, int>()
         {
             ["abc"] = 123,
-            ["def"] = 789 
+            ["def"] = 789
         };
     }
-}
+} 
