@@ -40,7 +40,7 @@ namespace ConsoleApplication1
 
             DependencyInjection.Test();
 
-            HashSet.Test();
+            HashSetTst.Test();
 
             List.Test();
 
