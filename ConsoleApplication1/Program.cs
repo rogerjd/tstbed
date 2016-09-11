@@ -52,6 +52,8 @@ namespace ConsoleApplication1
 
             DateTimeTimeSpan.Test();
 
+            Generics.Test();
+
             Console.ReadKey();
         }
     }

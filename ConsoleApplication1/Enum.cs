@@ -39,6 +39,24 @@ namespace ConsoleApplication1
             LoopThruElements();
             ZeroElement();
             CastToEnum();
+            EnumDefinedValid();
+        }
+
+        //test if value is within set of defined enum elements
+        //  see also, Enum.Defined, however is does not work for flags
+        private static void EnumDefinedValid()
+        {
+            Console.WriteLine("EnumDefinedValid **");
+
+            //out of range, no error
+            noZeroEnum n = (noZeroEnum)5; //5
+            int d;
+            bool def = !int.TryParse(n.ToString(), out d);
+            Console.WriteLine("  defined: {0}", def);
+
+            n = (noZeroEnum)1; //a = 1
+            def = !int.TryParse(n.ToString(), out d);
+            Console.WriteLine("  defined: {0}", def);
         }
 
         private static void CastToEnum()

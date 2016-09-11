@@ -76,6 +76,7 @@
     <Compile Include="Event.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="File.cs" />
+    <Compile Include="Generics.cs" />
     <Compile Include="HashSet.cs" />
     <Compile Include="Interface.cs" />
     <Compile Include="Lambda.cs" />
