@@ -93,6 +93,7 @@
     <Compile Include="String.cs" />
     <Compile Include="Struct.cs" />
     <Compile Include="TstType.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

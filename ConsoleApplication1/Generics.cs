@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 namespace ConsoleApplication1
 {
 
-/*
- * the type parameter <T> can be used on types(c/s/i/d) and methods only
- *   others can use, but not introduce. also, a method can use without introduce, too
- *   
- * default(T): returns default val for T, ref type = null, val type 0
- * 
- * constraints:
-*/
+    /*
+     * the type parameter <T> can be used on types(c/s/i/d) and methods only
+     *   others can use, but not introduce. also, a method can use without introduce, too
+     *   
+     * default(T): returns default val for T, ref type = null, val type 0
+     * 
+     * constraints:
+    */
+
+    delegate int tst(string s);
 
     class Stack<T>
     {
@@ -38,6 +40,12 @@ namespace ConsoleApplication1
         }
 
         static void GenericMethoc<T>(T s)
+        {
+
+        }
+
+
+        static void GenericMethod2<T>(T s)
         {
 
         }

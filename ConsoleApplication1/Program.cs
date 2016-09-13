@@ -54,6 +54,8 @@ namespace ConsoleApplication1
 
             Generics.Test();
 
+            lang.Test();
+
             Console.ReadKey();
         }
     }

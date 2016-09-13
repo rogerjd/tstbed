@@ -8,17 +8,17 @@ namespace ConsoleApplication1
 {
     namespace MyCollections
     {
+        //ref: can descend from EventArgs, to make specific cases (Mouse, Keyboard, etc)
         public delegate void ChangeDel(Object sender, EventArgs args);
+
         class Changer
         {
             public event ChangeDel OnChange;
 
             public void Change()
             {
-                if (OnChange != null)
-                {
-                    OnChange(this, null); //todo: args ?
-                }
+                //ref: null check
+                OnChange?.Invoke(this, null); //todo: args ?
             }
         }
     }
@@ -29,6 +29,9 @@ namespace ConsoleApplication1
 
         public static class Event
         {
+            //ref: subscriber, can only add/remv handlers for itself. can't do anything that would 
+            //     effect other subscribers, so this is illegal 
+            //                c.OnChange = null;
             public static void Test()
             {
                 Console.WriteLine("Event ****");
