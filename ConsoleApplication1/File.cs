@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class File
+    static class FileTst
     {
         static string FilePath = "tst.txt";
 
-        static File()
+        public static void Test()
         {
+            Utils.WriteTopic("File Test");
+
+            OpenText();
             Create();
             Delete();
             Write();
@@ -20,21 +23,35 @@ namespace ConsoleApplication1
             Delete();
         }
 
-/*
- * This is pretty straightforward using the File class.
+        private static void OpenText()
+        {
+            Utils.WriteSubTopic("Open Text");
 
-if(File.Exists(@"C:\test.txt"))
-{
-    File.Delete(@"C:\test.txt");
-}
-you don't actually need to do the File.Exists check since File.
-Delete doesn't throw an exception if the file doesn't exist, 
-although if you're using absolute paths you will need the check to make sure the entire file path is valid.
-The test is necessary if you want to prevent a possible DirectoryNotFoundException.
-The test shouldn't be used in place of exception handling tho, but rather in conduction with it. Any number of scenarios can result in the exists check returning true and Delete throwing.
-*/
+            if (File.Exists(FilePath))
+            {
+                using (StreamReader sr = File.OpenText(FilePath))
+                {
+
+                }
+            }
+        }
+
+        /*
+         * This is pretty straightforward using the File class.
+
+        if(File.Exists(@"C:\test.txt"))
+        {
+            File.Delete(@"C:\test.txt");
+        }
+        you don't actually need to do the File.Exists check since File.
+        Delete doesn't throw an exception if the file doesn't exist, 
+        although if you're using absolute paths you will need the check to make sure the entire file path is valid.
+        The test is necessary if you want to prevent a possible DirectoryNotFoundException.
+        The test shouldn't be used in place of exception handling tho, but rather in conduction with it. Any number of scenarios can result in the exists check returning true and Delete throwing.
+        */
         private static void Delete()
         {
+            Utils.WriteSubTopic("Delete");
             try
             {
                 System.IO.File.Delete(FilePath);
@@ -60,6 +77,8 @@ The test shouldn't be used in place of exception handling tho, but rather in con
         */
         private static void Read()
         {
+            Utils.WriteSubTopic("Read");
+
             try
             {
                 using (StreamReader sr = new StreamReader(FilePath))
@@ -79,6 +98,8 @@ The test shouldn't be used in place of exception handling tho, but rather in con
 
         private static void Write()
         {
+            Utils.WriteSubTopic("Write");
+
             try
             {
                 using (StreamWriter sw = new StreamWriter(FilePath))
@@ -99,6 +120,8 @@ The test shouldn't be used in place of exception handling tho, but rather in con
 
         private static void Create()
         {
+            Utils.WriteSubTopic("Create");
+
             string fe = FileExists(FilePath);
             Console.WriteLine("Before: {0} {1}", FilePath, fe);
 

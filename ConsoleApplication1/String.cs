@@ -14,12 +14,17 @@ namespace ConsoleApplication1
             Console.WriteLine("STRING TESTS ****");
 
             Contains();
+            EndsWith();
             IndexOf();
             SubStr();
             Compare();
             Concatenate();
             Replace();
             SplitIntoArray();
+        }
+
+        private static void EndsWith()
+        {
         }
 
         //array, convert to

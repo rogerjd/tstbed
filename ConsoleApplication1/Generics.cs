@@ -30,13 +30,31 @@ namespace ConsoleApplication1
     {
         internal static void Test()
         {
-            Console.WriteLine("Generics ****");
+            Utils.WriteTopic("Generics");
+
+            GenericStack();
+            TypeParameter();
+        }
+
+        private static void GenericStack()
+        {
+            Utils.WriteSubTopic("Generic Stack");
+
             var stack = new Stack<int>();
             stack.Push(5);
             stack.Push(10);
 
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
+            Utils.WriteDetailLine(stack.Pop().ToString());
+            Utils.WriteDetailLine(stack.Pop().ToString());
+        }
+
+        private static void TypeParameter()
+        {
+            Utils.WriteSubTopic("Type Parameter");
+
+            Func<string, string, int> totalLength = (s1, s2) => s1.Length + s2.Length;
+            int total = totalLength("abc", "defg");
+            Utils.WriteDetailLine(string.Format("{0} + {1} = {2}", "abc", "defg", total));
         }
 
         static void GenericMethoc<T>(T s)

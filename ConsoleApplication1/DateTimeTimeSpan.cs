@@ -6,15 +6,45 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
+    /*
+     * ref: TimeSpan, a particular time of day (still span, midnight to time)
+     *      format: control panel settings, also fmt str
+     */
+
     static class DateTimeTimeSpan
     {
         public static void Test()
         {
-            Console.WriteLine("DateTime ****");
+            Utils.WriteTopic("DateTime");
+
             Parse();
             ToStrFmt();
             Now();
             DaysBetween();
+            DaysAdd();
+            Compare();
+        }
+
+        private static void DaysAdd()
+        {
+            //ng            dt2 += 3;
+            //ng dt2 = dt2 + dt1;
+
+            DateTime dt1 = new DateTime(2016, 9, 14);
+            dt1 = dt1.AddDays(3);
+
+            TimeSpan ts = new TimeSpan(5, 0, 0, 0);
+            DateTime dt2 = dt1 + ts;
+        }
+
+        private static void Compare()
+        {
+            Utils.WriteSubTopic("Compare");
+
+            DateTime dt1 = new DateTime(2016, 9, 14);
+            DateTime dt2 = new DateTime(2016, 9, 21);
+
+            Utils.WriteDetailLine(string.Format("{0} > {1} {2}", dt2, dt1, (dt2 > dt1)));
         }
 
         private static void ToStrFmt()

@@ -19,7 +19,7 @@ namespace ConsoleApplication1
      *          return;
      *      }
      */
-    class Lambda
+    static class Lambda
     {
     }
 }

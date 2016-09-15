@@ -18,7 +18,7 @@ namespace ConsoleApplication1
 
             Linq.Test();
 
-            new File();
+            FileTst.Test();
 
             new Dir();
 
@@ -55,6 +55,10 @@ namespace ConsoleApplication1
             Generics.Test();
 
             lang.Test();
+
+            StringBuilderTst.Test();
+
+            Numbers.Test();
 
             Console.ReadKey();
         }

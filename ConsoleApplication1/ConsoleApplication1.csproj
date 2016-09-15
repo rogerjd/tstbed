@@ -85,12 +85,14 @@
     <Compile Include="List.cs" />
     <Compile Include="Loop.cs" />
     <Compile Include="Method.cs" />
+    <Compile Include="Numbers.cs" />
     <Compile Include="ObjectAndCollectionInitializers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="String.cs" />
+    <Compile Include="StringBuilderTst.cs" />
     <Compile Include="Struct.cs" />
     <Compile Include="TstType.cs" />
     <Compile Include="Utils.cs" />
