@@ -22,12 +22,12 @@ namespace ConsoleApplication1
 
         public static void Test()
         {
-            Console.WriteLine("Array ****");
+            Utils.WriteTopic("Array");
             Contains();
             ModifyMethodParam();
 
             Clone(); //shallow
-            Copy();  //deep
+            Copy();  //deep ?? shallow??
 
             SortIt();
         }
@@ -35,7 +35,7 @@ namespace ConsoleApplication1
         //ref: see List (there are also Linq methods)
         private static void SortIt()
         {
-            Console.WriteLine("  Sort ***");
+            Utils.WriteSubTopic("Sort");
 
             int[] a = (int[])ary.Clone();
 
@@ -44,9 +44,14 @@ namespace ConsoleApplication1
 
             System.Array.Reverse(a);
             Console.WriteLine("    " + string.Join(" ", a));
+
+            //sort by odd then even, but not within
+            int[] numbers = { 1, 4, 5, 2, 3 };
+            System.Array.Sort(numbers, (x, y) => x % 2 == y % 2 ? 0 : x % 2 == 1 ? -1 : 1);
+            Utils.WriteDetailLine(string.Join(" ", numbers));
         }
 
-        //deep
+        //deep?? shallow??
         //AgrumentException: if number of elements to copy is greater than that contained
         // in the source array
         private static void Copy()

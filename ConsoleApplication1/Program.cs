@@ -18,7 +18,7 @@ namespace ConsoleApplication1
 
             Linq.Test();
 
-            FileTst.Test();
+            IO.Test();
 
             new Dir();
 

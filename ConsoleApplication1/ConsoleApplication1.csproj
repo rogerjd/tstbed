@@ -75,7 +75,7 @@
     <Compile Include="Enum.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="ExtensionMethods.cs" />
-    <Compile Include="File.cs" />
+    <Compile Include="IO.cs" />
     <Compile Include="Generics.cs" />
     <Compile Include="HashSet.cs" />
     <Compile Include="Interface.cs" />

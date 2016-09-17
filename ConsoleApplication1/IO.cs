@@ -7,7 +7,15 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    static class FileTst
+    /*
+     * Stream:
+     *      - CanRead, CanWrite
+     *      
+     *      
+     * Stream Adapter(StreamReader) - Decorator(ZipStream) - Backing Store(FileStream)
+     */
+     
+    static class IO
     {
         static string FilePath = "tst.txt";
 
