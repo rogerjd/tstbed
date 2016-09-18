@@ -14,7 +14,7 @@ namespace ConsoleApplication1
             Console.WriteLine("{0} {1}", args[0], args[1]);
             new Delegates();
 
-            Dict.Test();
+            Collections.Dict.Test();
 
             Linq.Test();
 
@@ -40,9 +40,9 @@ namespace ConsoleApplication1
 
             DependencyInjection.Test();
 
-            HashSetTst.Test();
+            Collections.HashSetTst.Test();
 
-            List.Test();
+            Collections.List.Test();
 
             Array.Test();
 

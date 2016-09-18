@@ -67,22 +67,23 @@
   <ItemGroup>
     <Compile Include="Array.cs" />
     <Compile Include="Attribute.cs" />
+    <Compile Include="Collections\Collection.cs" />
     <Compile Include="Conditional.cs" />
     <Compile Include="DateTimeTimeSpan.cs" />
     <Compile Include="Delegates.cs" />
     <Compile Include="DependencyInjection.cs" />
-    <Compile Include="Dict.cs" />
+    <Compile Include="Collections\Dict.cs" />
     <Compile Include="Enum.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="IO.cs" />
     <Compile Include="Generics.cs" />
-    <Compile Include="HashSet.cs" />
+    <Compile Include="Collections\HashSet.cs" />
     <Compile Include="Interface.cs" />
     <Compile Include="Lambda.cs" />
     <Compile Include="lang.cs" />
     <Compile Include="Linq.cs" />
-    <Compile Include="List.cs" />
+    <Compile Include="Collections\List.cs" />
     <Compile Include="Loop.cs" />
     <Compile Include="Method.cs" />
     <Compile Include="Numbers.cs" />
