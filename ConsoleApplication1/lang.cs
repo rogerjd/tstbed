@@ -18,6 +18,16 @@ namespace ConsoleApplication1
 
             x a;
             DeclareInitVariables();
+
+            NewConstructInit();
+        }
+
+        private static void NewConstructInit()
+        {
+            //must have one or the other or both, () must come first
+            List<int> l = new List<int>() { };
+
+//            System.Collections.ArrayList al = new System.Collections.ArrayList;
         }
 
         private static void DeclareInitVariables()

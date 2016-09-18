@@ -26,8 +26,8 @@ namespace ConsoleApplication1
             Contains();
             ModifyMethodParam();
 
-            Clone(); //shallow
-            Copy();  //deep ?? shallow??
+            Clone(); //shallow. returns new array
+            Copy();  //shallow. copy to existing array, with an index(start pos)
 
             SortIt();
         }
@@ -51,7 +51,7 @@ namespace ConsoleApplication1
             Utils.WriteDetailLine(string.Join(" ", numbers));
         }
 
-        //deep?? shallow??
+        //shallow
         //AgrumentException: if number of elements to copy is greater than that contained
         // in the source array
         private static void Copy()
