@@ -11,7 +11,7 @@ namespace ConsoleApplication1
 
         static String()
         {
-            Console.WriteLine("STRING TESTS ****");
+            Utils.WriteTopic("STRING TESTS");
 
             Contains();
             EndsWith();
@@ -42,7 +42,7 @@ namespace ConsoleApplication1
             }
 
             //use string, not char
-            string[] res2 = s.Split(new string[] {"def"}, StringSplitOptions.None);
+            string[] res2 = s.Split(new string[] { "def" }, StringSplitOptions.None);
             foreach (string i in res2)
             {
                 Console.WriteLine("{0} {1}", i, i.Length);
@@ -76,12 +76,26 @@ namespace ConsoleApplication1
         //ref: word sort rules, not ordinal
         private static void Compare()
         {
+            Utils.WriteSubTopic("Compare");
             string s1 = "abc";
             string s2 = "ABC";
             int result;
             result = string.Compare(s1, s2);
             Console.WriteLine("Result {0}", result);
             Console.WriteLine(s1 == s2);
+
+            ////////////////////////////////
+            StringComparer scmp = StringComparer.CurrentCultureIgnoreCase;
+            result = scmp.Compare(s1, s2);
+            Utils.WriteDetailLine(result.ToString());
+
+            /////////////////////////////////////
+            //StringComparison.  is an enum
+
+            ////////////////////////////////////
+            scmp = StringComparer.Ordinal;
+            result = scmp.Compare(s1, s2);
+            Utils.WriteDetailLine(result.ToString()); //32, 97 - 65 = 32
         }
 
         static void Contains()
