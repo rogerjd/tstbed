@@ -20,6 +20,15 @@ namespace ConsoleApplication1
             DeclareInitVariables();
 
             NewConstructInit();
+
+            Equality();
+        }
+
+        private static void Equality()
+        {
+            //IEquatable<T> saves the overhead of boxing a value type into an object
+            //  object.Equals(object x)
+            // Equals  and GetHashCode   (and other Comparison methods should agree)
         }
 
         private static void NewConstructInit()

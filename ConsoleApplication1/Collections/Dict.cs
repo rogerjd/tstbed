@@ -17,13 +17,25 @@ namespace ConsoleApplication1.Collections
 
         public static void Test()
         {
-            Console.WriteLine("Dictionary ****");
+            Utils.WriteTopic("Dictionary");
             Loop();
             count();
             ItemPropIndexer_GetSet();
             Add();
             ContainsKey();
             ContainsValue();
+            Equality();
+        }
+
+        private static void Equality()
+        {
+            Utils.WriteSubTopic("Equality");
+            Customer c1 = new Customer("Bloggs", "Joe");
+            Customer c2 = new Customer("Bloggs", "Joe");
+
+            //not equal
+            Utils.WriteDetailLine((c1 == c2).ToString());
+            Utils.WriteDetailLine((c1.Equals(c2)).ToString());
         }
 
         private static void ContainsKey()
@@ -106,5 +118,26 @@ namespace ConsoleApplication1.Collections
                 Console.WriteLine(item);
             }
         }
+    }
+
+    class Customer
+    {
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
+
+        public Customer(string ln, string fn)
+        {
+            LastName = ln;
+            FirstName = fn;
+        }
+    }
+
+    class CustomerComparer : EqualityComparer<Customer>
+    {
+        public override bool Equals(Customer x, Customer y)
+            => x.LastName == y.LastName && x.FirstName == y.FirstName;
+
+        public override int GetHashCode(Customer obj)
+            => (obj.LastName + ";" + obj.FirstName).GetHashCode();
     }
 }
