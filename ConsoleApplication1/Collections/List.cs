@@ -8,11 +8,11 @@ namespace ConsoleApplication1.Collections
 {
     static class List
     {
-        static List<string> l = new List<string> { "a", "b", "c" };
+        static List<string> l = new List<string> { "z", "a", "b", "c" };
 
         public static void Test()
         {
-            Console.WriteLine("List ****");
+            Utils.WriteTopic("List");
             Count();
             Sort();
             Foreach();
@@ -36,8 +36,7 @@ namespace ConsoleApplication1.Collections
 
         private static void Find()
         {
-            Console.WriteLine("Find **");
-            Console.WriteLine(l.Contains("a"));
+            Utils.WriteSubTopic("Find");
             Console.WriteLine(l.Contains("z"));
 
             //ref: predicate
@@ -56,7 +55,7 @@ namespace ConsoleApplication1.Collections
 
         private static void Indexer()
         {
-            Console.WriteLine("Indexer **");
+            Utils.WriteSubTopic("Indexer");
 
             Console.WriteLine(l[0]);
             l[0] = "new";
@@ -65,7 +64,7 @@ namespace ConsoleApplication1.Collections
 
         private static void Modify()
         {
-            Console.WriteLine("Modify **");
+            Utils.WriteSubTopic("Modify");
 
             //ref: one at a time
             Count();
@@ -84,7 +83,7 @@ namespace ConsoleApplication1.Collections
 
         private static void Foreach()
         {
-            Console.WriteLine("Foreach **");
+            Utils.WriteSubTopic("Foreach");
 
             foreach (System.String s in l)
             {
@@ -93,20 +92,33 @@ namespace ConsoleApplication1.Collections
             }
         }
 
+        //- pass into l.Sort()
+        //      1 - nothing, uses default comparer
+        //      2 = Comparison  delegate
+        //      3 = an IComparer
+        //- l.Reverse
         private static void Sort()
         {
-            Console.WriteLine("Sort **");
+            Utils.WriteSubTopic("Sort");
 
+            //default /////////
             l.Sort();
             Console.WriteLine(string.Join(" ", l));
 
             l.Reverse();
             Console.WriteLine(string.Join(" ", l));
+
+            //use Comparison delegate
+            List<string> l2 = new List<string> { "abc, xyz", "qrs, def" };
+            l2.Sort((a, b) => a.Substring(5, 3).CompareTo(b.Substring(5, 3)));
+            Console.WriteLine(string.Join(" ", l2));
+
+            //use Comparer IComparer (it is class)
         }
 
         private static void Count()
         {
-            Console.WriteLine("Count **");
+            Utils.WriteSubTopic("Count");
             int n = l.Count();
             Console.WriteLine(n);
         }
