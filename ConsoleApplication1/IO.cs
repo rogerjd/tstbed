@@ -147,7 +147,7 @@ namespace ConsoleApplication1
             {
                 return "File Exists";
             }
-            return "File does not Exists";
+            return "File does not Exist";
         }
 
     }

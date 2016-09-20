@@ -65,7 +65,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Array.cs" />
+    <Compile Include="Collections\Array.cs" />
     <Compile Include="Attribute.cs" />
     <Compile Include="Collections\Collection.cs" />
     <Compile Include="Conditional.cs" />

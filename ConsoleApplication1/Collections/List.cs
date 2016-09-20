@@ -109,11 +109,13 @@ namespace ConsoleApplication1.Collections
             Console.WriteLine(string.Join(" ", l));
 
             //use Comparison delegate
-            List<string> l2 = new List<string> { "abc, xyz", "qrs, def" };
+            List<string> l2 = new List<string> { "abc, xyz0", "qrs, def9" };
             l2.Sort((a, b) => a.Substring(5, 3).CompareTo(b.Substring(5, 3)));
             Console.WriteLine(string.Join(" ", l2));
 
             //use Comparer IComparer (it is class)
+            l2.Sort(new MyComparer());
+            Console.WriteLine(string.Join(" ", l2));
         }
 
         private static void Count()
@@ -121,6 +123,14 @@ namespace ConsoleApplication1.Collections
             Utils.WriteSubTopic("Count");
             int n = l.Count();
             Console.WriteLine(n);
+        }
+    }
+
+    class MyComparer : Comparer<string>
+    {
+        public override int Compare(string x, string y)
+        {
+            return (x.Substring(8, 1).CompareTo(y.Substring(8, 1)));
         }
     }
 }

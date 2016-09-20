@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1.Collections
 {
+    /* IEquatable - used in Dictionary to determine Equality (key), not default reference
+     *              semantics(2 diff objs not equal(addr), but w/IE can be equal(flds))
+     * 
+     */
+      
     static class Dict
     {
         static Dictionary<string, string> dict = new Dictionary<string, string> { ["abc"] = "123" }; //ref: or {{"k", "v"}}
