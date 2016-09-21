@@ -36,6 +36,17 @@ namespace ConsoleApplication1.Collections
             //not equal
             Utils.WriteDetailLine((c1 == c2).ToString());
             Utils.WriteDetailLine((c1.Equals(c2)).ToString());
+
+            //same rules apply for Dict
+            Dictionary<Customer, string> d = new Dictionary<Customer, string>();
+            d[c1] = "Joe";
+            Utils.WriteDetailLine(d.ContainsKey(c2).ToString());
+
+            //use custom equality comparer
+            var CustomerComparer = new CustomerComparer();
+            d = new Dictionary<Customer, string>(CustomerComparer);
+            d[c1] = "Joe";
+            Utils.WriteDetailLine(d.ContainsKey(c2).ToString());
         }
 
         private static void ContainsKey()

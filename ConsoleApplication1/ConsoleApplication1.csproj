@@ -96,6 +96,7 @@
     <Compile Include="StringBuilderTst.cs" />
     <Compile Include="Struct.cs" />
     <Compile Include="TstType.cs" />
+    <Compile Include="Tuple.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>

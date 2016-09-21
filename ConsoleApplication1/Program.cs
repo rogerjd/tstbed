@@ -60,6 +60,8 @@ namespace ConsoleApplication1
 
             Numbers.Test();
 
+            TupleTst.Test();
+
             Console.ReadKey();
         }
     }
