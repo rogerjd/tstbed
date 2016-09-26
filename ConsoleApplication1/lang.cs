@@ -22,6 +22,15 @@ namespace ConsoleApplication1
             NewConstructInit();
 
             Equality();
+
+            VarDeclareInit();
+        }
+
+        private static void VarDeclareInit()
+        {
+            Utils.WriteTopic("Var Declare Init");
+            int n = 3, b = 4, c = n + 1;
+            Utils.WriteDetailLine(string.Format("{0} {1} {2}", n, b, c));
         }
 
         private static void Equality()
