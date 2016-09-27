@@ -71,6 +71,8 @@ namespace ConsoleApplication1
         {
             Console.WriteLine("  copy ****");
             int[] b = new int[5];
+
+
             Console.WriteLine("    " + string.Join(" ", b));
             System.Array.Copy(ary, b, 5);
             Console.WriteLine("    " + string.Join(" ", b));
@@ -94,7 +96,8 @@ namespace ConsoleApplication1
 
         static void method1(int[] m)
         {
-            m[0] = 2;
+            m[0] = 2; //ok
+            int len = m.Length;
             // m[99] = 4; IndexOutOfRangeException
         }
 

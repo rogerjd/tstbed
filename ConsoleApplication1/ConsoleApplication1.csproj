@@ -65,6 +65,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CmdLn.cs" />
     <Compile Include="Collections\Array.cs" />
     <Compile Include="Attribute.cs" />
     <Compile Include="Collections\Collection.cs" />

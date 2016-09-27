@@ -11,7 +11,11 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
+            //cmd ln 
+            // can set in iDE. Prj.Properties.CmdLnParams
             Console.WriteLine("{0} {1}", args[0], args[1]);
+            Utils.WriteDetailLine(args.Length.ToString());
+
             new Delegates();
 
             Collections.Dict.Test();

@@ -23,14 +23,32 @@ namespace ConsoleApplication1
 
             Equality();
 
-            VarDeclareInit();
+            ScopeAndDeclarationSpace();
         }
 
-        private static void VarDeclareInit()
+        private static void ScopeAndDeclarationSpace()
         {
-            Utils.WriteTopic("Var Declare Init");
-            int n = 3, b = 4, c = n + 1;
-            Utils.WriteDetailLine(string.Format("{0} {1} {2}", n, b, c));
+            //https://blogs.msdn.microsoft.com/ericlippert/2009/08/03/whats-the-difference-part-two-scope-vs-declaration-space-vs-lifetime/
+
+            Utils.WriteSubTopic("Scope and Declaration Space");
+
+            Utils.WriteDetailLine(string.Format("scope, class: {0}", z.ToString()));
+            //class var, z or lang.z or fully qualified
+
+            {
+                int z = 2; // same name: z, new declaration space
+                Utils.WriteDetailLine(string.Format("scope, class: {0}", z.ToString()));
+                Utils.WriteDetailLine(string.Format("scope, class: {0}", lang.z.ToString()));
+                //or, this.z if instance
+
+                //of course it is err to declare another z here in same declaration space
+                //int z;
+            }
+
+            {
+                int z = 3; //look another declaration space, z here too
+                Utils.WriteDetailLine(string.Format("scope: {0}", z.ToString()));
+            }
         }
 
         private static void Equality()
@@ -48,9 +66,11 @@ namespace ConsoleApplication1
 //            System.Collections.ArrayList al = new System.Collections.ArrayList;
         }
 
+        //multiple assign
         private static void DeclareInitVariables()
         {
-            Utils.WriteSubTopic("Declare and Init Variables");
+            Utils.WriteTopic("Var Declare Init");
+//            Utils.WriteSubTopic("Declare and Init Variables");
             //ok            int a, b, c;  //declare only
 
 //ok            int a, b, c = 0;  //only c is assigned, a and b are declared only
@@ -60,6 +80,10 @@ namespace ConsoleApplication1
             int a, b, c;  //ok
             a = b = c = 0;  //ok
             Utils.WriteDetailLine(string.Format("a: {0} b: {1} c:{2}" , a.ToString(), b.ToString(), c.ToString()));
+
+            ////////////////////////////
+            int n = 3, m = 4, o = n + 1;  //can use prior var
+            Utils.WriteDetailLine(string.Format("{0} {1} {2}", n, m, o));
         }
     }
 }

@@ -39,11 +39,18 @@ namespace ConsoleApplication1
         {
             Console.WriteLine("for test");
             int[] n = { 1, 2, 3, 4, 5 };
-            for (int i = 0; i < n.Length; i++)
-            {
-                Console.WriteLine("Value at index {0} is {1}", i, n[i]);
+            { // ref: as if braces around 
+                for (int i = 0; i < n.Length; i++)
+                {
+                    Console.WriteLine("Value at index {0} is {1}", i, n[i]);
+                }
             }
 
+            int z; //var can be outside of for
+            for (z = 0; z < 4; z++)
+            {
+
+            }
 
             for (int i = 0; i < 0; i++)
             {
