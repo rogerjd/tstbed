@@ -20,16 +20,34 @@ namespace ConsoleApplication1
 
         public static void Test()
         {
-            Console.WriteLine("Linq ****");
+            Utils.WriteTopic("Linq");
             zipTst();
             //            DB();
             Any();
             Where();
+            Range();
+        }
+
+        private static void Range()
+        {
+            Utils.WriteSubTopic("Range");
+            var x = Enumerable.Range(1, 12);  //IEnumerable<int>
+            foreach (var n in x)
+            {
+                Utils.WriteDetailLine(n.ToString());
+            }
+
+            x = x.Select(n => n + 1);  //Select(getMonthName); a transform function to apply to each element
+            foreach (var n in x)
+            {
+                Utils.WriteDetailLine(n.ToString());
+            }
         }
 
         private static void Where()
         {
-            Console.WriteLine("where **");
+            Utils.WriteSubTopic("where");
+
             string s = "abcabcabc";
             var r = from c in s
                     where c == 'c'
@@ -42,7 +60,7 @@ namespace ConsoleApplication1
 
         private static void Any()
         {
-            Console.WriteLine("any **");
+            Utils.WriteSubTopic("any");
             ICollection<int> c = new List<int> { 1, 2, 3, 4, 5 };
             bool b = c.Any(i => i > 10);
             Console.WriteLine("  " + b);
@@ -53,7 +71,7 @@ namespace ConsoleApplication1
 
         static private void zipTst()
         {
-            Console.WriteLine("zip **");
+            Utils.WriteSubTopic("zip");
             List<string> l1 = new List<string> { "a", "b", "c" };
             List<string> l2 = new List<string> { "1", "2", "3" };
 

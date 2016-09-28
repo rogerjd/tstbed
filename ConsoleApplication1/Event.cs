@@ -17,7 +17,7 @@ namespace ConsoleApplication1
 
             public void Change()
             {
-                //ref: null check
+                //ref: null check  null conditional
                 OnChange?.Invoke(this, null); //todo: args ?
             }
         }

@@ -13,6 +13,7 @@ namespace ConsoleApplication1
      *      
      *      
      * Stream Adapter(StreamReader) - Decorator(ZipStream) - Backing Store(FileStream)
+     *   (like Pascal, but not Readln(f).  it is sr.ReadLine  (it is created on a file(path) or stream)
      */
      
     static class IO

@@ -13,6 +13,18 @@ namespace ConsoleApplication1
             ForTst();
             WhileTst();
             DoTst();
+            foreachTst() ;
+        }
+
+        private static void foreachTst()
+        {
+            //each x (iteration), is a new/different storage location (immutable) so
+            //can capture the var in a closure
+            foreach (var x in Enumerable.Range(1, 10))
+            {
+                //x += 1;  error
+
+            }
         }
 
         private static void DoTst()
@@ -52,6 +64,7 @@ namespace ConsoleApplication1
 
             }
 
+            //it is as if i is declared outside, there is only 1 storage location
             for (int i = 0; i < 0; i++)
             {
                 Console.WriteLine("This should not execute");
