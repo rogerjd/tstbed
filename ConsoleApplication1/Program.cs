@@ -66,6 +66,8 @@ namespace ConsoleApplication1
 
             TupleTst.Test();
 
+            Operators.Test();
+
             Console.ReadKey();
         }
     }

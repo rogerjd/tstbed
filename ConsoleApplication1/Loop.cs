@@ -10,6 +10,8 @@ namespace ConsoleApplication1
     {
         static public void Test()
         {
+            Utils.WriteTopic("Loop");
+
             ForTst();
             WhileTst();
             DoTst();
@@ -23,7 +25,6 @@ namespace ConsoleApplication1
             foreach (var x in Enumerable.Range(1, 10))
             {
                 //x += 1;  error
-
             }
         }
 
@@ -39,12 +40,20 @@ namespace ConsoleApplication1
 
         private static void WhileTst()
         {
+            Utils.WriteSubTopic("While/do top/bottom");
+
             int n = 0;
             while (n < 5)
             {
-                Console.WriteLine("While: {0}", n);
+                Utils.WriteDetailLine(string.Format("While: {0}", n));
                 n++;
             }
+
+            do
+            {
+                n--;
+                Utils.WriteDetailLine(string.Format("do: {0}", n));
+            } while (n > 0);
         }
 
         private static void ForTst()

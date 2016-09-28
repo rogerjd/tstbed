@@ -88,8 +88,10 @@
     <Compile Include="Collections\List.cs" />
     <Compile Include="Loop.cs" />
     <Compile Include="Method.cs" />
+    <Compile Include="Nullable.cs" />
     <Compile Include="Numbers.cs" />
     <Compile Include="ObjectAndCollectionInitializers.cs" />
+    <Compile Include="Operators.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
