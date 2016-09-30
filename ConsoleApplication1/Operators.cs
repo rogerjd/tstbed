@@ -16,7 +16,7 @@ namespace ConsoleApplication1
         private static void LogicalAndConditionalLogicalOperators()
         {
             //logical: |  &
-            //conditional: ||  &&   these short-circuit (logical ones dont)
+            //conditional logical: ||  &&   these short-circuit (logical ones dont)
             //either can be used on boolean expressions
             //func calls, exceptions, etc and short-circuit
 
@@ -28,7 +28,7 @@ namespace ConsoleApplication1
 
             int n = 0, m;
             result = a || ((3 / n) == 1);  //will not throw exception, due to short-circuit
-            result = a | ((3 / n) == 1);   //will throw exception, does not short-circuit
+            //result = a | ((3 / n) == 1);   //will throw exception, does not short-circuit
         }
     }
 }

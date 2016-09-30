@@ -24,6 +24,9 @@ namespace ConsoleApplication1
             MyClass2 mc2 = new MyClass2();
             mc2.Tst1();
 
+            MyClass3 mc3 = new MyClass3();
+            mc3.Tst1();
+
             //only interface methods are available through the interface
             //Tster t = mc;
             //t.AnotherMethod();
@@ -48,7 +51,7 @@ namespace ConsoleApplication1
     {
         public void Tst1()
         {
-            System.Console.WriteLine("Interface: MyClass.Tst1");
+            System.Console.WriteLine("Interface: MyClass.Tst1 or 3");
         }
 
         public void AnotherMethod()
@@ -63,5 +66,12 @@ namespace ConsoleApplication1
         {
             System.Console.WriteLine("Interface: MyClass2.Tst1");
         }
+    }
+
+    //must this implements the interface it gets from the parent class? it inherits the 
+    //  implementation, but can override if it wishes
+    class MyClass3: MyClass
+    {
+
     }
 }

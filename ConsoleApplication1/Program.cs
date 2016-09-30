@@ -68,6 +68,10 @@ namespace ConsoleApplication1
 
             Operators.Test();
 
+            TimerTst.Test();
+
+            GCTst.Test();
+
             Console.ReadKey();
         }
     }

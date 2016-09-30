@@ -5,7 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//ref: extension methods only work on instances (not types)
+/*
+ * ref: extension methods only work on instances (not types)
+ *      Transform function    .Select(n => n.ToString())  Select(GetMonthName)
+ *        months = Enumerable.Range(1, 12).Select(dtfi.GetAbbreviatedMonthName).ToList();
+ *
+ */
 
 namespace ConsoleApplication1
 {

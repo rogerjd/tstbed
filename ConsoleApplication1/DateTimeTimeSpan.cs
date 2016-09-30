@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,29 @@ namespace ConsoleApplication1
             DaysBetween();
             DaysAdd();
             Compare();
+            Month();
+        }
+
+        private static void Month()
+        {
+            Utils.WriteSubTopic("Month");
+
+            // can use format string for a particular date  Format("MMM", date)
+
+            DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
+            Utils.WriteDetailLine(dtfi.GetMonthName(3));
+            Utils.WriteDetailLine(dtfi.GetAbbreviatedMonthName(4));
+
+            List<string> months = Enumerable.Range(1, 12).Select(tst).ToList();
+            Utils.WriteDetailLine(string.Join(" ", months));
+
+            months = Enumerable.Range(1, 12).Select(dtfi.GetAbbreviatedMonthName).ToList();
+            Utils.WriteDetailLine(string.Join(" ", months));
+        }
+
+        static string tst(int n)
+        {
+            return n.ToString() + "abc";
         }
 
         private static void DaysAdd()

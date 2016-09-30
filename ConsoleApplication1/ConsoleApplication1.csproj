@@ -78,6 +78,7 @@
     <Compile Include="Enum.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="GC.cs" />
     <Compile Include="IO.cs" />
     <Compile Include="Generics.cs" />
     <Compile Include="Collections\HashSet.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="String.cs" />
     <Compile Include="StringBuilderTst.cs" />
     <Compile Include="Struct.cs" />
+    <Compile Include="Timer.cs" />
     <Compile Include="TstType.cs" />
     <Compile Include="Tuple.cs" />
     <Compile Include="Utils.cs" />
