@@ -33,7 +33,10 @@ namespace ConsoleApplication1
             Utils.WriteSubTopic("Month");
 
             // can use format string for a particular date  Format("MMM", date)
-            Utils.WriteDetailLine(string.Format("{0:MMM}", new DateTime(2016, 09, 29)));
+            DateTime dt = new DateTime(2016, 09, 29);
+            Utils.WriteDetailLine(string.Format("{0:MMM}", dt));
+            Utils.WriteDetailLine(dt.ToString("MMMM"));
+            Utils.WriteDetailLine(dt.ToLongDateString());
 
             DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
             Utils.WriteDetailLine(dtfi.GetMonthName(3));
