@@ -27,11 +27,13 @@ namespace ConsoleApplication1
             Month();
         }
 
+        // month day year
         private static void Month()
         {
             Utils.WriteSubTopic("Month");
 
             // can use format string for a particular date  Format("MMM", date)
+            Utils.WriteDetailLine(string.Format("{0:MMM}", new DateTime(2016, 09, 29)));
 
             DateTimeFormatInfo dtfi = new DateTimeFormatInfo();
             Utils.WriteDetailLine(dtfi.GetMonthName(3));
