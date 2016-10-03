@@ -72,6 +72,8 @@ namespace ConsoleApplication1
 
             GCTst.Test();
 
+            TraceDebug.Test();
+
             Console.ReadKey();
         }
     }

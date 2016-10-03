@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractClass1.cs" />
+    <Compile Include="Async.cs" />
     <Compile Include="CmdLn.cs" />
     <Compile Include="Collections\Array.cs" />
     <Compile Include="Attribute.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="StringBuilderTst.cs" />
     <Compile Include="Struct.cs" />
     <Compile Include="Timer.cs" />
+    <Compile Include="TraceDebug.cs" />
     <Compile Include="TstType.cs" />
     <Compile Include="Tuple.cs" />
     <Compile Include="Utils.cs" />
