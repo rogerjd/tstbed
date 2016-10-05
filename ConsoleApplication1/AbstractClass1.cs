@@ -10,7 +10,13 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class AbstractClass1
+    abstract class AbstractClass1
     {
+        public void Test()
+        {
+            //can have body
+        }
+
+        public abstract void Test1();  //no body if declared abstract
     }
 }
