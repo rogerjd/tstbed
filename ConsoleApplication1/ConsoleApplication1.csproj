@@ -65,8 +65,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractClass1.cs" />
+    <Compile Include="AbstractClass.cs" />
     <Compile Include="Async.cs" />
+    <Compile Include="Closure.cs" />
     <Compile Include="CmdLn.cs" />
     <Compile Include="Collections\Array.cs" />
     <Compile Include="Attribute.cs" />

@@ -74,6 +74,10 @@ namespace ConsoleApplication1
 
             TraceDebug.Test();
 
+            AsyncTst.Test();
+
+            Closure.Test();
+
             Console.ReadKey();
         }
     }

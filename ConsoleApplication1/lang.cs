@@ -24,6 +24,17 @@ namespace ConsoleApplication1
             Equality();
 
             ScopeAndDeclarationSpace();
+
+            NamedAndOptionalDefaultArgs();
+        }
+
+        private static void NamedAndOptionalDefaultArgs()
+        {
+            //CalculateBMI(weight: 123, height: 64);
+            //However, a positional argument cannot follow a named argument.
+
+            //must specify all but optional args
+            TstArgs ta = new TstArgs(arg2: "abc", arg1: 124);
         }
 
         private static void ScopeAndDeclarationSpace()
@@ -84,6 +95,14 @@ namespace ConsoleApplication1
             ////////////////////////////
             int n = 3, m = 4, o = n + 1;  //can use prior var
             Utils.WriteDetailLine(string.Format("{0} {1} {2}", n, m, o));
+        }
+    }
+
+    class TstArgs
+    {
+        public TstArgs(int arg1, string arg2, bool arg3 = true)
+        {
+
         }
     }
 }

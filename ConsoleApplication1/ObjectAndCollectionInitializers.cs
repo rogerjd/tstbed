@@ -9,7 +9,8 @@ namespace ConsoleApplication1
     class ObjectAndCollectionInitializers
     {
         //w/the initializer {}, the () after new is optional; else required
-        Product prod = new Product() { ProductID = 100 };
+        Product prod = new Product() { ProductID = 100, Description = "test desc" };
+        Product prod2 = new Product(); //these are props, not ctor args:(200, "name", "desc", 12.23, "catg");
 
         string[] stringArray = { "apple", "orange", "plum" };  //array initializer, doesnt need (optional) new()
 

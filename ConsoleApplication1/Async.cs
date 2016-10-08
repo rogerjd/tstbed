@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleApplication1
@@ -15,7 +16,51 @@ namespace ConsoleApplication1
      *      so that they're awaitable.
      */
 
-    class Async
+    static class AsyncTst
     {
+        public static void Test()
+        {
+            Sync();
+            Async();
+        }
+
+        private static void Sync()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (i == 2)
+                {
+                    SyncCall();
+                }
+                Console.WriteLine(i);
+            }
+        }
+
+        private static void Async()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (i == 2)
+                {
+                    AsyncCall();
+                }
+                Console.WriteLine(i);
+            }
+        }
+
+        private static void SyncCall()
+        {
+            Console.WriteLine("Start sync");
+            Thread.Sleep(3000);  //Block
+            Console.WriteLine("End");
+        }
+
+        private static async void AsyncCall()
+        {
+            Console.WriteLine("Start async");
+            //await Thread.Sleep(3000);  //Block.  This doesnt work, needs Task
+            await Task.Delay(3000);
+            Console.WriteLine("End");
+        }
     }
 }
