@@ -26,6 +26,13 @@ namespace ConsoleApplication1
             ScopeAndDeclarationSpace();
 
             NamedAndOptionalDefaultArgs();
+
+//            Params() see, Method params
+        }
+
+        private static void Params()
+        {
+            throw new NotImplementedException();
         }
 
         private static void NamedAndOptionalDefaultArgs()

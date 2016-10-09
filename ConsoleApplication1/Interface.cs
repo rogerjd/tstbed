@@ -9,14 +9,14 @@ namespace ConsoleApplication1
     static class Interface
     {
 
-        public interface Tster
+        public interface ITster
         {
             void Tst1();
         }
 
         static public void Test()
         {
-            Console.WriteLine("Interface ****");
+            Utils.WriteTopic("Interface"); 
 
             MyClass mc = new MyClass();
             mc.Tst1();
@@ -32,26 +32,52 @@ namespace ConsoleApplication1
             //t.AnotherMethod();
 
             PassToInterfaceParameter();
+
+            MyClass4 mc4 = new MyClass4();
+            //            mc4.Tst1();  //cs1061, does not implement interface
+
+            MyStruct ms;
+            ms.Tst1();
+
+            PassAsParam(ms);
+
+            List<ITster> l = new List<ITster> { mc, mc2, mc3, ms };
+            PassAsList(l);
+        }
+
+        private static void PassAsList(IEnumerable<ITster> l)
+        {
+            Utils.WriteSubTopic("pass a list");
+            foreach (ITster item in l)
+            {
+                item.Tst1();
+            }
+        }
+
+        private static void PassAsParam(ITster i)
+        {
+            Utils.WriteSubTopic("pass as param");
+            i.Tst1();
         }
 
         private static void PassToInterfaceParameter()
         {
-            Console.WriteLine("Parameter **");
+            Utils.WriteSubTopic("Parameter");
             List<int> l = new List<int> { 1, 2, 3, 4, 5 };
             DoSomething(l);
         }
 
         private static void DoSomething(IList<int> l)
         {
-            Console.WriteLine(l.Count);
+            Utils.WriteDetailLine(l.Count.ToString());
         }
     }
 
-    class MyClass : Interface.Tster
+    class MyClass : Interface.ITster
     {
         public void Tst1()
         {
-            System.Console.WriteLine("Interface: MyClass.Tst1 or 3");
+            Utils.WriteDetailLine("Interface: MyClass.Tst1 or 3");
         }
 
         public void AnotherMethod()
@@ -60,11 +86,11 @@ namespace ConsoleApplication1
         }
     }
 
-    class MyClass2 : Interface.Tster
+    class MyClass2 : Interface.ITster
     {
         public void Tst1()
         {
-            System.Console.WriteLine("Interface: MyClass2.Tst1");
+            Utils.WriteDetailLine("Interface: MyClass2.Tst1");
         }
     }
 
@@ -73,5 +99,18 @@ namespace ConsoleApplication1
     class MyClass3: MyClass
     {
 
+    }
+
+    class MyClass4
+    {
+
+    }
+
+    struct MyStruct : Interface.ITster
+    {
+        public void Tst1()
+        {
+            Utils.WriteDetailLine("struct implementing an interface");
+        }
     }
 }

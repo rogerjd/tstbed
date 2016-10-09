@@ -26,8 +26,10 @@ namespace ConsoleApplication1
             Console.WriteLine("Val should be 5 (4 + 1): {0}", m);
 
             int i;
-            //can pass unassigned; like ref, but input can be unassigned
+            //can pass unassigned; like ref(pass by ref), but input can be unassigned
             out_param(out i);
+            int x = 3; //does not discard input
+            out_param(out x);
             Console.WriteLine("Val should be 8: {0}", i);
 
             params_param();
@@ -37,6 +39,8 @@ namespace ConsoleApplication1
 
         private static void out_param(out int i)
         {
+            //pass by ref
+            //does not discard input
             //must assign before leaving method
             i = 8;
         }
