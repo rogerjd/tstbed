@@ -93,13 +93,14 @@ namespace ConsoleApplication1
 
         private static void DaysBetween()
         {
-            Console.WriteLine("Days Between **");
+            Utils.WriteSubTopic("Days Between");
 
             DateTime dt1, dt2;
             dt1 = DateTime.Today;
             dt2 = DateTime.Today.AddDays(7);
             TimeSpan ts =  dt2 - dt1;  //ref: or, dt2.Subtract(dt1)
-            Console.WriteLine("    " + ts.TotalDays);
+            Console.WriteLine("    " + ts.TotalDays); //fractional days, with time part
+            Utils.WriteDetailLine(string.Format("whole days {0}", ts.Days));
         }
 
         private static void Now()

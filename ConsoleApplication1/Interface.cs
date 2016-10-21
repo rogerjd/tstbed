@@ -40,6 +40,7 @@ namespace ConsoleApplication1
             ms.Tst1();
 
             PassAsParam(ms);
+            PassAsParam(mc3);
 
             List<ITster> l = new List<ITster> { mc, mc2, mc3, ms };
             PassAsList(l);
