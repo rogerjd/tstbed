@@ -20,6 +20,17 @@ namespace ConsoleApplication1.Collections
             Indexer();
             Find();
             Dups();
+            RemoveAt();
+        }
+
+        //bug
+        private static void RemoveAt()
+        {
+            List<int> l = new List<int> {1, 2, 3, 4, 5, 6 };
+            for (int i = 0; i < l.Count - 1; i++)
+            {
+                l.RemoveAt(i);
+            }
         }
 
         private static void Dups()

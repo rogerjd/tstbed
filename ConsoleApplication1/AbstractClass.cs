@@ -12,7 +12,7 @@ namespace ConsoleApplication1
 {
     abstract class AbstractClass
     {
-        public void Test()
+        public void Test()  //as long as not declared/marked abstract, can have methods/body
         {
             //can have body
         }

@@ -20,6 +20,7 @@ namespace ConsoleApplication1
     static class Array
     {
         static int[] ary = { 1, 2, 3, 4, 5 };
+        static bool[] ary2 = new bool[10];
 
         public static void Test()
         {
@@ -33,13 +34,36 @@ namespace ConsoleApplication1
             SortIt();
 
             FileReadAllLines();
+
+            DefaultValues();
+        }
+
+        private static void DefaultValues()
+        {
+            Utils.WriteSubTopic("Default Values");
+
+            var n = default(bool); //bool is false
+            if (n)
+            {
+                Utils.WriteDetailLine("it's true, should be false");
+            }
+
+            foreach (var b in ary2)
+            {
+                if (b)
+                {
+                    throw new Exception("should be false, found true");
+                }
+            }
+            Utils.WriteDetailLine("all false");
         }
 
         private static void FileReadAllLines()
         {
+            //StringList LoadFromFile ReadFromFile
             Utils.WriteSubTopic("Read All Lines");
             string fn = Environment.CurrentDirectory + @"\tst2.txt";
-            string[] lns = File.ReadAllLines(fn);
+            string[] lns = File.ReadAllLines(fn);  //throws: FileNotFoundException
 
             //List<string> l = new List<string>(lns);
             //lns.ToList();

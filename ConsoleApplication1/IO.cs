@@ -30,6 +30,23 @@ namespace ConsoleApplication1
             Write();
             Read();
             Delete();
+            WriteAllLines();  //StringList.SaveToFile WriteToFile
+            ReadAllLines(); //StringList.LoadFromFile ReadFromFile
+        }
+
+        private static void ReadAllLines()
+        {
+            List<string> l = File.ReadAllLines("WriteAllLns.txt").ToList<string>();
+            foreach (var s in l)
+            {
+                Utils.WriteDetailLine(s);
+            }
+        }
+
+        private static void WriteAllLines()
+        {
+            List<string> l = new List<string> { "write", "all", "lines" };
+            File.WriteAllLines("WriteAllLns.txt", l);
         }
 
         private static void OpenText()

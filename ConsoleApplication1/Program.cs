@@ -43,7 +43,7 @@ namespace ConsoleApplication1
             ExtensionMenthods.Test();
 
             DependencyInjection.Test();
-
+            
             Collections.HashSetTst.Test();
 
             Collections.List.Test();

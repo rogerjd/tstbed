@@ -21,6 +21,11 @@ namespace ConsoleApplication1.Collections
 
             b = hs.Contains(4);
             Console.WriteLine("  contains 4: {0} **", b);
+
+            Console.WriteLine("  count: {0} **", hs.Count());
+
+            hs.Add(7);
+            Console.WriteLine("  after add, count: {0} **", hs.Count());
         }
     }
 }

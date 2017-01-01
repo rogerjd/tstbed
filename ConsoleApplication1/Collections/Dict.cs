@@ -10,7 +10,7 @@ namespace ConsoleApplication1.Collections
      *              semantics(2 diff objs not equal(addr), but w/IE can be equal(flds))
      * 
      */
-      
+
     static class Dict
     {
         static Dictionary<string, string> dict = new Dictionary<string, string> { ["abc"] = "123" }; //ref: or {{"k", "v"}}
@@ -22,7 +22,7 @@ namespace ConsoleApplication1.Collections
             count();
             ItemPropIndexer_GetSet();
             Add();
-            ContainsKey();
+            ContainsKey();  // key => bool
             ContainsValue();
             Equality();
         }
@@ -69,7 +69,7 @@ namespace ConsoleApplication1.Collections
 
         private static void Add()
         {
-            Console.WriteLine("Indexer **");
+            Console.WriteLine("Add **");
 
             //ok
             dict.Add("notExist", "ok");
@@ -82,17 +82,19 @@ namespace ConsoleApplication1.Collections
             }
             catch (Exception)
             {
-                Console.WriteLine("Key already exists on Add, it is err");
+                Console.WriteLine("if Key already exists on Add, then it is err");
             }
+
+            dict["notExist"] = "replace value for existing key";
         }
 
         private static void ItemPropIndexer_GetSet()
         {
-            //refL Item is indexer (see docs: this[key]), cant use Item
-            //            Console.WriteLine(dict.Item["abc"]);
             Console.WriteLine("Indexer **");
-            
+
             //key exists:
+            //ref: Item is indexer (see docs: this[key]), cant use Item
+            //Console.WriteLine(dict.Item["abc"]);
             Console.WriteLine(dict["abc"]);
 
             //key does not exist:  KeyNotFoundException
