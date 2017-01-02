@@ -26,6 +26,13 @@ namespace ConsoleApplication1.Collections
 
             hs.Add(7);
             Console.WriteLine("  after add, count: {0} **", hs.Count());
+
+            //add dup, won't hold dups, no exception, returns false
+            b = hs.Add(7);
+            Console.WriteLine("  after add, count: {0} **", hs.Count());
+
+            hs.Remove(7);
+            Console.WriteLine("  after remove, count: {0} **", hs.Count());
         }
     }
 }
