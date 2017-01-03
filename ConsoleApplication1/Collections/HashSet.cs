@@ -33,6 +33,9 @@ namespace ConsoleApplication1.Collections
 
             hs.Remove(7);
             Console.WriteLine("  after remove, count: {0} **", hs.Count());
+
+            hs.UnionWith(new int[] { 12 });
+            Console.WriteLine("  union, count: {0} **", hs.Count());
         }
     }
 }
