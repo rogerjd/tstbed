@@ -27,7 +27,21 @@ namespace ConsoleApplication1
 
             NamedAndOptionalDefaultArgs();
 
+            AnonymousObject();
+
 //            Params() see, Method params
+        }
+
+        private static void AnonymousObject()
+        {
+            var obj = new { fn = "joe", ln = "smith" };
+            Console.WriteLine(obj);
+
+            string fn, ln;
+            fn = "pete";
+            ln = "vog";
+            var obj2 = new { fn, ln }; //name and value at once
+            Console.WriteLine(obj2);
         }
 
         private static void Params()
