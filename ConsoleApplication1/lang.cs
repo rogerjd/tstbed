@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    struct x { };
+    struct X { };
 
-    static class lang
+    static class Lang
     {
-        static x z;
+        static X z;
 
         internal static void Test()
         {
             Utils.WriteTopic("Language");
 
-            x a;
+            X a;
             DeclareInitVariables();
 
             NewConstructInit();
@@ -39,7 +39,7 @@ namespace ConsoleApplication1
 
             string fn, ln;
             fn = "pete";
-            ln = "vog";
+            ln = null;
             var obj2 = new { fn, ln }; //name and value at once
             Console.WriteLine(obj2);
         }
@@ -70,7 +70,7 @@ namespace ConsoleApplication1
             {
                 int z = 2; // same name: z, new declaration space
                 Utils.WriteDetailLine(string.Format("scope, class: {0}", z.ToString()));
-                Utils.WriteDetailLine(string.Format("scope, class: {0}", lang.z.ToString()));
+                Utils.WriteDetailLine(string.Format("scope, class: {0}", Lang.z.ToString()));
                 //or, this.z if instance
 
                 //of course it is err to declare another z here in same declaration space

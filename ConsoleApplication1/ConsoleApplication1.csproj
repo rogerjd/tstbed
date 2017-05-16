@@ -89,6 +89,7 @@
     <Compile Include="lang.cs" />
     <Compile Include="Linq.cs" />
     <Compile Include="Collections\List.cs" />
+    <Compile Include="LocalFunc.cs" />
     <Compile Include="Loop.cs" />
     <Compile Include="Method.cs" />
     <Compile Include="Nullable.cs" />

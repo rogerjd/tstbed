@@ -29,6 +29,7 @@ namespace ConsoleApplication1
 
         //array, convert to
         //note:  For strings delimited by a pattern(ie: any number of spaces) rather than a value, RegEx is a great (well, the only) option
+        //       Empty string "" is returned for: delimitters at begin/end and adjacent ones
         private static void SplitIntoArray()
         {
             Console.WriteLine("  split into array **");

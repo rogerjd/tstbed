@@ -13,6 +13,9 @@ namespace ConsoleApplication1
         {
             Utils.WriteTopic("String Builder");
 
+            //Append: one big line
+            //AppendLine: adds \n\r, so adds a line, when prtd
+
             StringBuilder sb = new StringBuilder("abc", 100); //pay attention to ctor overloads
 
             sb.Append("def");
