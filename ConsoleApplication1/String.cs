@@ -21,6 +21,15 @@ namespace ConsoleApplication1
             Concatenate();
             Replace();
             SplitIntoArray();
+            Interpolation();
+        }
+
+        private static void Interpolation()
+        {
+            Console.WriteLine("  Interpolation**");
+            var d = "def";
+            var s = $"abc {d}";
+            Console.WriteLine("    {0}", s);
         }
 
         private static void EndsWith()

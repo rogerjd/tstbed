@@ -14,6 +14,9 @@ namespace ConsoleApplication1
      * 3 - except for "top-level" methods (typically event handler for UI controls),
      *      upgrade your asynchronous methods' return type to Task or Task<TResult>
      *      so that they're awaitable.
+     *      
+     * 4 - Such a method, defined by using the async modifier
+     * 5 - await operator, the await operator is applied to a task in an asynchronous method
      */
 
     static class AsyncTst
