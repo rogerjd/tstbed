@@ -58,7 +58,7 @@ namespace ConsoleApplication1
 
             Generics.Test();
 
-            Lang.Test();
+            Lang.Lang.Test();
 
             StringBuilderTst.Test();
 

@@ -72,6 +72,7 @@
     <Compile Include="Collections\Array.cs" />
     <Compile Include="Attribute.cs" />
     <Compile Include="Collections\Collection.cs" />
+    <Compile Include="Collections\IEnumerable.cs" />
     <Compile Include="Conditional.cs" />
     <Compile Include="DateTimeTimeSpan.cs" />
     <Compile Include="Delegates.cs" />
@@ -86,7 +87,8 @@
     <Compile Include="Collections\HashSet.cs" />
     <Compile Include="Interface.cs" />
     <Compile Include="Lambda.cs" />
-    <Compile Include="lang.cs" />
+    <Compile Include="Lang\interfaceTst.cs" />
+    <Compile Include="Lang\lang.cs" />
     <Compile Include="Linq.cs" />
     <Compile Include="Collections\List.cs" />
     <Compile Include="LocalFunc.cs" />
@@ -117,6 +119,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
