@@ -36,7 +36,26 @@ namespace ConsoleApplication1
             FileReadAllLines();
 
             DefaultValues();
+
+            EnumerateArray();
         }
+
+        private static void EnumerateArray()
+        {
+            Utils.WriteSubTopic("Enumerate Array");
+
+            int[] scores = new int[]{ 97, 92, 81, 60};
+
+            IEnumerable<int> scoreQuery =
+                from score in scores
+                where score > 80
+                select score;
+
+            foreach (int i in scoreQuery)
+            {
+                Utils.WriteDetailLine(i + " ");
+            }
+}
 
         private static void DefaultValues()
         {
@@ -93,7 +112,7 @@ namespace ConsoleApplication1
         // in the source array
         private static void Copy()
         {
-            Console.WriteLine("  copy ****");
+            Utils.WriteSubTopic("  copy ****");
             int[] b = new int[5];
 
 
@@ -109,7 +128,7 @@ namespace ConsoleApplication1
 
         private static void ModifyMethodParam()
         {
-            Console.WriteLine("Modify in Method **");
+            Utils.WriteSubTopic("Modify in Method **");
             int[] n = { 7, 8, 9 };
             method1(n);
             Console.WriteLine(string.Join(" ", n));
@@ -127,7 +146,7 @@ namespace ConsoleApplication1
 
         private static void Contains()
         {
-            Console.WriteLine("Contains **");
+            Utils.WriteSubTopic("Contains **");
             bool b = ary.Contains(3);
             Console.WriteLine(b);
 
