@@ -25,6 +25,9 @@ namespace ConsoleApplication1
         public static void Test()
         {
             Utils.WriteTopic("Array");
+
+            Create();
+
             Contains();
             ModifyMethodParam();
 
@@ -38,6 +41,21 @@ namespace ConsoleApplication1
             DefaultValues();
 
             EnumerateArray();
+        }
+
+        private static void Create()
+        {
+            //must have size or initializer (can have both, but must match)
+            //array initializer {}
+            var a = new int[3];  
+
+            a = new int[3] {1, 2, 3}; //if {} present, then must match size [3]
+
+            a = new int[] { 1, 2, 3 }; //if {} present, then must match size [3]
+
+            a = new int[] { }; //if {} present, then must match size [3]
+
+            //err: a = new int[]; //must have size or initializer
         }
 
         private static void EnumerateArray()
