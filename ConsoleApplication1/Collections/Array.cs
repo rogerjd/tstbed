@@ -41,17 +41,28 @@ namespace ConsoleApplication1
             DefaultValues();
 
             EnumerateArray();
+
+            Length();
+        }
+
+        private static void Length()
+        {
+            Utils.WriteSubTopic("Create Array");
+            var a = new int[] { }; //if {} present, then must match size [3]
+            Utils.WriteDetailLine(a.Length.ToString());
         }
 
         private static void Create()
         {
+            Utils.WriteSubTopic("Create Array");
+
             //must have size or initializer (can have both, but must match)
             //array initializer {}
             var a = new int[3];  
 
             a = new int[3] {1, 2, 3}; //if {} present, then must match size [3]
 
-            a = new int[] { 1, 2, 3 }; //if {} present, then must match size [3]
+            a = new int[] { 1, 2, 3 }; //size and init in initializer
 
             a = new int[] { }; //if {} present, then must match size [3]
 
