@@ -21,6 +21,45 @@ namespace ConsoleApplication1.Collections
             Find();
             Dups();
             RemoveAt();
+            FindAll();
+            WriteAsString();
+            SaveToFile();
+            ReadFromFile();
+        }
+
+        private static void WriteAsString()
+        {
+            Console.WriteLine(string.Join(" ", l));
+        }
+
+        private static void SaveToFile()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void ReadFromFile()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void FindAll()
+        {
+            Utils.WriteSubTopic("FindAll");
+
+            bool isVowel(string s)
+            {
+                return true;
+            }
+
+            var l2 = from x in l
+                     where isVowel(x)
+                     select x;
+            Console.WriteLine(string.Join(" ", l2));
+
+            var l3 = l.Where(p => p == "a");
+            Console.WriteLine(string.Join(" ", l3));
+
+            List<string> l4 = l.FindAll(x => x.CompareTo("b") > 0);
         }
 
         //bug
