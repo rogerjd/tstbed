@@ -13,10 +13,11 @@ namespace ConsoleApplication1
         //It behaves like you expect a value-type to behave because it is immutable; i.e.it doesn't* change once created. But there are lots of other immutable reference-types. Delegate instances, for example.
         //*=except for inside StringBuilder, but you never see it while it is doing this...
 
-        static String()
+        public static void Test()
         {
             Utils.WriteTopic("STRING TESTS");
 
+            AssignmentByVal();
             Contains();
             EndsWith();
             IndexOf();
@@ -26,6 +27,17 @@ namespace ConsoleApplication1
             Replace();
             SplitIntoArray();
             Interpolation();
+        }
+
+        private static void AssignmentByVal()
+        {
+            Utils.WriteSubTopic("Assignment by value");
+            string a, b;
+            a = "abc";
+            b = a;
+            Utils.WriteDetailLine((a.CompareTo(b) == 0).ToString());
+            b = "def";
+            Utils.WriteDetailLine((a.CompareTo(b) == 0).ToString());
         }
 
         private static void Interpolation()

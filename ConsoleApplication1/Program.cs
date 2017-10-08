@@ -28,7 +28,9 @@ namespace ConsoleApplication1
 
             new MyEnum();
 
-            new String();
+            //            new String();
+
+            String.Test();
 
             Loop.Test();
 
