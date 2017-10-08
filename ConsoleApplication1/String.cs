@@ -8,6 +8,10 @@ namespace ConsoleApplication1
 {
     class String
     {
+        //It's a reference type.
+        //It can't be a value-type, as value-types need a known size for the stack etc. As a reference-type, the size of the reference is known in advance, even if the size of the string isn't.
+        //It behaves like you expect a value-type to behave because it is immutable; i.e.it doesn't* change once created. But there are lots of other immutable reference-types. Delegate instances, for example.
+        //*=except for inside StringBuilder, but you never see it while it is doing this...
 
         static String()
         {

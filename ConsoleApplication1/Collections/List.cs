@@ -34,12 +34,10 @@ namespace ConsoleApplication1.Collections
 
         private static void SaveToFile()
         {
-            throw new NotImplementedException();
         }
 
         private static void ReadFromFile()
         {
-            throw new NotImplementedException();
         }
 
         private static void FindAll()
@@ -60,6 +58,9 @@ namespace ConsoleApplication1.Collections
             Console.WriteLine(string.Join(" ", l3));
 
             List<string> l4 = l.FindAll(x => x.CompareTo("b") > 0);
+            l4[0] = "zz";
+            Console.WriteLine(string.Join(" ", l));
+            Utils.WriteDetailLine("l4[0] == l[0]: " + (l4[0].CompareTo(l[0]) == 0).ToString());
         }
 
         //bug
