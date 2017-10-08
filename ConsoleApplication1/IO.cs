@@ -36,11 +36,19 @@ namespace ConsoleApplication1
 
         private static void ReadAllLines()
         {
+            Utils.WriteSubTopic("Read All Lines");
+
             List<string> l = File.ReadAllLines("WriteAllLns.txt").ToList<string>();
             foreach (var s in l)
             {
                 Utils.WriteDetailLine(s);
             }
+
+            //or
+            var f = File.ReadAllLines("WriteAllLns.txt"); //returns string[]
+            var l2 = new List<string>(f);  //ctor takes array
+            Utils.WriteDetailLine(string.Join(" ", l2));
+
         }
 
         private static void WriteAllLines()

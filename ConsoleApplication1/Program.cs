@@ -80,6 +80,8 @@ namespace ConsoleApplication1
 
             Closure.Test();
 
+            Lang.TypeTest.Test();
+
             Console.WriteLine("press any key to exit(async may not have ended)");
             Console.ReadKey();
         }

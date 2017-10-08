@@ -34,10 +34,12 @@ namespace ConsoleApplication1.Collections
 
         private static void SaveToFile()
         {
+            //see: File.WriteAllLines
         }
 
         private static void ReadFromFile()
         {
+            //see: File.ReadAllLines
         }
 
         private static void FindAll()
@@ -58,7 +60,7 @@ namespace ConsoleApplication1.Collections
             Console.WriteLine(string.Join(" ", l3));
 
             List<string> l4 = l.FindAll(x => x.CompareTo("b") > 0);
-            l4[0] = "zz";
+            l4[0] = "zz"; //this is new string (immutable)
             Console.WriteLine(string.Join(" ", l));
             Utils.WriteDetailLine("l4[0] == l[0]: " + (l4[0].CompareTo(l[0]) == 0).ToString());
         }

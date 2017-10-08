@@ -89,6 +89,7 @@
     <Compile Include="Lambda.cs" />
     <Compile Include="Lang\interfaceTst.cs" />
     <Compile Include="Lang\lang.cs" />
+    <Compile Include="Lang\TypeTest.cs" />
     <Compile Include="Linq.cs" />
     <Compile Include="Collections\List.cs" />
     <Compile Include="LocalFunc.cs" />
