@@ -22,6 +22,8 @@ namespace ConsoleApplication1.Lang
 
             var b = n1.GetType().IsAssignableFrom(s.GetType());
 
+            var t = typeof(int);
+
             //typeof(n1.GetType()).IsAssignableFrom(s.GetType());
         }
 
