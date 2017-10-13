@@ -46,7 +46,7 @@ namespace ConsoleApplication1
 
             //or
             var f = File.ReadAllLines("WriteAllLns.txt"); //returns string[]
-            var l2 = new List<string>(f);  //ctor takes array
+            var l2 = new List<string>(f);  //ctor takes array ICollection etc
             Utils.WriteDetailLine(string.Join(" ", l2));
 
         }

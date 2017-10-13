@@ -12,6 +12,17 @@ namespace ConsoleApplication1.Lang
         {
             Utils.WriteTopic("Type test");
             ArrayTst();
+            IsUnassignableFrom();
+        }
+
+        private static void IsUnassignableFrom()
+        {
+            int n1 = 23;
+            string s = "abc";
+
+            var b = n1.GetType().IsAssignableFrom(s.GetType());
+
+            //typeof(n1.GetType()).IsAssignableFrom(s.GetType());
         }
 
         private static void ArrayTst()
