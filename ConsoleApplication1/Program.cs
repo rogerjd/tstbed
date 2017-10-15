@@ -34,7 +34,7 @@ namespace ConsoleApplication1
 
             Loop.Test();
 
-            //            DB.Test();
+            DB.Test();
 
             Conditional.Test();
 
@@ -45,7 +45,7 @@ namespace ConsoleApplication1
             ExtensionMenthods.Test();
 
             DependencyInjection.Test();
-            
+
             Collections.HashSetTst.Test();
 
             Collections.List.Test();

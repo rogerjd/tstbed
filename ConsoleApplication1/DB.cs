@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,12 @@ namespace ConsoleApplication1
                     {
                         Console.WriteLine(" {0} {1} - {2}", rdr[0], rdr[1], rdr[4]);
                     }
+                    //rdr is at end, Load returns 0 rows
+                    //The *DataReader classes are forward-only iterators. (store results in list or table for example)
+                    //The only way to restart/reset it is to grab a new reader with ExecuteReader().
+
+                    DataTable tbl = new DataTable();
+                    tbl.Load(rdr);
                 }
             }
         }

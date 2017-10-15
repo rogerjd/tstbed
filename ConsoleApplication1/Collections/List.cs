@@ -23,7 +23,7 @@ namespace ConsoleApplication1.Collections
             RemoveAt();
             FindAll();
             WriteAsString();
-            SaveToFile();
+            WriteToFile();
             ReadFromFile();
         }
 
@@ -32,11 +32,13 @@ namespace ConsoleApplication1.Collections
             Console.WriteLine(string.Join(" ", l));
         }
 
-        private static void SaveToFile()
+        //SaveToFile
+        private static void WriteToFile()
         {
             //see: File.WriteAllLines
         }
 
+        //LoadFromFile
         private static void ReadFromFile()
         {
             //see: File.ReadAllLines
@@ -166,7 +168,7 @@ namespace ConsoleApplication1.Collections
             l2.Sort((a, b) => a.Substring(5, 3).CompareTo(b.Substring(5, 3)));
             Console.WriteLine(string.Join(" ", l2));
 
-            //use Comparer IComparer (it is class)
+            //use Comparer IComparer (it is class, w/method)
             l2.Sort(new MyComparer());
             Console.WriteLine(string.Join(" ", l2));
         }
