@@ -40,6 +40,31 @@ namespace ConsoleApplication1
             ZeroElement();
             CastToEnum();
             EnumDefinedValid();
+            PassAsParam(MyDaysOfWeek.Mon);
+        }
+
+        private static void PassAsParam(MyDaysOfWeek md)
+        {
+            switch (md)
+            {
+                case MyDaysOfWeek.Mon:
+                    Utils.WriteDetailLine(md.ToString());
+                    break;
+                case MyDaysOfWeek.Tue:
+                    break;
+                case MyDaysOfWeek.Wed:
+                    break;
+                case MyDaysOfWeek.Thu:
+                    break;
+                case MyDaysOfWeek.Fri:
+                    break;
+                case MyDaysOfWeek.Sat:
+                    break;
+                case MyDaysOfWeek.Sun:
+                    break;
+                default:
+                    break;
+            }
         }
 
         //test if value is within set of defined enum elements
