@@ -86,9 +86,9 @@ namespace ConsoleApplication1
             Console.WriteLine("Count of elements **");
             var a = Enum.GetValues(typeof(ConsoleApplication1.MyEnum.MyDaysOfWeek));
             Console.WriteLine(a.Length);
-            a = Enum.GetValues(e.GetType());
+            a = Enum.GetValues(e.GetType());  // Mon; not string
             Console.WriteLine(a.Length);
-            a = Enum.GetNames(e.GetType());
+            a = Enum.GetNames(e.GetType()); //this string, i think. eg: "Mon"
             Console.WriteLine(a.Length);
         }
 
