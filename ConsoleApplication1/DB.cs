@@ -14,10 +14,16 @@ namespace ConsoleApplication1
 
         static public void Test()
         {
+            SelectToTable();
+        }
+
+        private static void SelectToTable()
+        {
             using (
                 SqlConnection con = new SqlConnection(connStr))
             {
                 SqlCommand cmd = new SqlCommand("select * from movie", con);
+                //default: cmd.CommandType = CommandType.Text;
                 con.Open();
                 using (SqlDataReader rdr = cmd.ExecuteReader())
                 {
@@ -33,6 +39,45 @@ namespace ConsoleApplication1
                     tbl.Load(rdr);
                 }
             }
+        }
+
+        static public void StoredProcedure()
+        {
+
+            /*
+            Where is your problem ??
+
+            For the stored procedure, just create:
+
+            CREATE PROCEDURE dbo.ReadEmployees @EmpID INT
+            AS
+               SELECT * --I would* strongly*recommend specifying the columns EXPLICITLY
+               FROM dbo.Emp
+               WHERE ID = @EmpID
+            That's all there is.
+
+            From your ASP.NET application, just create a SqlConnection and a SqlCommand(don't forget to set the CommandType = CommandType.StoredProcedure)
+
+            DataTable tblEmployees = new DataTable();
+
+                        using (SqlConnection _con = new SqlConnection("your-connection-string-here"))
+                        using (SqlCommand _cmd = new SqlCommand("ReadEmployees", _con))
+                        {
+                            _cmd.CommandType = CommandType.StoredProcedure;
+
+                            _cmd.Parameters.Add(new SqlParameter("@EmpID", SqlDbType.Int));
+                            _cmd.Parameters["@EmpID"].Value = 42;
+
+                            SqlDataAdapter _dap = new SqlDataAdapter(_cmd);
+
+                            _dap.Fill(tblEmployees);
+                        }
+
+                        YourGridView.DataSource = tblEmployees;
+                        YourGridView.DataBind();
+
+                    }
+            */
         }
     }
 }
