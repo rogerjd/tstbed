@@ -41,6 +41,13 @@ namespace ConsoleApplication1
             CastToEnum();
             EnumDefinedValid();
             PassAsParam(MyDaysOfWeek.Mon);
+            GetLongNamesArray();
+        }
+
+        private static void GetLongNamesArray()
+        {
+            //todo: array or attribute?
+
         }
 
         private static void PassAsParam(MyDaysOfWeek md)

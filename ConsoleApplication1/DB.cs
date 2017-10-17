@@ -14,16 +14,16 @@ namespace ConsoleApplication1
 
         static public void Test()
         {
-            SelectToTable();
+            SqlDataReaderTst();
         }
 
-        private static void SelectToTable()
+        private static void SqlDataReaderTst()
         {
             using (
                 SqlConnection con = new SqlConnection(connStr))
             {
                 SqlCommand cmd = new SqlCommand("select * from movie", con);
-                //default: cmd.CommandType = CommandType.Text;
+                //default: cmd.CommandType = CommandType.Text; cam be also, StoredProcedure
                 con.Open();
                 using (SqlDataReader rdr = cmd.ExecuteReader())
                 {
