@@ -29,6 +29,7 @@ namespace ConsoleApplication1
             Create();
 
             Contains();
+            Declare();
             ModifyMethodParam();
 
             Clone(); //shallow. returns new array
@@ -43,6 +44,13 @@ namespace ConsoleApplication1
             EnumerateArray();
 
             Length();
+        }
+
+        private static void Declare()
+        {
+            //can declare an array in a class or method (probably same for structure)
+
+            int[] n = new int[]{ 1, 3, 6};
         }
 
         private static void Length()

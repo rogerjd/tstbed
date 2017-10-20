@@ -48,10 +48,7 @@ namespace ConsoleApplication1
         {
             //todo: array or attribute?
 
-            248
-down vote
-I do this with extension methods:
-
+/*
 public enum ErrorLevel
         {
             None,
@@ -79,8 +76,9 @@ public enum ErrorLevel
                 }
             }
         }
-
+*/
     }
+
 
         private static void PassAsParam(MyDaysOfWeek md)
         {
