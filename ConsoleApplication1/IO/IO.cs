@@ -183,6 +183,17 @@ namespace ConsoleApplication1
         static Dir()
         {
             CurDir();
+            GetAllFiles();
+        }
+
+        private static void GetAllFiles()
+        {
+            Utils.WriteSubTopic("Dir GetFiles");
+            string[] files = Directory.GetFiles(".");
+            foreach (string f in files)
+            {
+                Utils.WriteDetailLine(f);
+            }
         }
 
         static void CurDir()

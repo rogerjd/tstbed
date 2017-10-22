@@ -35,49 +35,58 @@ namespace ConsoleApplication1
             MyDaysOfWeek md = MyDaysOfWeek.Mon;
             md.Count();
 
+            LoopTst();
+
             CountOfElements(md);
             LoopThruElements();
             ZeroElement();
-            CastToEnum();
-            EnumDefinedValid();
+            Cast();
             PassAsParam(MyDaysOfWeek.Mon);
             GetLongNamesArrayToStr();
+        }
+
+        private static void LoopTst()
+        {
+            foreach (MyDaysOfWeek md in Enum.GetValues(typeof(MyDaysOfWeek)))
+            {
+                Console.WriteLine(md);
+            }
         }
 
         private static void GetLongNamesArrayToStr()
         {
             //todo: array or attribute?
 
-/*
-public enum ErrorLevel
-        {
-            None,
-            Low,
-            High,
-            SoylentGreen
-        }
+            /*
+            public enum ErrorLevel
+                    {
+                        None,
+                        Low,
+                        High,
+                        SoylentGreen
+                    }
 
-        public static class ErrorLevelExtensions
-        {
-            public static string ToFriendlyString(this ErrorLevel me)
-            {
-                switch (me)
-                {
-                    case ErrorLevel.None:
-                        return "Everything is OK";
-                    case ErrorLevel.Low:
-                        return "SNAFU, if you know what I mean.";
-                    case ErrorLevel.High:
-                        return "Reaching TARFU levels";
-                    case ErrorLevel.SoylentGreen:
-                        return "ITS PEOPLE!!!!";
-                    default:
-                        return "Get your damn dirty hands off me you FILTHY APE!";
-                }
-            }
+                    public static class ErrorLevelExtensions
+                    {
+                        public static string ToFriendlyString(this ErrorLevel me)
+                        {
+                            switch (me)
+                            {
+                                case ErrorLevel.None:
+                                    return "Everything is OK";
+                                case ErrorLevel.Low:
+                                    return "SNAFU, if you know what I mean.";
+                                case ErrorLevel.High:
+                                    return "Reaching TARFU levels";
+                                case ErrorLevel.SoylentGreen:
+                                    return "ITS PEOPLE!!!!";
+                                default:
+                                    return "Get your damn dirty hands off me you FILTHY APE!";
+                            }
+                        }
+                    }
+            */
         }
-*/
-    }
 
 
         private static void PassAsParam(MyDaysOfWeek md)
@@ -106,11 +115,12 @@ public enum ErrorLevel
 
         //test if value is within set of defined enum elements
         //  see also, Enum.Defined, however is does not work for flags
-        private static void EnumDefinedValid()
+        private static void Cast()
         {
-            Console.WriteLine("EnumDefinedValid **");
+            Console.WriteLine("Cast EnumDefinedValid **");
 
             //out of range, no error
+            //undefined
             noZeroEnum n = (noZeroEnum)5; //5
             //int d; variable declaration can be inlined
             bool def = !int.TryParse(n.ToString(), out int d);
@@ -124,6 +134,10 @@ public enum ErrorLevel
             def = !int.TryParse(n.ToString(), out d);
             Console.WriteLine("  defined: {0}", def);
 
+            int p = (int)n;
+            Console.WriteLine(p); //3
+
+            CastToEnum();
         }
 
         private static void CastToEnum()
@@ -167,7 +181,7 @@ public enum ErrorLevel
             Console.WriteLine("ZeroElement");
 
             Console.WriteLine(tstEnum);
-            
+
             //ref: now its init'd
             tstEnum = noZeroEnum.a;
             Console.WriteLine(tstEnum);

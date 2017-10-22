@@ -34,7 +34,9 @@ namespace ConsoleApplication1
 
             Loop.Test();
 
-            DB.Test();
+            //            DB.Test(); lengthy
+            //            DB.DataReaderTst.Test(); lengthy
+
 
             Conditional.Test();
 
