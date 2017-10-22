@@ -112,13 +112,18 @@ public enum ErrorLevel
 
             //out of range, no error
             noZeroEnum n = (noZeroEnum)5; //5
-            int d;
-            bool def = !int.TryParse(n.ToString(), out d);
+            //int d; variable declaration can be inlined
+            bool def = !int.TryParse(n.ToString(), out int d);
             Console.WriteLine("  defined: {0}", def);
 
             n = (noZeroEnum)1; //a = 1
             def = !int.TryParse(n.ToString(), out d);
             Console.WriteLine("  defined: {0}", def);
+
+            n = (noZeroEnum)3; //b = 3  it is not index, but value
+            def = !int.TryParse(n.ToString(), out d);
+            Console.WriteLine("  defined: {0}", def);
+
         }
 
         private static void CastToEnum()
