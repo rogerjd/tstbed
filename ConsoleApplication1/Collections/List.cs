@@ -30,6 +30,7 @@ namespace ConsoleApplication1.Collections
         private static void WriteAsString()
         {
             Console.WriteLine(string.Join(" ", l));
+            //l.ToString
         }
 
         //SaveToFile
@@ -96,14 +97,14 @@ namespace ConsoleApplication1.Collections
 
             //ref: predicate
             //      return is not bool, but the item
-            Console.WriteLine(l.Find(List.finder));
+            Console.WriteLine(l.Find(List.Finder));
             string res = l.Find(s => { return s == "a"; });
             Console.WriteLine(res);
             res = "wqwq";
             Foreach();
         }
 
-        static bool finder(string s)
+        static bool Finder(string s)
         {
             return s == "zx";
         }

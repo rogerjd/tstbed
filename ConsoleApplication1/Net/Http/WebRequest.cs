@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1.Net.Http
 {
-    class WebRequestTst
+    static class WebRequestTst
     {
         public static void Test()
         {

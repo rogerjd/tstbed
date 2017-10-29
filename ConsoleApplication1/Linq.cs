@@ -42,6 +42,13 @@ namespace ConsoleApplication1
             {
                 Utils.WriteDetailLine(n.ToString());
             }
+
+            IEnumerable<string> l2 = Enumerable.Range(0, 5).Select(_ => "abc" );
+            //var l2 = Enumerable.Range(0, 5).Select(_ => "abc").ToList();
+            foreach (string i in l2)
+            {
+                Utils.WriteDetailLine(i.ToString());
+            }
         }
 
         private static void Where()
