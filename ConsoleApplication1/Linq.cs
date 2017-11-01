@@ -50,7 +50,7 @@ namespace ConsoleApplication1
                 Utils.WriteDetailLine(i.ToString());
             }
 
-            var l3 = new List<string>{"abc", "def", "ghi" };
+            var l3 = new List<string>(3){"abc", "def", "ghi" };
             foreach(string s in Enumerable.Range(0, l3.Count()).Select(i => l3[i]))
             {
                 Utils.WriteDetailLine(s);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace ConsoleApplication1.Collections
 {
@@ -20,11 +21,37 @@ namespace ConsoleApplication1.Collections
             Indexer();
             Find();
             Dups();
+            Insert();
+            Remove();
             RemoveAt();
             FindAll();
             WriteAsString();
             WriteToFile();
             ReadFromFile();
+            Capacity();
+        }
+
+        private static void Remove()
+        {
+            l.Remove("zz");
+            //If type T implements the IEquatable<T> generic interface, the equality comparer is the Equals method of that interface; otherwise, the default equality comparer is Object.Equals.
+        }
+
+        private static void Insert()
+        {
+            Assert.Equal(l.Count, 4);
+            l.Insert(2, "zy");
+            Assert.Equal(l[2], "zy");
+            Assert.Equal(l[3], "b");
+            Assert.Equal(l.Count, 5);
+        }
+
+        private static void Capacity()
+        {
+            /* see Count, TrimExcess
+             * Resize
+             * 
+             */
         }
 
         private static void WriteAsString()
