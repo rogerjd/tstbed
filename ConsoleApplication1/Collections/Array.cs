@@ -22,7 +22,7 @@ namespace ConsoleApplication1
         static int[] ary = { 1, 2, 3, 4, 5 };
         static bool[] ary2 = new bool[10];
 
-        static int[,] x = new int[9, 9]; //2 dimensional array
+        static string[,] md = new string[2, 3] { { "", "", "" }, { "", "", "" } }; //2 dimensional array
 
         public static void Test()
         {
@@ -52,7 +52,7 @@ namespace ConsoleApplication1
         {
             //can declare an array in a class or method (probably same for structure)
 
-            int[] n = new int[]{ 1, 3, 6};
+            int[] n = new int[] { 1, 3, 6 };
         }
 
         private static void Length()
@@ -68,9 +68,9 @@ namespace ConsoleApplication1
 
             //must have size or initializer (can have both, but must match)
             //array initializer {}
-            var a = new int[3];  
+            var a = new int[3];
 
-            a = new int[3] {1, 2, 3}; //if {} present, then must match size [3]
+            a = new int[3] { 1, 2, 3 }; //if {} present, then must match size [3]
 
             a = new int[] { 1, 2, 3 }; //size and init in initializer
 
@@ -83,7 +83,7 @@ namespace ConsoleApplication1
         {
             Utils.WriteSubTopic("Enumerate Array");
 
-            int[] scores = new int[]{ 97, 92, 81, 60};
+            int[] scores = new int[] { 97, 92, 81, 60 };
 
             IEnumerable<int> scoreQuery =
                 from score in scores
@@ -94,7 +94,7 @@ namespace ConsoleApplication1
             {
                 Utils.WriteDetailLine(i + " ");
             }
-}
+        }
 
         private static void DefaultValues()
         {

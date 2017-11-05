@@ -24,6 +24,7 @@ namespace ConsoleApplication1
 
             AssignmentByVal();
             Contains();
+            StartsWith();
             EndsWith();
             IndexOf();
             SubStr();
@@ -34,6 +35,23 @@ namespace ConsoleApplication1
             Interpolation();
             EmptyNullWhitespace();
             Escape();
+            //Trim TrimStart TrimEnd
+            //Remove  delete
+            //Join
+            //Split
+            Format();
+        }
+
+        private static void Format()
+        {
+            Utils.WriteSubTopic("Format");
+            string str = String.Format("{0:c}", 1.56);
+            Utils.WriteDetailLine(str);
+        }
+
+        private static void StartsWith()
+        {
+            //
         }
 
         private static void Escape()
