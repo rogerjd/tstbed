@@ -22,6 +22,9 @@ namespace ConsoleApplication1.Lang
 
             var b = n1.GetType().IsAssignableFrom(s.GetType());
 
+            var t1 = n1.GetTypeCode();
+            Utils.WriteDetailLine("int's type code is: " + t1);
+
             var t = typeof(int);
 
             b = n1 is int;

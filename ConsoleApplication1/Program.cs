@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ConsoleApplication1.TestEvents;
+using System.Diagnostics;
 
 namespace ConsoleApplication1
 {
@@ -15,6 +16,9 @@ namespace ConsoleApplication1
             // can set in iDE. Prj.Properties.CmdLnParams
             Console.WriteLine("{0} {1}", args[0], args[1]);
             Utils.WriteDetailLine(args.Length.ToString());
+
+            //name of pgm. there are other ways
+            Console.WriteLine(Process.GetCurrentProcess().ProcessName);
 
             new Delegates();
 
@@ -38,7 +42,7 @@ namespace ConsoleApplication1
             //            DB.DataReaderTst.Test(); lengthy
 
 
-            Conditional.Test();
+            Lang.Conditional.Test();
 
             Method.Test();
 
