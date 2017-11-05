@@ -34,15 +34,22 @@ namespace ConsoleApplication1
 
             MyDaysOfWeek md = MyDaysOfWeek.Mon;
             md.Count();
+            //MyDaysOfWeek.Count();
 
             LoopTst();
 
             CountOfElements(md);
+            CountNumElements(typeof(MyDaysOfWeek));
             LoopThruElements();
             ZeroElement();
             Cast();
             PassAsParam(MyDaysOfWeek.Mon);
             GetLongNamesArrayToStr();
+        }
+
+        private static int CountNumElements(Type md)
+        {
+            return Enum.GetNames(md).Length;
         }
 
         private static void LoopTst()
@@ -165,6 +172,8 @@ namespace ConsoleApplication1
         private static void CountOfElements(Enum e)
         {
             Console.WriteLine("Count of elements **");
+            var myEnumMemberCount = Enum.GetNames(typeof(MyEnum.MyDaysOfWeek)).Length;
+
             var a = Enum.GetValues(typeof(ConsoleApplication1.MyEnum.MyDaysOfWeek));
             Console.WriteLine(a.Length);
             a = Enum.GetValues(e.GetType());  // Mon; not string
@@ -199,7 +208,7 @@ namespace ConsoleApplication1
         //ref: extension method
         public static int Count(this ConsoleApplication1.MyEnum.MyDaysOfWeek e)
         {
-            return 0;
+            return Enum.GetNames(e.GetType()).Length;
         }
     }
 

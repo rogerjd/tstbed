@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class String
+    class StringTst
     {
         //It is immutable
         //   so, x = "abc"  then x = "def"    def in entirely new string (abc in unchanged)
@@ -15,6 +15,8 @@ namespace ConsoleApplication1
         //It can't be a value-type, as value-types need a known size for the stack etc. As a reference-type, the size of the reference is known in advance, even if the size of the string isn't.
         //It behaves like you expect a value-type to behave because it is immutable; i.e.it doesn't* change once created. But there are lots of other immutable reference-types. Delegate instances, for example.
         //*=except for inside StringBuilder, but you never see it while it is doing this...
+
+        //a collection of chars: foreach(char c in str)
 
         public static void Test()
         {
@@ -30,6 +32,24 @@ namespace ConsoleApplication1
             Replace();
             SplitIntoArray();
             Interpolation();
+            EmptyNullWhitespace();
+            Escape();
+        }
+
+        private static void Escape()
+        {
+            Utils.WriteSubTopic("Escape");
+            string str = "\'  \"  \\  \b  \n  \t";
+            Utils.WriteDetailLine(str);
+        }
+
+        private static void EmptyNullWhitespace()
+        {
+            Utils.WriteSubTopic("Empty Null");
+            string str = "";
+            Utils.WriteDetailLine("is empty: " + (str == String.Empty));
+            Utils.WriteDetailLine("is null empty: " + String.IsNullOrEmpty(str));
+            Utils.WriteDetailLine("is null whitespace: " + String.IsNullOrWhiteSpace(str));
         }
 
         private static void AssignmentByVal()

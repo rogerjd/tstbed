@@ -34,7 +34,7 @@ namespace ConsoleApplication1
 
             //            new String();
 
-            String.Test();
+            StringTst.Test();
 
             Loop.Test();
 
