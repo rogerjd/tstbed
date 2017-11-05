@@ -22,6 +22,8 @@ namespace ConsoleApplication1
         static int[] ary = { 1, 2, 3, 4, 5 };
         static bool[] ary2 = new bool[10];
 
+        static int[,] x = new int[9, 9]; //2 dimensional array
+
         public static void Test()
         {
             Utils.WriteTopic("Array");
