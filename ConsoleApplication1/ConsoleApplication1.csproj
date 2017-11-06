@@ -73,6 +73,7 @@
     <Compile Include="Attribute.cs" />
     <Compile Include="Collections\Collection.cs" />
     <Compile Include="Collections\IEnumerable.cs" />
+    <Compile Include="howto\sort\SortTst.cs" />
     <Compile Include="Lang\Conditional.cs" />
     <Compile Include="DateTimeTimeSpan.cs" />
     <Compile Include="DB\DataTable.cs" />

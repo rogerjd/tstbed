@@ -39,7 +39,18 @@ namespace ConsoleApplication1
             //Remove  delete
             //Join
             //Split
+            //Length property
             Format();
+            Equals();
+        }
+
+        private static void Equals()
+        {
+            Utils.WriteSubTopic("Equals");
+            string str = "abd";
+            Utils.WriteDetailLine("abd == abc: " + str.Equals("abc"));
+            Utils.WriteDetailLine("abd == abc: " + (str == "abc"));
+            Utils.WriteDetailLine("abd != abc: " + (str != "abc"));
         }
 
         private static void Format()
