@@ -14,6 +14,7 @@ namespace ConsoleApplication1.Collections
         public static void Test()
         {
             Utils.WriteTopic("List");
+
             Count();
             Sort();
             Foreach();
@@ -29,6 +30,18 @@ namespace ConsoleApplication1.Collections
             WriteToFile();
             ReadFromFile();
             Capacity();
+            AddRange();
+        }
+
+        private static void AddRange()
+        {
+            Utils.WriteSubTopic("Add Range");
+            List<int> l = new List<int> { 1, 2, 3 };
+            Utils.WriteDetailLine("before join: " + string.Join(",", l));
+
+            int[] n = new int[] { 4, 5, 6 };
+            l.AddRange(n);
+            Utils.WriteDetailLine("after join: " + string.Join(",", l));
         }
 
         private static void Remove()
@@ -98,7 +111,7 @@ namespace ConsoleApplication1.Collections
         //bug
         private static void RemoveAt()
         {
-            List<int> l = new List<int> {1, 2, 3, 4, 5, 6 };
+            List<int> l = new List<int> { 1, 2, 3, 4, 5, 6 };
             for (int i = 0; i < l.Count - 1; i++)
             {
                 l.RemoveAt(i);
