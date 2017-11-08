@@ -88,8 +88,9 @@ namespace ConsoleApplication1
 
             Lang.TypeTest.Test();
 
-
             howto.sort.SortTst.Test();
+
+            Net.Http.WebRequestTst.Test();
 
             Console.WriteLine("press any key to exit(async may not have ended)");
             Console.ReadKey();
