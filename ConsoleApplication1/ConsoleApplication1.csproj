@@ -89,6 +89,7 @@
     <Compile Include="Collections\HashSet.cs" />
     <Compile Include="Interface.cs" />
     <Compile Include="Lambda.cs" />
+    <Compile Include="Lang\Indexer.cs" />
     <Compile Include="Lang\interfaceTst.cs" />
     <Compile Include="Lang\lang.cs" />
     <Compile Include="Lang\TypeTest.cs" />

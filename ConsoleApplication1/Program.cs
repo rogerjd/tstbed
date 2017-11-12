@@ -92,6 +92,8 @@ namespace ConsoleApplication1
 
             Net.Http.WebRequestTst.Test();
 
+            Lang.IndexerTst.Test();
+
             Console.WriteLine("press any key to exit(async may not have ended)");
             Console.ReadKey();
         }
