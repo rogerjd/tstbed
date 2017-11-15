@@ -56,6 +56,11 @@ namespace ConsoleApplication1
                 Utils.WriteDetailLine(s);
             }
 
+            var l4 = Enumerable.Range(0, 10).Where(i => (i % 2) == 0).ToList();
+            foreach (int n in l4)
+            {
+                Utils.WriteDetailLine(n.ToString());
+            }
         }
 
         private static void Where()
