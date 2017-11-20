@@ -44,6 +44,9 @@ namespace ConsoleApplication1.howto.sort
                 return string.Compare(Make, other.Make);
             }
 
+            //todo: make IComparer (class), to sort by Year asc/desc
+            //https://support.microsoft.com/en-us/help/320727/how-to-use-the-icomparable-and-icomparer-interfaces-in-visual-c
+
             public int Year { get; set; }
             public string Make { get; set; }
 
