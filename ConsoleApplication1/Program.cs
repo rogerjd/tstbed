@@ -56,7 +56,7 @@ namespace ConsoleApplication1
 
             Collections.List.Test();
 
-            Array.Test();
+            ArrayTst.Test();
 
             Struct.Test();
 

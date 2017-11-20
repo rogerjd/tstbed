@@ -17,7 +17,7 @@ namespace ConsoleApplication1
 
         it is ref type (so can modify orig in a called method)
     */
-    static class Array
+    static class ArrayTst
     {
         static int[] ary = { 1, 2, 3, 4, 5 };
         static bool[] ary2 = new bool[10];

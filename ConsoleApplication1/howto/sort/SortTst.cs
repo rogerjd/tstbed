@@ -22,6 +22,10 @@ namespace ConsoleApplication1.howto.sort
                 new car("Honda", 1977)
             };
             WriteArray("Array - Unsorted", arrayOfCars);
+
+            Array.Sort(arrayOfCars);
+
+            WriteArray("Sorted", arrayOfCars);
         }
 
         static void WriteArray(string hdr, car[] cars)
@@ -33,11 +37,11 @@ namespace ConsoleApplication1.howto.sort
             }
         }
 
-        class car : IComparable
+        class car : IComparable<car>
         {
-            public int CompareTo(object obj)
+            public int CompareTo(car other)
             {
-                throw new NotImplementedException();
+                return string.Compare(Make, other.Make);
             }
 
             public int Year { get; set; }
