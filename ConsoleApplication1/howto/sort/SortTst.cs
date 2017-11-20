@@ -25,7 +25,10 @@ namespace ConsoleApplication1.howto.sort
 
             Array.Sort(arrayOfCars);
 
-            WriteArray("Sorted", arrayOfCars);
+            WriteArray("Sorted by Make", arrayOfCars);
+
+            Array.Sort(arrayOfCars, new car.SortYear());
+            WriteArray("Sorted by Year", arrayOfCars);
         }
 
         static void WriteArray(string hdr, car[] cars)
@@ -39,6 +42,14 @@ namespace ConsoleApplication1.howto.sort
 
         class car : IComparable<car>
         {
+            public class SortYear: IComparer<car>
+            {
+                public int Compare(car c1, car c2)
+                {
+                    return c1.Year.CompareTo(c2.Year);
+                }
+            }
+
             public int CompareTo(car other)
             {
                 return string.Compare(Make, other.Make);
