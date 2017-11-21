@@ -27,7 +27,7 @@ namespace ConsoleApplication1.howto.sort
 
             WriteArray("Sorted by Make", arrayOfCars);
 
-            Array.Sort(arrayOfCars, new car.SortYear() { _asc = true });
+            Array.Sort(arrayOfCars, new car.SortYear()); //alt: use default param { _asc = true });
             WriteArray("Sorted by Year - asc", arrayOfCars);
 
             Array.Sort(arrayOfCars, new car.SortYear(false));
@@ -49,8 +49,8 @@ namespace ConsoleApplication1.howto.sort
             {
                 public bool _asc; //default = false
 
-                public SortYear() : this(true) { }
-                public SortYear(bool asc)
+                //alt: use default param public SortYear() : this(true) { }
+                public SortYear(bool asc = true)
                 {
                     _asc = asc;
                 }
