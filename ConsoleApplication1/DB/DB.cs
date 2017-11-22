@@ -34,9 +34,8 @@ namespace ConsoleApplication1.DB
                     //rdr is at end, Load returns 0 rows
                     //The *DataReader classes are forward-only iterators. (store results in list or table for example)
                     //The only way to restart/reset it is to grab a new reader with ExecuteReader().
-
-                    DataTable tbl = new DataTable();
-                    tbl.Load(rdr);
+                    //DataTable tbl = new DataTable();
+                    //tbl.Load(rdr);
                 }
             }
         }

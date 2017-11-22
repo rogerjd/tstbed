@@ -41,7 +41,7 @@ namespace ConsoleApplication1
             //            DB.Test(); lengthy
             //            DB.DataReaderTst.Test(); lengthy
 
-
+            DB.DataTableTst.Test();
             Lang.Conditional.Test();
 
             Method.Test();
