@@ -23,6 +23,13 @@ namespace ConsoleApplication1.howto.sort
             };
             WriteArray("Array - Unsorted", arrayOfCars);
 
+            //linq
+            var a2 = arrayOfCars.OrderBy(i => i.Make).ToArray();
+            WriteArray("Sorted by Linq Make", a2);
+
+            a2 = arrayOfCars.OrderByDescending(i => i.Year).ToArray();
+            WriteArray("Sorted by Linq Year desc", a2);
+
             Array.Sort(arrayOfCars);
 
             WriteArray("Sorted by Make", arrayOfCars);
@@ -32,6 +39,11 @@ namespace ConsoleApplication1.howto.sort
 
             Array.Sort(arrayOfCars, new car.SortYear(false));
             WriteArray("Sorted by Year - desc", arrayOfCars);
+
+
+            ////linq
+            //var a2 = arrayOfCars.OrderBy(i => i.Make).ToList();
+            //WriteArray("Sorted by Linq Make", arrayOfCars);
         }
 
         static void WriteArray(string hdr, car[] cars)
