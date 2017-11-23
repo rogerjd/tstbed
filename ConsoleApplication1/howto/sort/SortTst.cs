@@ -27,6 +27,8 @@ namespace ConsoleApplication1.howto.sort
             var a2 = arrayOfCars.OrderBy(i => i.Make).ToArray();
             WriteArray("Sorted by Linq Make", a2);
 
+            //mulitple cols: Var movies = _db.Movies.OrderBy(c => c.Category).ThenBy(n => n.Name)
+
             a2 = arrayOfCars.OrderByDescending(i => i.Year).ToArray();
             WriteArray("Sorted by Linq Year desc", a2);
 
