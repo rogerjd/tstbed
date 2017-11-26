@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,6 +14,23 @@ namespace ConsoleApplication1.Lang
             Utils.WriteTopic("Type test");
             ArrayTst();
             IsUnassignableFrom();
+            GetFields();
+        }
+
+        class Emp
+        {
+            public string Name;
+            public int ID;
+        }
+
+        private static void GetFields()
+        {
+            Utils.WriteSubTopic("Get Fields");
+            var e = new Emp() { Name = "Jj", ID = 2133 };
+            foreach (FieldInfo fi in e.GetType().GetFields())
+            {
+                Utils.WriteDetailLine(fi.Name + " " + fi.GetValue(e));
+            }
         }
 
         private static void IsUnassignableFrom()
