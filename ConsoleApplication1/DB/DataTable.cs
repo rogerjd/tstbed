@@ -33,6 +33,13 @@ namespace ConsoleApplication1.DB
                     tbl.Load(rdr);
                 }
             }
+
+            //DataTable load from query
+            var table = new DataTable();
+            using (var da = new SqlDataAdapter("SELECT * FROM movie", connStr))
+            {
+                da.Fill(table);
+            }
         }
     }
 }
