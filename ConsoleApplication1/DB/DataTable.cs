@@ -19,6 +19,41 @@ namespace ConsoleApplication1.DB
         public static void Test()
         {
             Load();
+            Select_tst();
+            UpdateTst();
+        }
+
+        private static void UpdateTst()
+        {
+            DataTable dt = new DataTable();
+            using (var da = new SqlDataAdapter("SELECT * FROM movie", connStr))
+            {
+                da.Fill(dt);
+                DataRow[] dr = dt.Select("Title='Star Wars'");
+                dr[0]["Title"] = "Stars Wars 9";
+                da.UpdateCommand = new SqlCommand("update movie set Title = @newTitle where ID = @oldID");
+                da.UpdateCommand.Connection = da.SelectCommand.Connection;
+                da.UpdateCommand.Parameters.Add("@newTitle", SqlDbType.NVarChar);
+                SqlParameter sp = da.UpdateCommand.Parameters.Add("@oldID", SqlDbType.Int,0, "ID");
+                sp.SourceVersion = DataRowVersion.Original;
+                da.Update(dr);
+            }
+        }
+
+        private static void Select_tst()
+        {
+            DataTable dt = new DataTable();
+            LoadTbl(dt);
+            DataRow[] rows = dt.Select();
+        }
+
+        private static void LoadTbl(DataTable dt)
+        {
+            //DataTable load from query
+            using (var da = new SqlDataAdapter("SELECT * FROM movie", connStr))
+            {
+                da.Fill(dt);
+            }
         }
 
         private static void Load()
