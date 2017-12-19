@@ -30,11 +30,17 @@ namespace ConsoleApplication1.DB
             {
                 da.Fill(dt);
                 DataRow[] dr = dt.Select("Title='Star Wars'");
+                if (dr.Length == 0)
+                {
+                    return;
+                }
                 dr[0]["Title"] = "Stars Wars 9";
                 da.UpdateCommand = new SqlCommand("update movie set Title = @newTitle where ID = @oldID");
                 da.UpdateCommand.Connection = da.SelectCommand.Connection;
-                da.UpdateCommand.Parameters.Add("@newTitle", SqlDbType.NVarChar);
-                SqlParameter sp = da.UpdateCommand.Parameters.Add("@oldID", SqlDbType.Int,0, "ID");
+                SqlParameter sp0 = da.UpdateCommand.Parameters.Add("@newTitle", SqlDbType.NVarChar);
+                sp0.SourceColumn = "Title";
+                sp0.SourceVersion = DataRowVersion.Current;
+                SqlParameter sp = da.UpdateCommand.Parameters.Add("@oldID", SqlDbType.Int, 0, "ID");
                 sp.SourceVersion = DataRowVersion.Original;
                 da.Update(dr);
             }
