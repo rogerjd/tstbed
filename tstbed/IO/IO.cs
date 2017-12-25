@@ -184,6 +184,14 @@ namespace tstbed
         {
             CurDir();
             GetAllFiles();
+            GetDirectories();
+        }
+
+        private static void GetDirectories()
+        {
+            //returns string[] of directory names in that folder (only dirs, no files)
+            //there are overloads, eg: sub dir search
+            var dirs = Directory.GetDirectories(@"C:\prjs");
         }
 
         private static void GetAllFiles()

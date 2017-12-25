@@ -1,0 +1,20 @@
+﻿- Directory
+    - contents: 
+		- Direcories
+			- tstbed.Dir.GetDirectories() //only dirs, no files
+				
+    - make/create new dir (one or all)
+        pkg: osTest  file: mkdir.go    
+
+- File
+    - Copy file
+        pkg: io file: CopyFile.go  func: CopyFile
+    - Read file line by line
+        bufio.NewScanner(f)
+        pkg: io file: io_tst func: scanfile
+
+
+- Path        
+    - file name(base) of path, return
+        pkg: pathTst/filepathTst    file: filepath.go   func: base
+    
