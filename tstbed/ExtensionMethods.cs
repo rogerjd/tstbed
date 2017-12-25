@@ -12,7 +12,7 @@ using System.Threading.Tasks;
  *                                                  int => string
  */
 
-namespace ConsoleApplication1
+namespace tstbed
 {
     static class MyExtensionMethods
     {

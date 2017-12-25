@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace tstbed
 {
 
     /*
@@ -174,7 +174,7 @@ namespace ConsoleApplication1
             Console.WriteLine("Count of elements **");
             var myEnumMemberCount = Enum.GetNames(typeof(MyEnum.MyDaysOfWeek)).Length;
 
-            var a = Enum.GetValues(typeof(ConsoleApplication1.MyEnum.MyDaysOfWeek));
+            var a = Enum.GetValues(typeof(tstbed.MyEnum.MyDaysOfWeek));
             Console.WriteLine(a.Length);
             a = Enum.GetValues(e.GetType());  // Mon; not string
             Console.WriteLine(a.Length);
@@ -206,7 +206,7 @@ namespace ConsoleApplication1
     static class EnumUtils
     {
         //ref: extension method
-        public static int Count(this ConsoleApplication1.MyEnum.MyDaysOfWeek e)
+        public static int Count(this tstbed.MyEnum.MyDaysOfWeek e)
         {
             return Enum.GetNames(e.GetType()).Length;
         }

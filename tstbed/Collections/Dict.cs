@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1.Collections
+namespace tstbed.Collections
 {
     /* IEquatable - used in Dictionary to determine Equality (key), not default reference
      *              semantics(2 diff objs not equal(addr), but w/IE can be equal(flds))

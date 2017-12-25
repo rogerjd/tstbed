@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace tstbed
 {
     //named properties allowed in contstructor, but only for attributes
     //  ie: ctor defined with 1 param: ctor(int n), but can call like this:

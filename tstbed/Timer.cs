@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 
-namespace ConsoleApplication1
+namespace tstbed
 {
 /* must Dispose the Timer, else it and its object are kept alive(.Net holds ref so can fire elapsed event)
  *   Finalize not best way (it can call dispose)

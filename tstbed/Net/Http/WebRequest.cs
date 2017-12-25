@@ -6,7 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1.Net.Http
+namespace tstbed.Net.Http
 {
     static class WebRequestTst
     {

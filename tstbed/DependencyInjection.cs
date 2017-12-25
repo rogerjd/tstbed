@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ninject;
 
-namespace ConsoleApplication1
+namespace tstbed
 {
     /* types
      *   - ctor

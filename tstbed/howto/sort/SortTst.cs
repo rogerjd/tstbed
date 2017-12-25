@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1.howto.sort
+namespace tstbed.howto.sort
 {
     static class SortTst
     {

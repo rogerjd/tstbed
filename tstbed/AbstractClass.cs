@@ -8,7 +8,7 @@ using System.Threading.Tasks;
  * - can contain implementation(code body) (but, interface cant)
  */
 
-namespace ConsoleApplication1
+namespace tstbed
 {
     abstract class AbstractClass
     {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace tstbed
 {
     /* basic principle of async design:
      * 1 - write your methods synchronously

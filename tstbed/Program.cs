@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ConsoleApplication1.TestEvents;
+using tstbed.TestEvents;
 using System.Diagnostics;
 
-namespace ConsoleApplication1
+namespace tstbed
 {
     class Program
     {

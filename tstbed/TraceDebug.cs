@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace tstbed
 {
     //Debug: only for debug builds. Trace: debug and release
     static class TraceDebug

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1.Lang
+namespace tstbed.Lang
 {
     class PartialTst
     {

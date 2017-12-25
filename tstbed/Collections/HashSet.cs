@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1.Collections
+namespace tstbed.Collections
 {
     //it is not a dictionary (key/value), only one value/item
     static class HashSetTst

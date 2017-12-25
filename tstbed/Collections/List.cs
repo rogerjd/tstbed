@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace ConsoleApplication1.Collections
+namespace tstbed.Collections
 {
     static class List
     {
