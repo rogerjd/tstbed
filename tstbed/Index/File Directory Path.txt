@@ -1,8 +1,9 @@
 ﻿- Directory
     - contents: 
 		- Direcories
-			- tstbed.Dir.GetDirectories() //only dirs, no files
-				
+			- IO.cs, tstbed.Dir.GetDirectories() //only dirs, no files
+	- Exists				
+		- IO.cs, tstbed.Dir.GetAllFiles()
     - make/create new dir (one or all)
         pkg: osTest  file: mkdir.go    
 

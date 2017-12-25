@@ -189,18 +189,32 @@ namespace tstbed
 
         private static void GetDirectories()
         {
-            //returns string[] of directory names in that folder (only dirs, no files)
+            //returns string[] of directory names(full path) in that folder (only dirs, no files)
             //there are overloads, eg: sub dir search
             var dirs = Directory.GetDirectories(@"C:\prjs");
         }
 
+        //2 ways shown
         private static void GetAllFiles()
         {
             Utils.WriteSubTopic("Dir GetFiles");
-            string[] files = Directory.GetFiles(".");
-            foreach (string f in files)
+            if (Directory.Exists("."))
             {
-                Utils.WriteDetailLine(f);
+                string[] files = Directory.GetFiles(".");  //static,    string[]
+                foreach (string f in files)
+                {
+                    Utils.WriteDetailLine(f);
+                }
+            }
+
+            DirectoryInfo di = new DirectoryInfo(".");  //instance,  FileInfo[]
+            if (di.Exists)
+            {
+                FileInfo[] files2 = di.GetFiles(".");
+                foreach (FileInfo fi in files2)
+                {
+                    Utils.WriteDetailLine(fi.Name);
+                }
             }
         }
 
