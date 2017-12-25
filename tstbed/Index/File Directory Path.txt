@@ -1,9 +1,17 @@
 ﻿- Directory
+	2 classes
+		- Directory			static
+		- DirectoryInfo		instance
+
     - contents: 
-		- Direcories
+		- Directories
 			- IO.cs, tstbed.Dir.GetDirectories() //only dirs, no files
+		- Files
+			- IO.cs, tstbed.Dir.GetAllFiles() //only dirs, no files
+
 	- Exists				
 		- IO.cs, tstbed.Dir.GetAllFiles()
+
     - make/create new dir (one or all)
         pkg: osTest  file: mkdir.go    
 
