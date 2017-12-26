@@ -28,8 +28,6 @@ namespace tstbed
 
             IO.Test();
 
-            new Dir();
-
             new MyEnum();
 
             //            new String();
@@ -84,7 +82,6 @@ namespace tstbed
 
             AsyncTst.Test();
 
-
             Closure.Test();
 
             Lang.TypeTest.Test();
@@ -94,6 +91,8 @@ namespace tstbed
             Net.Http.WebRequestTst.Test();
 
             Lang.IndexerTst.Test();
+
+            Directoy_File_Path.Dir.Test();
 
             Console.WriteLine("press any key to exit(async may not have ended)");
             Console.ReadKey();

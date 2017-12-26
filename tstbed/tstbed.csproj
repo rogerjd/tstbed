@@ -73,6 +73,7 @@
     <Compile Include="Attribute.cs" />
     <Compile Include="Collections\Collection.cs" />
     <Compile Include="Collections\IEnumerable.cs" />
+    <Compile Include="Directoy File Path\Dir.cs" />
     <Compile Include="howto\sort\SortTst.cs" />
     <Compile Include="Lang\Conditional.cs" />
     <Compile Include="DateTimeTimeSpan.cs" />
@@ -84,7 +85,7 @@
     <Compile Include="Event.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="GC.cs" />
-    <Compile Include="IO\IO.cs" />
+    <Compile Include="Directoy File Path\IO.cs" />
     <Compile Include="Generics.cs" />
     <Compile Include="Collections\HashSet.cs" />
     <Compile Include="Interface.cs" />

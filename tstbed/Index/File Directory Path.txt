@@ -3,7 +3,7 @@
 		- Directory			static
 		- DirectoryInfo		instance
 
-    - contents: 
+    - Contents: 
 		- Directories
 			- IO.cs, tstbed.Dir.GetDirectories() //only dirs, no files
 		- Files
