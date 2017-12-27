@@ -93,6 +93,7 @@ namespace tstbed
             Lang.IndexerTst.Test();
 
             Directoy_File_Path.Dir.Test();
+            Directoy_File_Path.File_tst.Test();
 
             Console.WriteLine("press any key to exit(async may not have ended)");
             Console.ReadKey();

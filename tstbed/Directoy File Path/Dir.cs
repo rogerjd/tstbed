@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace tstbed.Directoy_File_Path
 {
-    class Dir
+    static class Dir
     {
         public static void Test()
         {

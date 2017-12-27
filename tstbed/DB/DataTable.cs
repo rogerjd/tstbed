@@ -19,7 +19,7 @@ namespace tstbed.DB
         public static void Test()
         {
             Load();
-            Select_tst();
+            Find();
             UpdateTst();
         }
 
@@ -46,11 +46,15 @@ namespace tstbed.DB
             }
         }
 
-        private static void Select_tst()
+        private static void Find()
         {
             DataTable dt = new DataTable();
-            LoadTbl(dt);
-            DataRow[] rows = dt.Select();
+            LoadTbl(dt);               //col = 'value'
+            DataRow[] rows = dt.Select("Genre='Comedy'");
+
+            var result = from row in dt.AsEnumerable()
+                         where row.Field<string>("Genre") == "Comedy"
+                         select row;
         }
 
         private static void LoadTbl(DataTable dt)
@@ -64,23 +68,32 @@ namespace tstbed.DB
 
         private static void Load()
         {
-            using (SqlConnection con = new SqlConnection(connStr))
+            void FromReader()
             {
-                SqlCommand cmd = new SqlCommand("select * from movie", con);
-                con.Open();
-                using (SqlDataReader rdr = cmd.ExecuteReader())
+                using (SqlConnection con = new SqlConnection(connStr))
                 {
-                    DataTable tbl = new DataTable();
-                    tbl.Load(rdr);
+                    SqlCommand cmd = new SqlCommand("select * from movie", con);
+                    con.Open();
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        DataTable tbl = new DataTable();
+                        tbl.Load(rdr);
+                    }
                 }
             }
 
-            //DataTable load from query
-            var table = new DataTable();
-            using (var da = new SqlDataAdapter("SELECT * FROM movie", connStr))
+            void FromAdapter()
             {
-                da.Fill(table);
+                //DataTable load from query
+                var table = new DataTable();
+                using (var da = new SqlDataAdapter("SELECT * FROM movie", connStr))
+                {
+                    da.Fill(table);
+                }
             }
+
+            FromReader();
+            FromAdapter();
         }
-    }
+}
 }
