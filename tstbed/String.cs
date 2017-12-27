@@ -9,7 +9,7 @@ namespace tstbed
     class StringTst
     {
         //It is immutable
-        //   so, x = "abc"  then x = "def"    def in entirely new string (abc in unchanged)
+        //   so, x = "abc"  then x = "def"    def in entirely new string (abc is unchanged)
 
         //It's a reference type.
         //It can't be a value-type, as value-types need a known size for the stack etc. As a reference-type, the size of the reference is known in advance, even if the size of the string isn't.
@@ -22,7 +22,7 @@ namespace tstbed
         {
             Utils.WriteTopic("STRING TESTS");
 
-            AssignmentByVal();
+            AssignmentByValImmutable();
             Contains();
             StartsWith();
             EndsWith();
@@ -81,7 +81,7 @@ namespace tstbed
             Utils.WriteDetailLine("is null whitespace: " + String.IsNullOrWhiteSpace(str));
         }
 
-        private static void AssignmentByVal()
+        private static void AssignmentByValImmutable()
         {
             Utils.WriteSubTopic("Assignment by value");
             string a, b;
