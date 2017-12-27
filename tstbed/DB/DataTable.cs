@@ -49,12 +49,22 @@ namespace tstbed.DB
         private static void Find()
         {
             DataTable dt = new DataTable();
-            LoadTbl(dt);               //col = 'value'
-            DataRow[] rows = dt.Select("Genre='Comedy'");
 
-            var result = from row in dt.AsEnumerable()
-                         where row.Field<string>("Genre") == "Comedy"
-                         select row;
+            void Select()
+            {
+                LoadTbl(dt);               //col = 'value'
+                DataRow[] rows = dt.Select("Genre='Comedy'");
+            }
+
+            void LINQ()
+            {
+                var result = from row in dt.AsEnumerable()  //IEnumerable, must be for linq
+                             where row.Field<string>("Genre") == "Comedy"
+                             select row;
+            }
+
+            Select();
+            LINQ();
         }
 
         private static void LoadTbl(DataTable dt)
