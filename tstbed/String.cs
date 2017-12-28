@@ -83,12 +83,12 @@ namespace tstbed
 
         private static void AssignmentByValImmutable()
         {
-            Utils.WriteSubTopic("Assignment by value");
+            Utils.WriteSubTopic("Assignment by value"); //string is immutable
             string a, b;
             a = "abc";
             b = a;
             Utils.WriteDetailLine((a.CompareTo(b) == 0).ToString());
-            b = "def";
+            b = "def"; //string is immutable; makes new string/new memory
             Utils.WriteDetailLine((a.CompareTo(b) == 0).ToString());
         }
 

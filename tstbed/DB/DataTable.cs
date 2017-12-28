@@ -28,12 +28,21 @@ namespace tstbed.DB
         {
             void Add()
             {
+                Utils.WriteSubTopic("Add Rows");
+
                 /*
                  DataRow newCustomersRow = dataSet1.Tables["Customers"].NewRow();
                  newCustomersRow["CustomerID"] = "ALFKI";
                  newCustomersRow["CompanyName"] = "Alfreds Futterkiste";
                  dataSet1.Tables["Customers"].Rows.Add(newCustomersRow);
                 */
+
+                DataTable dt = new DataTable();
+                DataRow dr = dt.NewRow();
+                Utils.WriteDetailLine($"number rows {dt.Rows.Count}");
+
+                dt.Rows.Add(dr);
+                Utils.WriteDetailLine($"number rows {dt.Rows.Count}");
             }
 
             void Delete()
@@ -55,6 +64,7 @@ namespace tstbed.DB
                 */
             }
 
+            Utils.WriteTopic("DataTable Rows");
             Add();
             Delete();
             Edit();
