@@ -18,9 +18,46 @@ namespace tstbed.DB
 
         public static void Test()
         {
-            Load();
+            LoadFromDB();
             Find();
+            Rows();
             UpdateTst();
+        }
+
+        private static void Rows()
+        {
+            void Add()
+            {
+                /*
+                 DataRow newCustomersRow = dataSet1.Tables["Customers"].NewRow();
+                 newCustomersRow["CustomerID"] = "ALFKI";
+                 newCustomersRow["CompanyName"] = "Alfreds Futterkiste";
+                 dataSet1.Tables["Customers"].Rows.Add(newCustomersRow);
+                */
+            }
+
+            void Delete()
+            {
+                //dataSet1.Tables["Customers"].Rows[0].Delete();
+            }
+
+            void Edit()
+            {
+                /*
+                DataRow[] customerRow = dataSet1.Tables["Customers"].Select("CustomerID = 'ALFKI'");
+                customerRow[0]["CompanyName"] = "Updated Company Name";
+                customerRow[0]["City"] = "Seattle";
+
+                or, if the row index is known:
+
+                northwindDataSet1.Customers[4].CompanyName = "Updated Company Name";
+                northwindDataSet1.Customers[4].City = "Seattle";
+                */
+            }
+
+            Add();
+            Delete();
+            Edit();
         }
 
         private static void UpdateTst()
@@ -76,7 +113,7 @@ namespace tstbed.DB
             }
         }
 
-        private static void Load()
+        private static void LoadFromDB()
         {
             void FromReader()
             {
@@ -105,5 +142,5 @@ namespace tstbed.DB
             FromReader();
             FromAdapter();
         }
-}
+    }
 }
