@@ -19,12 +19,22 @@ namespace tstbed.DB
         public static void Test()
         {
             LoadFromDB();
+            UpdateToDB();
             Find();
-            Rows();
-            UpdateTst();
+            AddEditDelete();
+            Changes();
         }
 
-        private static void Rows()
+        private static void Changes()
+        {
+            //may apply to both DataRow and DataTable
+
+            //HasChanges
+            //AcceptChanges
+            //RejectChanges
+        }
+
+        private static void AddEditDelete()
         {
             DataTable dt = new DataTable();
             LoadTbl(dt);
@@ -100,7 +110,7 @@ namespace tstbed.DB
             //see Rows, Edit
         }
 
-        private static void UpdateTst()
+        private static void UpdateToDB()
         {
             DataTable dt = new DataTable();
             using (var da = new SqlDataAdapter("SELECT * FROM movie", connStr))
