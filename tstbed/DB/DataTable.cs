@@ -26,6 +26,9 @@ namespace tstbed.DB
 
         private static void Rows()
         {
+            DataTable dt = new DataTable();
+            LoadTbl(dt);
+
             void Add()
             {
                 Utils.WriteSubTopic("Add Rows");
@@ -37,21 +40,41 @@ namespace tstbed.DB
                  dataSet1.Tables["Customers"].Rows.Add(newCustomersRow);
                 */
 
-                DataTable dt = new DataTable();
-                DataRow dr = dt.NewRow();
-                Utils.WriteDetailLine($"number rows {dt.Rows.Count}");
+                Utils.WriteDetailLine($"before add, number rows {dt.Rows.Count}");
 
+                DataRow dr = dt.NewRow();
                 dt.Rows.Add(dr);
-                Utils.WriteDetailLine($"number rows {dt.Rows.Count}");
+                Utils.WriteDetailLine($"after add, number rows {dt.Rows.Count}");
             }
 
             void Delete()
             {
+                Utils.WriteSubTopic("DeleteRows");
+
+                Utils.WriteDetailLine($"before delete, number rows {dt.Rows.Count}");
+                int n = dt.Rows.Count;
+                dt.Rows[n - 1].Delete();
+                Utils.WriteDetailLine($"after delete, number rows {dt.Rows.Count}");
                 //dataSet1.Tables["Customers"].Rows[0].Delete();
             }
 
             void Edit()
             {
+                Utils.WriteSubTopic("Edit Rows");
+
+                DataRow[] drs = dt.Select("ID=4");
+                if (drs.Length == 0)
+                {
+                    return;
+                }
+                Utils.WriteDetailLine($"before edit, row state {drs[0].RowState}");
+                drs[0]["Title"] = "test edit";
+                Utils.WriteDetailLine($"after edit, row state {drs[0].RowState}");
+
+                //undo change
+                drs[0].RejectChanges();
+                Utils.WriteDetailLine($"after RejectChanges, row state {drs[0].RowState}");
+
                 /*
                 DataRow[] customerRow = dataSet1.Tables["Customers"].Select("CustomerID = 'ALFKI'");
                 customerRow[0]["CompanyName"] = "Updated Company Name";
@@ -68,6 +91,13 @@ namespace tstbed.DB
             Add();
             Delete();
             Edit();
+            RejectChanges();
+        }
+
+        private static void RejectChanges()
+        {
+            //applies to both DataRow and DataTable
+            //see Rows, Edit
         }
 
         private static void UpdateTst()
@@ -82,8 +112,10 @@ namespace tstbed.DB
                     return;
                 }
                 dr[0]["Title"] = "Stars Wars 9";
-                da.UpdateCommand = new SqlCommand("update movie set Title = @newTitle where ID = @oldID");
-                da.UpdateCommand.Connection = da.SelectCommand.Connection;
+                da.UpdateCommand = new SqlCommand("update movie set Title = @newTitle where ID = @oldID") //ctor
+                {
+                    Connection = da.SelectCommand.Connection  //object initializer, fixes: object initialization can be simplified
+                };
                 SqlParameter sp0 = da.UpdateCommand.Parameters.Add("@newTitle", SqlDbType.NVarChar);
                 sp0.SourceColumn = "Title";
                 sp0.SourceVersion = DataRowVersion.Current;
