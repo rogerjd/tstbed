@@ -27,10 +27,40 @@ namespace tstbed.DB
 
         private static void Changes()
         {
+            DataTable dt = new DataTable();
+            void AcceptChanges()
+            {
+                using (var da = new SqlDataAdapter("SELECT * FROM movie", connStr))
+                {
+                    da.Fill(dt);
+                    DataRow[] dr = dt.Select("Title='Star Wars 10'");
+                    if (dr.Length == 0)
+                    {
+                        return;
+                    }
+                    dr[0]["Title"] = "Star Wars AccptChng";
+                    da.UpdateCommand = new SqlCommand("update movie set Title = @newTitle where ID = @oldID") //ctor
+                    {
+                        Connection = da.SelectCommand.Connection  //object initializer, fixes: object initialization can be simplified
+                    };
+                    SqlParameter sp0 = da.UpdateCommand.Parameters.Add("@newTitle", SqlDbType.NVarChar);
+                    sp0.SourceColumn = "Title";
+                    sp0.SourceVersion = DataRowVersion.Current;
+                    SqlParameter sp = da.UpdateCommand.Parameters.Add("@oldID", SqlDbType.Int, 0, "ID");
+                    sp.SourceVersion = DataRowVersion.Original;
+                    dt.AcceptChanges(); //this cancels the change from going to the DB. why? becuase now the row is Unmodified (no reason to update)
+                    int n = da.Update(dr);
+                }
+            }
+
             //may apply to both DataRow and DataTable
 
             //HasChanges
             //AcceptChanges
+            AcceptChanges();  //if a change is made, and then AcceptChanges is called on the DT, 
+                                //the DB should not be updated. Because now the rows are marked as Unmodified
+                                //Note: when Update is called it will internally call AcceptChanges (Row.State = Unmodified)
+                                //      but, after saving/updating to the DB
             //RejectChanges
         }
 
@@ -115,13 +145,14 @@ namespace tstbed.DB
             DataTable dt = new DataTable();
             using (var da = new SqlDataAdapter("SELECT * FROM movie", connStr))
             {
+
                 da.Fill(dt);
-                DataRow[] dr = dt.Select("Title='Star Wars'");
+                DataRow[] dr = dt.Select("Title='Stars Wars 10'");
                 if (dr.Length == 0)
                 {
                     return;
                 }
-                dr[0]["Title"] = "Stars Wars 9";
+                dr[0]["Title"] = "Star Wars 10";
                 da.UpdateCommand = new SqlCommand("update movie set Title = @newTitle where ID = @oldID") //ctor
                 {
                     Connection = da.SelectCommand.Connection  //object initializer, fixes: object initialization can be simplified
@@ -131,7 +162,7 @@ namespace tstbed.DB
                 sp0.SourceVersion = DataRowVersion.Current;
                 SqlParameter sp = da.UpdateCommand.Parameters.Add("@oldID", SqlDbType.Int, 0, "ID");
                 sp.SourceVersion = DataRowVersion.Original;
-                da.Update(dr);
+                int n = da.Update(dr);
             }
         }
 
