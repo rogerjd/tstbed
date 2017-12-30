@@ -58,7 +58,7 @@ namespace tstbed.DB
             //HasChanges
             //AcceptChanges
             AcceptChanges();  //if a change is made, and then AcceptChanges is called on the DT, 
-                                //the DB should not be updated. Because now the rows are marked as Unmodified
+                                //the DB i snot be updated. Because now the rows are marked as Unmodified
                                 //Note: when Update is called it will internally call AcceptChanges (Row.State = Unmodified)
                                 //      but, after saving/updating to the DB
             //RejectChanges
