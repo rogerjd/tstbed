@@ -23,6 +23,7 @@ namespace tstbed.DB
             Find();
             AddEditDelete();
             Changes();
+            //DataRowVersion, see changes
         }
 
         private static void Changes()
@@ -38,6 +39,8 @@ namespace tstbed.DB
                     {
                         return;
                     }
+                    var orig = dr[0]["Title"];
+
                     dr[0]["Title"] = "Star Wars AccptChng";
                     da.UpdateCommand = new SqlCommand("update movie set Title = @newTitle where ID = @oldID") //ctor
                     {
@@ -48,21 +51,33 @@ namespace tstbed.DB
                     sp0.SourceVersion = DataRowVersion.Current;
                     SqlParameter sp = da.UpdateCommand.Parameters.Add("@oldID", SqlDbType.Int, 0, "ID");
                     sp.SourceVersion = DataRowVersion.Original;
-                    dt.AcceptChanges(); //this cancels the change from going to the DB. why? becuase now the row is Unmodified (no reason to update)
-                    //note: RowVersion should change too, todo
+                    dt.AcceptChanges(); //this cancels the change from going to the DB. why? becuase now the RowState is Unmodified (no reason to update)
+                                        //note: RowVersion should change too, todo
+                                        //Current value is copied to Original value
+                    if (orig == dr[0]["Title", DataRowVersion.Original])
+                    {
+                        Utils.WriteDetailLine("should not be");
+                    }
                     int n = da.Update(dr);
                 }
             }
 
-            //may apply to both DataRow and DataTable
+            void RejectChanges()
+            {
+                //after RejectChanges, the Original value is copied to the Current value. The RowState = Unmodified
+                //  no, db update/access on dt.Update, because it is now unchaged/Unmodified
+            }
+
+            //applies to DataSet, DataTable and DataRow
 
             //HasChanges
             //AcceptChanges
             AcceptChanges();  //if a change is made, and then AcceptChanges is called on the DT, 
-                                //the DB i snot be updated. Because now the rows are marked as Unmodified
-                                //Note: when Update is called it will internally call AcceptChanges (Row.State = Unmodified)
-                                //      but, after saving/updating to the DB
-            //RejectChanges
+                              //the DB i snot be updated. Because now the rows are marked as Unmodified
+                              //Note: when Update is called it will internally call AcceptChanges (Row.State = Unmodified)
+                              //      but, after saving/updating to the DB
+            RejectChanges();
+
         }
 
         private static void AddEditDelete()
@@ -132,13 +147,7 @@ namespace tstbed.DB
             Add();
             Delete();
             Edit();
-            RejectChanges();
-        }
-
-        private static void RejectChanges()
-        {
-            //applies to both DataRow and DataTable
-            //see Rows, Edit
+            //see changes
         }
 
         private static void UpdateToDB()
