@@ -12,6 +12,15 @@ namespace tstbed.Directoy_File_Path
         static public void Test()
         {
             Read();
+            Copy();
+        }
+
+        private static void Copy()
+        {
+            string inFile, outFile;
+            inFile = @"c:\temp\testfile.txt";
+            outFile = @"c:\temp\testfile_copy.txt";
+            File.Copy(inFile, outFile); //params are strings
         }
 
         private static void Read()

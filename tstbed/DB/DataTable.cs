@@ -49,6 +49,7 @@ namespace tstbed.DB
                     SqlParameter sp = da.UpdateCommand.Parameters.Add("@oldID", SqlDbType.Int, 0, "ID");
                     sp.SourceVersion = DataRowVersion.Original;
                     dt.AcceptChanges(); //this cancels the change from going to the DB. why? becuase now the row is Unmodified (no reason to update)
+                    //note: RowVersion should change too, todo
                     int n = da.Update(dr);
                 }
             }
