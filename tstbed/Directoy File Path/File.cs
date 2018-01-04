@@ -20,7 +20,9 @@ namespace tstbed.Directoy_File_Path
             string inFile, outFile;
             inFile = @"c:\temp\testfile.txt";
             outFile = @"c:\temp\testfile_copy.txt";
+            //will raise exception if File already exists
             File.Copy(inFile, outFile); //params are strings
+
         }
 
         private static void Read()

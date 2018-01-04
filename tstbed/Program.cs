@@ -91,6 +91,7 @@ namespace tstbed
             Net.Http.WebRequestTst.Test();
 
             Lang.IndexerTst.Test();
+            Lang.Operators.Test();
 
             Directoy_File_Path.Dir.Test();
             Directoy_File_Path.File_tst.Test();
