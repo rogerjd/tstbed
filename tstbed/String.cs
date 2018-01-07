@@ -31,7 +31,7 @@ namespace tstbed
             Compare();
             Concatenate();
             Replace();
-            SplitIntoArray();
+            SplitIntoArrayJoin();
             Interpolation();
             EmptyNullWhitespace();
             Escape();
@@ -107,24 +107,27 @@ namespace tstbed
         //array, convert to
         //note:  For strings delimited by a pattern(ie: any number of spaces) rather than a value, RegEx is a great (well, the only) option
         //       Empty string "" is returned for: delimitters at begin/end and adjacent ones
-        private static void SplitIntoArray()
+        private static void SplitIntoArrayJoin()
         {
-            Console.WriteLine("  split into array **");
+            Utils.WriteSubTopic("Split Join");
+//            Console.WriteLine("  split into array **");
 
             //ref: leading/trailing delims will result in an empty string added to the array
             string s = "abc def ghi";
             string[] res = s.Split(' ');
             foreach (string i in res)
             {
-                Console.WriteLine("    {0} {1}", i, i.Length);
+                Utils.WriteDetailLine(i.ToString() + " " + i.Length.ToString());
             }
 
             //use string, not char
             string[] res2 = s.Split(new string[] { "def" }, StringSplitOptions.None);
             foreach (string i in res2)
             {
-                Console.WriteLine("{0} {1}", i, i.Length);
+                Utils.WriteDetailLine(i.ToString() + " " + i.Length.ToString());
             }
+
+            Utils.WriteDetailLine("Join: " + string.Join(";", res));
         }
 
         //ref: replace all occurrences
