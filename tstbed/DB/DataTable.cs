@@ -232,8 +232,22 @@ namespace tstbed.DB
                 }
             }
 
+            void FromStoredProcedure()
+            {
+                DataTable dt = new DataTable();
+                using (SqlConnection conn = new SqlConnection(connStr))
+                using (SqlCommand cmd = new SqlCommand("usp_movie_get_id", conn))
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    cmd.Parameters.Add("id", SqlDbType.Int).Value = 4;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    da.Fill(dt);
+                }
+            }
+
             FromReader();
             FromAdapter();
+            FromStoredProcedure();
         }
     }
 }
