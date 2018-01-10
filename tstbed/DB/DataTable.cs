@@ -240,11 +240,15 @@ namespace tstbed.DB
                 using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                 {
                     cmd.Parameters.Add("id", SqlDbType.Int).Value = 4;
-                    //in sp:  RETURN 0
-                    var returnParam = cmd.Parameters.Add("@retVal", SqlDbType.Int).Direction = ParameterDirection.ReturnValue; //return value
+                    //in sp:  RETURN 0 return value  use parameter:
+                    //var returnParam = dont need param direction here
+                    cmd.Parameters.Add("@retVal", SqlDbType.Int).Direction = ParameterDirection.ReturnValue; //return value
                     //returnParam.Direction = ParameterDirection.ReturnValue;  
                     cmd.CommandType = CommandType.StoredProcedure;
                     da.Fill(dt);
+
+                    Utils.WriteDetailLine(cmd.Parameters["@retVal"].ParameterName + " " + 
+                        cmd.Parameters["@retVal"].Value);
                 }
             }
 
