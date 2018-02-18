@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using tstbed.TestEvents;
 using System.Diagnostics;
+using tstbed.Net;
 
 namespace tstbed
 {
@@ -12,6 +13,7 @@ namespace tstbed
     {
         static void Main(string[] args)
         {
+/*        
             //cmd ln 
             // can set in iDE. Prj.Properties.CmdLnParams
             Console.WriteLine("{0} {1}", args[0], args[1]);
@@ -95,6 +97,9 @@ namespace tstbed
 
             Directoy_File_Path.Dir.Test();
             Directoy_File_Path.File_tst.Test();
+*/
+
+            DNSTst.Test();
 
             Console.WriteLine("press any key to exit(async may not have ended)");
             Console.ReadKey();
