@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace tstbed
 {
+    using static System.Console;
+
     static class StringBuilderTst
     {
 
@@ -17,6 +19,7 @@ namespace tstbed
             //AppendLine: adds \n\r, so adds a line, when prtd
 
             StringBuilder sb = new StringBuilder("abc", 100); //pay attention to ctor overloads
+            WriteLine(sb.Capacity == 100);
 
             sb.Append("def");
             sb.AppendLine("ghi"); //ref: 2 chars, \n\r

@@ -76,8 +76,13 @@ namespace tstbed.Lang
 
                 //of course it is err to declare another z here in same declaration space
                 //int z;
-            }
 
+                int j = 3;
+            }
+            //Utils.WriteDetailLine(j); CS0103
+
+            //int z; //this is error CS0136. order of declaration does not matter; it is 
+                   // enclosing scope; the outer encompasses the 2 inner
             {
                 int z = 3; //look another declaration space, z here too
                 Utils.WriteDetailLine(string.Format("scope: {0}", z.ToString()));
