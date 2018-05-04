@@ -46,6 +46,12 @@ namespace tstbed
             EnumerateArray();
 
             Length();
+            ReadOnly();
+        }
+
+        private static void ReadOnly()
+        {
+            var b = ary2.IsReadOnly;
         }
 
         private static void Declare()

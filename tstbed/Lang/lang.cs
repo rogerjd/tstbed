@@ -77,9 +77,9 @@ namespace tstbed.Lang
                 //of course it is err to declare another z here in same declaration space
                 //int z;
 
-                int j = 3;
+                int j = 3; //this j is only within block
             }
-            //Utils.WriteDetailLine(j); CS0103
+            //Utils.WriteDetailLine(j); CS0103 j is out of scope
 
             //int z; //this is error CS0136. order of declaration does not matter; it is 
                    // enclosing scope; the outer encompasses the 2 inner

@@ -105,6 +105,9 @@ namespace tstbed.Lang
             n = 2;
             i = n ?? -1;
             Utils.WriteDetailLine(i.ToString());
+
+            string s = null;
+            string s2 = s ?? "abc";
         }
     }
 }

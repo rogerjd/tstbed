@@ -20,7 +20,10 @@ namespace tstbed
             public int n;
             public string s;
 
-            //ctor must assign all struct flds
+            //It is an error to define a default (parameterless) constructor for a struct
+
+            //ctor must assign all struct flds 
+            //parameterized constructor or  object initializer
             public MyStruct(int n, string s)
             {
                 this.n = n;
