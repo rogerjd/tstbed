@@ -100,6 +100,7 @@ namespace tstbed
             Lang.IndexerTst.Test();
 */
             Lang.Operators.Test();
+            Lang.interfaceTst.Test();
 /*
 
             Directoy_File_Path.Dir.Test();
