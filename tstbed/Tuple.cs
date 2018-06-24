@@ -14,6 +14,12 @@ namespace tstbed
             Utils.WriteTopic("Tuple");
             Demo();
             Compare();
+            Named();
+        }
+
+        private static void Named()
+        {
+//need >net 4.7            (string name, int id) x = ("H", 2);
         }
 
         private static void Demo()

@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="AbstractClass.cs" />
     <Compile Include="Async.cs" />
+    <Compile Include="Class\Class1.cs" />
     <Compile Include="Closure.cs" />
     <Compile Include="CmdLn.cs" />
     <Compile Include="Collections\Array.cs" />

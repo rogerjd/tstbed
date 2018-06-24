@@ -24,8 +24,25 @@ namespace tstbed.Directoy_File_Path
             File.Copy(inFile, outFile); //params are strings
         }
 
+        /* 2 ways:
+             - whole thing at once StringList
+             - or line by line
+        */
         private static void Read()
         {
+            void ReadLineByLine()
+            {
+                using (System.IO.StreamReader file = new StreamReader("WriteAllLns.txt"))
+                {
+                    string ln;
+                    while ((ln = file.ReadLine()) != null)
+                    {
+                        Utils.WriteDetailLine(ln);
+                    }
+                }
+            
+            }
+
             void ReadAllLines()
             {
                 string[] lns = File.ReadAllLines("WriteAllLns.txt");
@@ -33,6 +50,9 @@ namespace tstbed.Directoy_File_Path
             }
 
             ReadAllLines();
+
+            ReadLineByLine();
         }
+
     }
 }

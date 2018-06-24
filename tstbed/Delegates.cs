@@ -33,9 +33,9 @@ namespace tstbed
     {
         static public readonly MyDel md = DelMeth;
 
-        public static int DelMeth(string s)
+        public static int DelMeth(string x)
         {
-            Console.WriteLine(s);
+            Console.WriteLine(x);
             return 1;
         }
 

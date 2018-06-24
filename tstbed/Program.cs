@@ -9,6 +9,23 @@ using tstbed.Net;
 
 namespace tstbed
 {
+    struct myStruct
+    {
+
+    }
+
+    enum myEnum
+    {
+
+    }
+
+    interface myIntf
+    {
+
+    }
+
+    delegate void MyDelegate();
+
     class Program
     {
         static void Main(string[] args)
@@ -101,11 +118,13 @@ namespace tstbed
 */
             Lang.Operators.Test();
             Lang.interfaceTst.Test();
-/*
+            /*
 
-            Directoy_File_Path.Dir.Test();
+                        Directoy_File_Path.Dir.Test();
+            */
+
             Directoy_File_Path.File_tst.Test();
-*/
+
 
             DNSTst.Test();
 
