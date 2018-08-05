@@ -89,36 +89,36 @@ namespace tstbed
 */
 
             Lang.Lang.Test();
-/*
-            StringBuilderTst.Test();
+            /*
+                        StringBuilderTst.Test();
 
-            Numbers.Test();
+                        Numbers.Test();
 
-            TupleTst.Test();
+                        TupleTst.Test();
 
-            Operators.Test();
+                        Operators.Test();
 
-            TimerTst.Test();
+                        TimerTst.Test();
 
-            GCTst.Test();
+                        GCTst.Test();
 
-            TraceDebug.Test();
+                        TraceDebug.Test();
 
-            AsyncTst.Test();
+                        AsyncTst.Test();
 
-            Closure.Test();
+                        Closure.Test();
 
-            Lang.TypeTest.Test();
+                        Lang.TypeTest.Test();
 
-            howto.sort.SortTst.Test();
+                        howto.sort.SortTst.Test();
 
+            */
             Net.Http.WebRequestTst.Test();
 
+            /*
             Lang.IndexerTst.Test();
-*/
             Lang.Operators.Test();
             Lang.interfaceTst.Test();
-            /*
 
                         Directoy_File_Path.Dir.Test();
             */

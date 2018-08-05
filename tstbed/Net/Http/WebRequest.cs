@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +13,15 @@ namespace tstbed.Net.Http
     {
         public static void Test()
         {
+
+            void HttpClientTst()
+            {
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri("https://www.nytimes.com");
+                var str = client.GetStringAsync("https://www.nytimes.com");
+                Utils.WriteDetailLine(str.Result);
+            }
+
             Utils.WriteTopic("Web Request");
             WebRequest req = WebRequest.Create("http://www.contoso.com");
             WebResponse resp = req.GetResponse();
@@ -22,6 +32,9 @@ namespace tstbed.Net.Http
             Utils.WriteDetailLine(respFromServer);
 
             resp.Close(); //must close either resp or resp.stream (no harm in closing both)
+
+            HttpClientTst();
+
         }
     }
 }
