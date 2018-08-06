@@ -18,7 +18,7 @@ namespace tstbed.Net.Http
             {
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri("https://www.nytimes.com");
-                var str = client.GetStringAsync("https://www.nytimes.com");
+                var str = client.GetStringAsync(""); //it is relative//("https://www.nytimes.com");
                 Utils.WriteDetailLine(str.Result);
             }
 
