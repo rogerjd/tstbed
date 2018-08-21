@@ -14,6 +14,7 @@ namespace tstbed.Net.Http
         public static void Test()
         {
 
+            //HttpClient is preferred over HttpWebRequest due to async methods available out of the box and you would not have to worry about writing begin/end methods.
             void HttpClientTst()
             {
                 HttpClient client = new HttpClient();
@@ -34,7 +35,6 @@ namespace tstbed.Net.Http
             resp.Close(); //must close either resp or resp.stream (no harm in closing both)
 
             HttpClientTst();
-
         }
     }
 }

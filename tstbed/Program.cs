@@ -110,9 +110,9 @@ namespace tstbed
 
                         Lang.TypeTest.Test();
 
-                        howto.sort.SortTst.Test();
-
             */
+            howto.sort.SortTst.Test();
+
             Net.Http.WebRequestTst.Test();
 
             /*

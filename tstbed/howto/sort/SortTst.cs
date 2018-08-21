@@ -24,8 +24,20 @@ namespace tstbed.howto.sort
             WriteArray("Array - Unsorted", arrayOfCars);
 
             //linq
+#region "Linq"
             var a2 = arrayOfCars.OrderBy(i => i.Make).ToArray();
             WriteArray("Sorted by Linq Make", a2);
+
+            //Method syntax:
+            a2 = arrayOfCars.OrderBy(i => i.Make).ThenByDescending(i => i.Year).ToArray();
+            WriteArray("Sorted by Linq Make and Year", a2);
+
+            //Query syntax:
+            var qry = from car in arrayOfCars
+                      orderby car.Make //descending, if needed
+                      select car;
+            WriteArray("Quey syntax", qry);
+#endregion
 
             //mulitple cols: Var movies = _db.Movies.OrderBy(c => c.Category).ThenBy(n => n.Name)
 
@@ -36,19 +48,20 @@ namespace tstbed.howto.sort
 
             WriteArray("Sorted by Make", arrayOfCars);
 
+            #region "IComparer"
             Array.Sort(arrayOfCars, new car.SortYear()); //alt: use default param { _asc = true });
             WriteArray("Sorted by Year - asc", arrayOfCars);
 
             Array.Sort(arrayOfCars, new car.SortYear(false));
             WriteArray("Sorted by Year - desc", arrayOfCars);
-
+            #endregion
 
             ////linq
             //var a2 = arrayOfCars.OrderBy(i => i.Make).ToList();
             //WriteArray("Sorted by Linq Make", arrayOfCars);
         }
 
-        static void WriteArray(string hdr, car[] cars)
+        static void WriteArray(string hdr,  IEnumerable<car> cars)  //car[] cars)
         {
             Utils.WriteSubTopic(hdr);
             foreach (car c in cars)
@@ -92,6 +105,5 @@ namespace tstbed.howto.sort
                 Year = year;
             }
         }
-
     }
 }
