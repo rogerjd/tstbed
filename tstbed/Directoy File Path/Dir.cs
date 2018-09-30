@@ -13,6 +13,15 @@ namespace tstbed.Directoy_File_Path
         {
             CurDir();
             Contents();
+            MakeRemvDir();
+        }
+
+        private static void MakeRemvDir()
+        {
+            //Any and all directories specified in path are created, unless they already exist or unless some part of path is invalid.The path parameter specifies a directory path, not a file path. If the directory already exists, this method does nothing.
+           Directory.CreateDirectory("testDir");
+
+            Directory.Delete("testDir");  //must be empty dir
         }
 
         private static void Contents()

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace tstbed.Directoy_File_Path
 {
-    static class    File_tst
+    static class File_tst
     {
         static public void Test()
         {
@@ -20,8 +20,8 @@ namespace tstbed.Directoy_File_Path
             string inFile, outFile;
             inFile = @"c:\temp\testfile.txt";
             outFile = @"c:\temp\testfile_copy.txt";
-            //will raise exception if File already exists
-            File.Copy(inFile, outFile); //params are strings
+            //will raise exception if File already exists, unless overwrite param is True
+            File.Copy(inFile, outFile, true); //params are strings
         }
 
         /* 2 ways:
@@ -40,7 +40,7 @@ namespace tstbed.Directoy_File_Path
                         Utils.WriteDetailLine(ln);
                     }
                 }
-            
+
             }
 
             void ReadAllLines()

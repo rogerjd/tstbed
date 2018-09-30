@@ -124,6 +124,7 @@ namespace tstbed
             */
 
             Directoy_File_Path.File_tst.Test();
+            Directoy_File_Path.Dir.Test();
 
 
             DNSTst.Test();
