@@ -32,7 +32,7 @@ namespace tstbed.howto.sort
             a2 = arrayOfCars.OrderBy(i => i.Make).ThenByDescending(i => i.Year).ToArray();
             WriteArray("Sorted by Linq Make and Year", a2);
 
-            //Query syntax:
+            //Query syntax: part of lang 
             var qry = from car in arrayOfCars
                       orderby car.Make //descending, if needed
                       select car;

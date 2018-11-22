@@ -13,6 +13,12 @@ namespace tstbed.Directoy_File_Path
         {
             Read();
             Copy();
+            Length();
+        }
+
+        private static void Length()
+        {
+            Utils.WriteDetailLine(new FileInfo("WriteAllLns.txt").Length.ToString());
         }
 
         private static void Copy()
