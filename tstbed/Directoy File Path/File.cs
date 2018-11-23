@@ -19,6 +19,9 @@ namespace tstbed.Directoy_File_Path
         private static void Length()
         {
             Utils.WriteDetailLine(new FileInfo("WriteAllLns.txt").Length.ToString());
+
+            var fi = new FileInfo("WriteAllLns.txt");
+//            fi.
         }
 
         private static void Copy()
