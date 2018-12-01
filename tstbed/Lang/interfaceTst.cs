@@ -30,35 +30,35 @@ namespace tstbed.Lang
             return null;
         }
 
-        static void tst(intf a)
+        static void tst(Iintf a)
         {
             a.Hello();
         }
     }
 
-    interface intf
+    interface Iintf
     {
         void Hello();
     }
 
-    class intfTst : intf
+    class intfTst : Iintf
     {
         public void Hello()
         {
             Console.WriteLine("Joe");
         }
 
-        void tst(intf a) { }
+        void tst(Iintf a) { }
     }
 
-    class intfTstA : intf
+    class intfTstA : Iintf
     {
         public void Hello()
         {
             Console.WriteLine("Jane");
         }
 
-        void tst(intf a) { }
+        void tst(Iintf a) { }
     }
 
 }

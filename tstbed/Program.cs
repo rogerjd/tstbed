@@ -130,6 +130,8 @@ namespace tstbed
 
             DNSTst.Test();
 
+            Collections.SequenceEqual.Test();
+
             Console.WriteLine("press any key to exit(async may not have ended)");
             Console.ReadKey();
         }
