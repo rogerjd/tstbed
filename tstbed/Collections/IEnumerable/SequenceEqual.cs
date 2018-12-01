@@ -35,7 +35,7 @@ namespace tstbed.Collections
                 return false;
             }
 
-            return y.Code != x.Code;
+            return y.Code == x.Code;
         }
 
         public override int GetHashCode(Product obj)
@@ -51,7 +51,7 @@ namespace tstbed.Collections
         {
             Utils.WriteTopic("Collections");
             Utils.WriteSubTopic("Sequence Equal");
-            Product[] storeA = { new Product {Name="apple", Code=9 },
+            Product[] storeA = { new Product {Name="apple1", Code=9 },
                                 new Product{Name="orange", Code=4 } };
             Product[] storeB = { new Product {Name="apple", Code=9 },
                                 new Product {Name="orange", Code=4 } }; //,
