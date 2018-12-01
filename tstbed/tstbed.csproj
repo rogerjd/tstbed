@@ -78,6 +78,8 @@
     <Compile Include="Directoy File Path\File.cs" />
     <Compile Include="Directoy File Path\Path.cs" />
     <Compile Include="howto\sort\SortTst.cs" />
+    <Compile Include="Collections\IEnumerable\SequenceEqual.cs" />
+    <Compile Include="Collections\EqualityComparer.cs" />
     <Compile Include="Lang\Conditional.cs" />
     <Compile Include="DateTimeTimeSpan.cs" />
     <Compile Include="DB\DataTable.cs" />
