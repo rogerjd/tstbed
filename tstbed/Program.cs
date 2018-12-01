@@ -111,17 +111,17 @@ namespace tstbed
                         Lang.TypeTest.Test();
 
             */
+
+            /*
             howto.sort.SortTst.Test();
 
             Net.Http.WebRequestTst.Test();
 
-            /*
             Lang.IndexerTst.Test();
             Lang.Operators.Test();
             Lang.interfaceTst.Test();
 
                         Directoy_File_Path.Dir.Test();
-            */
 
             Directoy_File_Path.File_tst.Test();
             Directoy_File_Path.Dir.Test();
@@ -129,6 +129,8 @@ namespace tstbed
 
 
             DNSTst.Test();
+            */
+
 
             Collections.SequenceEqual.Test();
 
