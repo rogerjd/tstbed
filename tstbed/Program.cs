@@ -42,53 +42,56 @@ namespace tstbed
             //name of pgm. there are other ways
             Console.WriteLine(Process.GetCurrentProcess().ProcessName);
 
-/*           
-            new Delegates();
+            /*           
+                        new Delegates();
 
-            Collections.Dict.Test();
+                        Collections.Dict.Test();
 
-            Linq.Test();
+                        Linq.Test();
 
-            IO.Test();
+                        IO.Test();
 
-            new MyEnum();
+                        new MyEnum();
 
-            //            new String();
+                        //            new String();
 
-            StringTst.Test();
+                        StringTst.Test();
 
-            Loop.Test();
+                        Loop.Test();
 
-            //            DB.Test(); lengthy
-            //            DB.DataReaderTst.Test(); lengthy
+                        //            DB.Test(); lengthy
+                        //            DB.DataReaderTst.Test(); lengthy
 
-            DB.DataTableTst.Test();
-            Lang.Conditional.Test();
+                        DB.DataTableTst.Test();
+                        Lang.Conditional.Test();
 
-            Method.Test();
+                        Method.Test();
 
-            Interface.Test();
+                        Interface.Test();
 
-            ExtensionMenthods.Test();
+                        ExtensionMenthods.Test();
 
-            DependencyInjection.Test();
+                        DependencyInjection.Test();
 
-            Collections.HashSetTst.Test();
+                        Collections.HashSetTst.Test();
 
-            Collections.List.Test();
+                        Collections.List.Test();
 
-            ArrayTst.Test();
+                        ArrayTst.Test();
 
-            Struct.Test();
+                        Struct.Test();
 
-            Event.Test();
+                        Event.Test();
 
-            DateTimeTimeSpan.Test();
+                        DateTimeTimeSpan.Test();
 
-            Generics.Test();
-*/
+                        Generics.Test();
+            */
 
-            Lang.Lang.Test();
+            #region Desk
+            Lang.Operators.Test();
+            #endregion
+
             /*
                         StringBuilderTst.Test();
 
@@ -127,12 +130,12 @@ namespace tstbed
             Directoy_File_Path.Dir.Test();
             Directoy_File_Path.PathTst.Test();
 
+            Collections.SequenceEqual.Test();
 
             DNSTst.Test();
             */
 
 
-            Collections.SequenceEqual.Test();
 
             Console.WriteLine("press any key to exit(async may not have ended)");
             Console.ReadKey();

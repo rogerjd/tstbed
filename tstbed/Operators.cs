@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//ref: dont use, see: Lang\Opertaors
+
 namespace tstbed
 {
     static class Operators
@@ -11,9 +13,9 @@ namespace tstbed
         public static void Test()
         {
             LogicalAndConditionalLogicalOperators();
-        }
+}
 
-        private static void LogicalAndConditionalLogicalOperators()
+private static void LogicalAndConditionalLogicalOperators()
         {
             //logical: |  &
             //conditional logical: ||  &&   these short-circuit (logical ones dont)

@@ -14,6 +14,21 @@ namespace tstbed.Lang
 
             NullCoalesce(); //??
             EqualEqual(); //.Equality compares values   == compares refs excpet for string it is value
+            NullConditional();
+            IsAs();
+        }
+
+        private static void IsAs()
+        {
+        }
+
+        private static void NullConditional()
+        {
+            var str = "abcdef";
+            var res = str?.Substring(0, 3);
+
+            str = null;
+            res = str?.Substring(0, 3);
         }
 
         //For predefined value types, the equality operator (==) 
@@ -68,16 +83,16 @@ namespace tstbed.Lang
 
                     }
 
-/*
-                    if (a == b)
-                    {
-                        Utils.WriteDetailLine("should not be equal, refs/addresses are different");
-                    }
-                    else
-                    {
-                        Utils.WriteDetailLine("unequal, becuase of different memory locations(refs)");
-                    }
-*/
+                    /*
+                                        if (a == b)
+                                        {
+                                            Utils.WriteDetailLine("should not be equal, refs/addresses are different");
+                                        }
+                                        else
+                                        {
+                                            Utils.WriteDetailLine("unequal, becuase of different memory locations(refs)");
+                                        }
+                    */
                 }
 
                 List<int> l1 = new List<int> { 1, 2, 3 };
