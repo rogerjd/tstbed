@@ -25,10 +25,10 @@ namespace tstbed.Lang
         private static void NullConditional()
         {
             var str = "abcdef";
-            var res = str?.Substring(0, 3);
+            var res = str?.Substring(0, 3);  //guard clause?
 
             str = null;
-            res = str?.Substring(0, 3);
+            res = str?.Substring(0, 3); //guard clause?
         }
 
         //For predefined value types, the equality operator (==) 
