@@ -24,6 +24,10 @@ namespace tstbed
 
         static string[,] md = new string[2, 3] { { "", "", "" }, { "", "", "" } }; //2 dimensional array
 
+        static readonly string[] strings = {null, string.Empty, "ABCDE",
+                                new string(' ', 20), "  \t  ",
+                                new string('\u2000', 20)};
+
         public static void Test()
         {
             Utils.WriteTopic("Array");
@@ -39,7 +43,7 @@ namespace tstbed
 
             SortIt();
 
-            FileReadAllLines();
+            FileReadAllLines(); 
 
             DefaultValues();
 

@@ -78,7 +78,7 @@ namespace tstbed
             string str = "";
             Utils.WriteDetailLine("is empty: " + (str == String.Empty));
             Utils.WriteDetailLine("is null empty: " + String.IsNullOrEmpty(str));
-            Utils.WriteDetailLine("is null whitespace: " + String.IsNullOrWhiteSpace(str));
+            Utils.WriteDetailLine("is null whitespace: " + String.IsNullOrWhiteSpace(str)); //done by char.IsWhiteSpace()
         }
 
         private static void AssignmentByValImmutable()
@@ -110,7 +110,7 @@ namespace tstbed
         private static void SplitIntoArrayJoin()
         {
             Utils.WriteSubTopic("Split Join");
-//            Console.WriteLine("  split into array **");
+            //            Console.WriteLine("  split into array **");
 
             //ref: leading/trailing delims will result in an empty string added to the array
             string s = "abc def ghi";
