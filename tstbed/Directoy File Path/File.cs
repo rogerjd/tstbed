@@ -11,7 +11,7 @@ namespace tstbed.Directoy_File_Path
     {
         static public void Test()
         {
-            Read();
+            ReadAndOpen();
             Copy();
             Length();
         }
@@ -37,23 +37,24 @@ namespace tstbed.Directoy_File_Path
              - whole thing at once StringList
              - or line by line
         */
-        private static void Read()
+        private static void ReadAndOpen()
         {
             void ReadLineByLine()
-            {
-                using (System.IO.StreamReader file = new StreamReader("WriteAllLns.txt"))
-                {
-                    string ln;
-                    while ((ln = file.ReadLine()) != null)
+            {   if (File.Exists("WriteAllLns.txt")) {
+                    using (System.IO.StreamReader file = new StreamReader("WriteAllLns.txt"))
                     {
-                        Utils.WriteDetailLine(ln);
+                        string ln;
+                        while ((ln = file.ReadLine()) != null)
+                        {
+                            Utils.WriteDetailLine(ln);
+                        }
                     }
                 }
-
             }
 
             void ReadAllLines()
             {
+                //chk if File.Exists first
                 string[] lns = File.ReadAllLines("WriteAllLns.txt");
                 //can put into a List<string>
             }
