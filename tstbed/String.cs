@@ -36,12 +36,22 @@ namespace tstbed
             EmptyNullWhitespace();
             Escape();
             //Trim TrimStart TrimEnd
+            Trim();
+
             //Remove  delete
             //Join
             //Split
             //Length property
             Format();
             Equals();
+        }
+
+        private static void Trim()
+        {
+            char[] charsToTrim = {'.', ',' };
+
+            string str = ".txt";
+            str = str.Trim('.');
         }
 
         private static void Equals()
