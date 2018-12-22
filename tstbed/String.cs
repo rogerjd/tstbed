@@ -51,7 +51,7 @@ namespace tstbed
             char[] charsToTrim = {'.', ',' };
 
             string str = ".txt";
-            str = str.Trim('.');
+            str = str.Trim('.'); //can use array: charsToTrim
         }
 
         private static void Equals()
