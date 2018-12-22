@@ -34,6 +34,7 @@ namespace tstbed
 
             GenericStack();
             TypeParameter();
+            TestDelegateGeneric();
         }
 
         private static void GenericStack()
@@ -57,7 +58,7 @@ namespace tstbed
             Utils.WriteDetailLine(string.Format("{0} + {1} = {2}", "abc", "defg", total));
         }
 
-        static void GenericMethoc<T>(T s)
+        static void GenericMethod<T>(T s)
         {
 
         }
@@ -67,5 +68,33 @@ namespace tstbed
         {
 
         }
+
+        static void TestDelegateGeneric()
+        {
+            var str = "Hello";
+            var l = Mapper(str, GetOrdinalValue);
+            var l2 = Mapper(str, GetUpperCase);
+        }
+
+        static List<T> Mapper<T>(string str, Func<char, T> func)
+        {
+            List<T> ts = new List<T>();
+            foreach (char c in str)
+            {
+                ts.Add(func(c));
+            }
+            return ts;
+        }
+
+        static int GetOrdinalValue(char c)
+        {
+            return (int)c;
+        }
+
+        static char GetUpperCase(char c)
+        {
+            return Char.ToUpper(c);
+        }
+            
     }
 }

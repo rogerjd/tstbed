@@ -89,7 +89,7 @@ namespace tstbed
             */
 
             #region Desk
-            Lang.Operators.Test();
+            Generics.Test();
             #endregion
 
             /*
