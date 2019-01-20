@@ -89,7 +89,7 @@ namespace tstbed
             */
 
             #region Desk
-            StringTst.Test();
+            Net.Http.WebRequestTst.Test();
             #endregion
 
             /*

@@ -13,14 +13,21 @@ namespace tstbed.Net.Http
     {
         public static void Test()
         {
+            HttpClient client = new HttpClient();
 
             //HttpClient is preferred over HttpWebRequest due to async methods available out of the box and you would not have to worry about writing begin/end methods.
-            void HttpClientTst()
+            void HttpClientTstAsync()
             {
-                HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri("https://www.nytimes.com");
-                var str = client.GetStringAsync(""); //it is relative//("https://www.nytimes.com");
+//                client.BaseAddress = new Uri("http://www.google.com/robots.txt");
+                Task<string> str = client.GetStringAsync(""); //it is relative  //("https://www.nytimes.com");
                 Utils.WriteDetailLine(str.Result);
+            }
+
+            async void GetAsync()
+            {
+                HttpResponseMessage msg = await client.GetAsync("");
+                Utils.WriteDetailLine(msg.StatusCode.ToString());
             }
 
             Utils.WriteTopic("Web Request");
@@ -34,7 +41,8 @@ namespace tstbed.Net.Http
 
             resp.Close(); //must close either resp or resp.stream (no harm in closing both)
 
-            HttpClientTst();
+            HttpClientTstAsync();
+            GetAsync();
         }
     }
 }
