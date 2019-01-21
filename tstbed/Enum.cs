@@ -193,7 +193,10 @@ namespace tstbed
 
             //ref: now its init'd
             tstEnum = noZeroEnum.a;
-            Console.WriteLine(tstEnum);
+            Console.WriteLine(tstEnum);  //same as ToString
+            tstEnum = noZeroEnum.b;
+            Console.WriteLine(tstEnum.ToString());
+            Console.WriteLine((int)tstEnum);
 
             /*
                         Array a = Enum.GetValues(typeof(x));
