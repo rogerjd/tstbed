@@ -89,7 +89,14 @@ namespace tstbed
             */
 
             #region Desk
-            Lang.UsingTest.Test();
+            switch (args[0])
+            {
+                case "lang":
+                    Lang.Main.Test(args);
+                    break;
+                default:
+                    break;
+            }
             #endregion
 
             /*

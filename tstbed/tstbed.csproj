@@ -99,6 +99,7 @@
     <Compile Include="Lang\Indexer.cs" />
     <Compile Include="Lang\interfaceTst.cs" />
     <Compile Include="Lang\lang.cs" />
+    <Compile Include="Lang\main.cs" />
     <Compile Include="Lang\Operators.cs" />
     <Compile Include="Lang\PartialTst.cs" />
     <Compile Include="Lang\TypeTest.cs" />
