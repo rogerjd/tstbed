@@ -89,7 +89,7 @@ namespace tstbed
             */
 
             #region Desk
-            new MyEnum();
+            new Delegates();
             #endregion
 
             /*

@@ -7,13 +7,19 @@ using System.Threading.Tasks;
 namespace tstbed
 {
     public delegate int MyDel(string s);
+    delegate int MyDel2(string s);
 
     class Delegates
     {
         public Delegates()
         {
-            tst(Tst.md);
-            tst(Tst.DelMeth2);
+            MyDel md = null;
+            md = Tst.DelMeth;
+            tst(md);
+            md = Tst.DelMeth2;
+
+            tst(Tst.md);       //cant change del type
+            tst(Tst.DelMeth2); //can use compatible method
 
             MyDel x = Tst.DelMeth;
             x("qwe");
