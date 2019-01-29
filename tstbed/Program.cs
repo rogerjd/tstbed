@@ -89,7 +89,7 @@ namespace tstbed
             */
 
             #region Desk
-            new Delegates();
+            Lang.UsingTest.Test();
             #endregion
 
             /*

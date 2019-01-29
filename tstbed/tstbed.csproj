@@ -102,6 +102,7 @@
     <Compile Include="Lang\Operators.cs" />
     <Compile Include="Lang\PartialTst.cs" />
     <Compile Include="Lang\TypeTest.cs" />
+    <Compile Include="Lang\using.cs" />
     <Compile Include="Linq.cs" />
     <Compile Include="Collections\List.cs" />
     <Compile Include="LocalFunc.cs" />

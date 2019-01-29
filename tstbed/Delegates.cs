@@ -34,7 +34,6 @@ namespace tstbed
         }
     }
 
-
     static class Tst
     {
         static public readonly MyDel md = DelMeth;
