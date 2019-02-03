@@ -10,6 +10,10 @@ namespace tstbed.Lang
     {
         public static void Test(string[] args)
         {
+            if (args.Length < 1)
+            {
+                return;
+            }
             switch (args[1])
             {
                 case "using":

@@ -13,14 +13,16 @@ namespace tstbed.Lang
         {
 
         }
+
         public static void Test(string[] args)
         {
-            /*
-                        using (tst t = new tst()) //err, must be IDisposable
-                        {
+/*
+            using (tst t = new tst()) //err, must be IDisposable  CS1674
+            {
 
-                        }
-            */
+            }
+*/
+
             using (SqlConnection conn = new SqlConnection()) //ok, is IDisposable
             {
 
