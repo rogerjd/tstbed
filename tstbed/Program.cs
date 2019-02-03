@@ -89,12 +89,13 @@ namespace tstbed
             */
 
             #region Desk
-            switch (args[0])
+            switch (Utils.GetCmdArg(args, 0))
             {
                 case "lang":
                     Lang.Main.Test(args);
                     break;
                 default:
+                    Utils.WriteDetailLine("Arg 0 not found");
                     break;
             }
             #endregion

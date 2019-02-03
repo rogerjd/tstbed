@@ -23,9 +23,9 @@ namespace tstbed
             Console.WriteLine("    {0}", ln);
         }
 
-        static string GetCmdArg(string[] args, int ArgNum)
+        internal static string GetCmdArg(string[] args, int ArgNum)
         {
-            if (args.Length > ArgNum && ArgNum > 1)
+            if (args.Length > ArgNum && ArgNum > -1)
             {
                 return args[ArgNum];
             }

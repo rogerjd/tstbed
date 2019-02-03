@@ -10,16 +10,13 @@ namespace tstbed.Lang
     {
         public static void Test(string[] args)
         {
-            if (args.Length < 1)
-            {
-                return;
-            }
-            switch (args[1])
+            switch (Utils.GetCmdArg(args, 1))
             {
                 case "using":
                     UsingTest.Test(args);
                     break;
                 default:
+                    Utils.WriteDetailLine("Arg 1 not found");
                     break;
             }
         }
