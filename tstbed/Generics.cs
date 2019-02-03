@@ -53,7 +53,8 @@ namespace tstbed
         {
             Utils.WriteSubTopic("Type Parameter");
 
-            Func<string, string, int> totalLength = (s1, s2) => s1.Length + s2.Length;
+            int totalLength(string s1, string s2) => s1.Length + s2.Length; //local func w/lambda
+            //ok  above    Func<string, string, int> totalLength = (s1, s2) => s1.Length + s2.Length;
             int total = totalLength("abc", "defg");
             Utils.WriteDetailLine(string.Format("{0} + {1} = {2}", "abc", "defg", total));
         }
@@ -62,7 +63,6 @@ namespace tstbed
         {
 
         }
-
 
         static void GenericMethod2<T>(T s)
         {
