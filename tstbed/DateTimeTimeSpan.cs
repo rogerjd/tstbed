@@ -113,8 +113,8 @@ namespace tstbed
         {
             Console.WriteLine("Parse **");
             string dtIn = "09/01/2015 01:13:34";
-            System.DateTime dtOut;
-            bool b = System.DateTime.TryParse(dtIn, out dtOut);
+            //System.DateTime dtOut; /C# 7 allows it to be declared with arg
+            bool b = System.DateTime.TryParse(dtIn, out DateTime dtOut);
             Console.WriteLine("  " + b);
             Console.WriteLine("  " + dtOut);
             Console.WriteLine("  " + dtOut.Date); //dt + 12:00:00 *this is date part, cleared time*
