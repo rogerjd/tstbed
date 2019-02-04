@@ -51,6 +51,13 @@ namespace tstbed
 
         private static void TypeParameter()
         {
+            void tst()
+            {
+
+            }
+
+            tst();
+
             Utils.WriteSubTopic("Type Parameter");
 
             int totalLength(string s1, string s2) => s1.Length + s2.Length; //local func w/lambda
