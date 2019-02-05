@@ -8,6 +8,22 @@ using System.Threading.Tasks;
 
 namespace tstbed.DB
 {
+    static class Main
+    {
+        public static void Test(string[] args)
+        {
+            switch (Utils.GetCmdArg(args, 1))
+            {
+                case "Reader":
+                    DataReaderTst.Test();
+                    break;
+                default:
+                    Utils.WriteDetailLine("Arg 1 not found");
+                    break;
+            }
+        }
+    }
+
     static class DataReaderTst
     {
         static string connStr = "Server=(localdb)\\mssqllocaldb;Database=aspnet5-MVCMovie-6ee74982-4ec3-47e0-b632-1729502aab6a;Trusted_Connection=True;MultipleActiveResultSets=true";

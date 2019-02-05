@@ -94,6 +94,9 @@ namespace tstbed
                 case "lang":
                     Lang.Main.Test(args);
                     break;
+                case "DB":
+                    DB.Main.Test(args); //lengthy
+                    break;
                 default:
                     Utils.WriteDetailLine("Arg 0 not found");
                     break;
