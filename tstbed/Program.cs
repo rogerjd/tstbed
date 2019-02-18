@@ -97,6 +97,9 @@ namespace tstbed
                 case "DB":
                     DB.Main.Test(args); //lengthy
                     break;
+                case "collections":
+                    Collections.Dict.Test();
+                    break;
                 default:
                     Utils.WriteDetailLine("Arg 0 not found");
                     break;

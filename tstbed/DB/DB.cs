@@ -17,6 +17,9 @@ namespace tstbed.DB
                 case "Reader":
                     DataReaderTst.Test();
                     break;
+                case "DataTable":
+                    DataTableTst.Test();
+                    break;
                 default:
                     Utils.WriteDetailLine("Arg 1 not found");
                     break;

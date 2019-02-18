@@ -71,11 +71,13 @@ namespace tstbed.Collections
         {
             Console.WriteLine("Add **");
 
+            //each Key must be unique. If need duplicate keys use, for instance: you can use Lookup<TKey, TValue> instead of dictionary.
+            // W, add key,  will get exception if already exist ArgumentException 
+            //R,              "     "    "     if doesnt exist  KeyNotFoundException
             //ok
             dict.Add("notExist", "ok");
 
             //err:  ArgumentException
-            //  however, indexer allows this(key already exists, not an error)
             try
             {
                 dict.Add("notExist", "cant add if key exists");

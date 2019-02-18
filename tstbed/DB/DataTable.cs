@@ -182,7 +182,6 @@ namespace tstbed.DB
 
             void Select()
             {
-                LoadTbl(dt);               //col = 'value' if string use quotes
                 DataRow[] rows = dt.Select("Genre='Comedy'");
             }
 
@@ -193,6 +192,7 @@ namespace tstbed.DB
                              select row;
             }
 
+            LoadTbl(dt);               //col = 'value' if string use quotes
             Select();
             LINQ();
         }
