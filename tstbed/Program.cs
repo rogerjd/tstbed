@@ -99,6 +99,7 @@ namespace tstbed
                     break;
                 case "collections":
                     Collections.Dict.Test();
+                    Collections.Lookup.Test();
                     break;
                 default:
                     Utils.WriteDetailLine("Arg 0 not found");

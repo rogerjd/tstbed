@@ -74,6 +74,8 @@
     <Compile Include="Attribute.cs" />
     <Compile Include="Collections\Collection.cs" />
     <Compile Include="Collections\IEnumerable\IEnumerable.cs" />
+    <Compile Include="Collections\Lookup.cs" />
+    <Compile Include="Collections\Main.cs" />
     <Compile Include="Directoy File Path\Dir.cs" />
     <Compile Include="Directoy File Path\File.cs" />
     <Compile Include="Directoy File Path\Path.cs" />
