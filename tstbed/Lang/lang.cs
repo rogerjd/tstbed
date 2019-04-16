@@ -87,6 +87,20 @@ namespace tstbed.Lang
                 int z = 3; //look another declaration space, z here too
                 Utils.WriteDetailLine(string.Format("scope: {0}", z.ToString()));
             }
+
+            //similarly, the vars declared in catch block are only in scope within that block
+            try
+            {
+
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         private static void Equality()
