@@ -117,6 +117,7 @@
     <Compile Include="Net\Http\WebRequest.cs" />
     <Compile Include="Nullable.cs" />
     <Compile Include="Numbers.cs" />
+    <Compile Include="Object.cs" />
     <Compile Include="ObjectAndCollectionInitializers.cs" />
     <Compile Include="Operators.cs" />
     <Compile Include="Program.cs" />
