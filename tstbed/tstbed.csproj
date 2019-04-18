@@ -131,6 +131,7 @@
     <Compile Include="TstType.cs" />
     <Compile Include="Tuple.cs" />
     <Compile Include="Utils.cs" />
+    <Compile Include="WriteLine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

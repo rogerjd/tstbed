@@ -101,6 +101,9 @@ namespace tstbed
                     Collections.Dict.Test();
                     Collections.Lookup.Test();
                     break;
+                case "WriteLine":
+                    WriteLine.Test();
+                    break;
                 default:
                     Utils.WriteDetailLine("Arg 0 not found");
                     break;
