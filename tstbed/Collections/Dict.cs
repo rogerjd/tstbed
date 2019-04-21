@@ -47,7 +47,7 @@ namespace tstbed.Collections
             d = new Dictionary<Customer, string>(CustomerComparer);
             d[c1] = "Joe";
             Utils.WriteDetailLine(d.ContainsKey(c2).ToString());
-        }
+        }   
 
         private static void ContainsKey()
         {
@@ -139,7 +139,12 @@ namespace tstbed.Collections
     {
         public string LastName { get; set; }
         public string FirstName { get; set; }
-
+        
+        /// <summary>
+        /// ctor
+        /// </summary>
+        /// <param name="ln">Last Name</param>
+        /// <param name="fn">First Name</param>
         public Customer(string ln, string fn)
         {
             LastName = ln;
