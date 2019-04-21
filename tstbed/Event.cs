@@ -13,12 +13,19 @@ namespace tstbed
 
         class Changer
         {
-            public event ChangeDel OnChange;
+            public event EventHandler Change;
+            //https://stackoverflow.com/questions/2282476/actiont-vs-delegate-event
+            public event EventHandler<EventArgs> Leave;
 
-            public void Change()
+            protected void OnChange()
             {
-                //ref: null check  null conditional
-                OnChange?.Invoke(this, null); //todo: args ?
+                //ref: null check  null conditional. else
+                //    protected virtual void OnLeave(EmployeeEventArgs e)
+                //    {
+                //      var handler = Leave;
+                //      if (handler != null) handler(this, e);
+                //    }
+                Change?.Invoke(this, new EventArgs()); //todo: args ?
             }
         }
     }
@@ -36,17 +43,17 @@ namespace tstbed
             {
                 Console.WriteLine("Event ****");
                 Changer c = new Changer();
-                c.OnChange += DoChange;
-                c.Change();
+                c.Change += DoChange;
+                //c.OnChange();
 
                 Console.WriteLine("  remv handler");
-                c.OnChange -= DoChange;
-                c.Change();
+                c.Change -= DoChange;
+                //c.OnChange();
 
                 Console.WriteLine("  multicast");
-                c.OnChange += DoChange;
-                c.OnChange += DoChange;
-                c.Change();
+                c.Change += DoChange;
+                c.Change += DoChange;
+                //c.OnChange();
             }
 
             static void DoChange(Object sender, EventArgs args)
