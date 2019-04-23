@@ -107,6 +107,9 @@ namespace tstbed
                 case "object":
                     ObjectTst.Test();
                     break;
+                case "string":
+                    StringTst.Test();
+                    break;
                 default:
                     Utils.WriteDetailLine("Arg 0 not found");
                     break;

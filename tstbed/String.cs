@@ -48,7 +48,7 @@ namespace tstbed
 
         private static void Trim()
         {
-            char[] charsToTrim = {'.', ',' };
+            char[] charsToTrim = { '.', ',' };
 
             string str = ".txt";
             str = str.Trim('.'); //can use array: charsToTrim
@@ -66,7 +66,13 @@ namespace tstbed
         private static void Format()
         {
             Utils.WriteSubTopic("Format");
-            string str = String.Format("{0:c}", 1.56);
+            string str = String.Format("{0:c}", 1.56); //currency, money
+            Utils.WriteDetailLine(str);
+            str = string.Format($"{3}");
+            Utils.WriteDetailLine(str);
+
+            var p1 = "param";
+            str = string.Format($"LIKE '{p1}%'");
             Utils.WriteDetailLine(str);
         }
 
