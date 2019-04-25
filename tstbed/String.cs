@@ -66,8 +66,17 @@ namespace tstbed
         private static void Format()
         {
             Utils.WriteSubTopic("Format");
-            string str = String.Format("{0:c}", 1.56); //currency, money
+            string str = String.Format("{0:c}", 1.56); //currency, money //round to 2 places
             Utils.WriteDetailLine(str);
+            
+            //currency, money //round to 2 places
+            str = String.Format("{0:c}", 1.569); 
+            Utils.WriteDetailLine(str);
+
+            //upper case C (same as lower case)
+            str = String.Format("{0:C}", 1.569);
+            Utils.WriteDetailLine(str);
+
             str = string.Format($"{3}");
             Utils.WriteDetailLine(str);
 
