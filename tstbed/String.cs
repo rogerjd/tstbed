@@ -77,6 +77,10 @@ namespace tstbed
             str = String.Format("{0:C}", 1.569);
             Utils.WriteDetailLine(str);
 
+            //without dollar sign, currency symbol
+            str = String.Format("{0:N}", 1.569);
+            Utils.WriteDetailLine(str);
+
             str = string.Format($"{3}");
             Utils.WriteDetailLine(str);
 
