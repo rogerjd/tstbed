@@ -8,6 +8,16 @@ namespace tstbed
 {
     static class Method
     {
+        static void OverloadTst()
+        {
+
+        }
+
+        static void OverloadTst(int n)
+        {
+
+        }
+
         static public void Test()
         {
             Params();
