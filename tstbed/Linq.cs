@@ -13,7 +13,7 @@ namespace tstbed
      *      from range_variable in datasource
      *      select(projection) can be r_v, r_v.field, or new anonymous type
      */
-     
+
     static class Linq
     {
         public static object DataContext { get; private set; }
@@ -26,6 +26,55 @@ namespace tstbed
             Any();
             Where();
             Range();
+            GroupBy();
+        }
+
+        class School
+        {
+            public string Name;
+            public List<Student> Students { get; set; }
+        }
+
+        class Student
+        {
+            public string Name { get; set; }
+        }
+
+
+        private static void GroupBy()
+        {
+
+            var schools = new[] {
+            new School(){Name = "A", Students = new List<Student> { new Student(){ Name="Bob"}, new Student(){ Name="Jack"} }},
+            new School(){Name = "B", Students = new List<Student> { new Student(){ Name="Jim"}, new Student(){ Name="John"} }}
+            };
+
+            var allStudents = schools.SelectMany(s => s.Students, (s, j) => new { Sch = s.Name, Std = j.Name });
+
+            foreach (var student in allStudents)
+            {
+                Console.WriteLine(student.Std + " " + student.Sch);
+            }
+
+            var g = from s in schools
+                    group s by s.Name into g2
+                    select new
+                    {
+                        Name = g2.Key,
+                        Stds = g2
+                    };
+            foreach (var x in g)
+            {
+                Console.WriteLine(x.Name);
+                foreach (var y in x.Stds)
+                {
+                    Console.WriteLine(y);
+                    foreach (var z in y.Students)
+                    {
+                        Console.WriteLine(z.Name);
+                    }
+                }
+            }
         }
 
         private static void Range()
@@ -43,20 +92,20 @@ namespace tstbed
                 Utils.WriteDetailLine(n.ToString());
             }
 
-            IEnumerable<string> l2 = Enumerable.Range(0, 5).Select(_ => "abc" );
+            IEnumerable<string> l2 = Enumerable.Range(0, 5).Select(_ => "abc");
             //var l2 = Enumerable.Range(0, 5).Select(_ => "abc").ToList();
             foreach (string i in l2)
             {
                 Utils.WriteDetailLine(i.ToString());
             }
 
-            var l3 = new List<string>(3){"abc", "def", "ghi" };
-            foreach(string s in Enumerable.Range(0, l3.Count()).Select(i => l3[i]))
+            var l3 = new List<string>(3) { "abc", "def", "ghi" };
+            foreach (string s in Enumerable.Range(0, l3.Count()).Select(i => l3[i]))
             {
                 Utils.WriteDetailLine(s);
             }
 
-             var l4 = Enumerable.Range(0, 10).Where(i => (i % 2) == 0).ToList();
+            var l4 = Enumerable.Range(0, 10).Where(i => (i % 2) == 0).ToList();
             foreach (int n in l4)
             {
                 Utils.WriteDetailLine(n.ToString());
@@ -102,11 +151,11 @@ namespace tstbed
 
 
 
-//converts int to string automatically
+            //converts int to string automatically
             l1 = new List<string> { "a", "b", "c" };
             List<int> l3 = new List<int> { 1, 2, 3 };
 
-            var l4 = l1.Zip(l2, (a, b) => a + " " + b );
+            var l4 = l1.Zip(l2, (a, b) => a + " " + b);
             foreach (var s in l4)
             {
                 Console.WriteLine(s);
