@@ -26,6 +26,13 @@ namespace tstbed
 
     delegate void MyDelegate();
 
+    class MyTstClass
+    {
+
+    }
+
+    //MyTstClass mc = new MyTstClass(); //CS0116 namespace cannot directly contain members such as fields or methods
+
     class Program
     {
         static void Main(string[] args)
