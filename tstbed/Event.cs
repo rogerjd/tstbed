@@ -8,6 +8,15 @@ namespace tstbed
 {
     namespace MyCollections
     {
+        public class SampleEventArgs
+        {
+            public SampleEventArgs(string s)
+            {
+                Text = s;
+            }
+            public string Text { get; }
+        }
+
         //ref: can descend from EventArgs, to make specific cases (Mouse, Keyboard, etc)
         public delegate void ChangeDel(Object sender, EventArgs args);
 
