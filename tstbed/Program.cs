@@ -107,6 +107,7 @@ namespace tstbed
                 case "collections":
                     Collections.Dict.Test();
                     Collections.Lookup.Test();
+                    Collections.List.Test();
                     break;
                 case "WriteLine":
                     WriteLine.Test();

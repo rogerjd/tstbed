@@ -31,6 +31,33 @@ namespace tstbed.Collections
             ReadFromFile();
             Capacity();
             AddRange();
+            Any();
+            RemoveAll();
+        }
+
+        private static void Any()
+        {
+            Utils.WriteSubTopic("Any");
+            if (l.Any(x => string.Compare(x, "c") == -1))
+            {
+                Utils.WriteDetailLine("some are less than c");
+            }
+        }
+
+        private static void RemoveAll()
+        {
+            void WriteList()
+            {
+                foreach(var s in l)
+                {
+                    Utils.WriteDetailLine(s);
+                }
+            }
+
+            WriteList();
+            var n = l.RemoveAll(x => string.Compare(x, "c") == -1);
+            Utils.WriteDetailLine($"{n} items removed");
+            WriteList();
         }
 
         private static void AddRange()
