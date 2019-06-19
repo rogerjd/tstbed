@@ -118,6 +118,9 @@ namespace tstbed
                 case "string":
                     StringTst.Test();
                     break;
+                case "array":
+                    ArrayTst.Test();
+                    break;
                 default:
                     Utils.WriteDetailLine("Arg 0 not found");
                     break;

@@ -43,7 +43,7 @@ namespace tstbed
 
             SortIt();
 
-            FileReadAllLines(); 
+            FileReadAllLines();
 
             DefaultValues();
 
@@ -51,6 +51,15 @@ namespace tstbed
 
             Length();
             ReadOnly();
+
+            MultiDim();
+        }
+
+        private static void MultiDim()
+        {
+            string[,] param = new string[,] { { "a", "c", "h"}, { "ab", "def", "jk"} };
+            int x = param.GetLength(0);  //2
+            int y = param.GetLength(1);  //3
         }
 
         private static void ReadOnly()
@@ -63,6 +72,7 @@ namespace tstbed
             //can declare an array in a class or method (probably same for structure)
 
             int[] n = new int[] { 1, 3, 6 };
+
         }
 
         private static void Length()

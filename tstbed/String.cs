@@ -61,6 +61,7 @@ namespace tstbed
             Utils.WriteDetailLine("abd == abc: " + str.Equals("abc"));
             Utils.WriteDetailLine("abd == abc: " + (str == "abc"));
             Utils.WriteDetailLine("abd != abc: " + (str != "abc"));
+            Utils.WriteDetailLine("abd == Abd: " + str.Equals("Abd"));
         }
 
         private static void Format()
