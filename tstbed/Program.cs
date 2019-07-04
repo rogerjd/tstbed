@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using tstbed.TestEvents;
 using System.Diagnostics;
 using tstbed.Net;
+using tstbed.Collections;
 
 namespace tstbed
 {
@@ -120,6 +121,10 @@ namespace tstbed
                     break;
                 case "array":
                     ArrayTst.Test();
+                    break;
+                case "enum":
+                    MyEnum.Test();
+                    EnumerableTest.Test();
                     break;
                 default:
                     Utils.WriteDetailLine("Arg 0 not found");

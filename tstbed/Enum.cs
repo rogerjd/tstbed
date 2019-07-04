@@ -13,7 +13,7 @@ namespace tstbed
      *    hold invalid val
      *  - cast of an out of range int, is not a prob/err, just returns the int
     */
-    class MyEnum
+    static class MyEnum
     {
         //holds integer types
         //starts with 0, unless othewise specified
@@ -26,7 +26,7 @@ namespace tstbed
 
         static noZeroEnum tstEnum;
 
-        static MyEnum()
+        public static void Test()
         {
             Console.WriteLine("Enum ****");
 
@@ -45,6 +45,12 @@ namespace tstbed
             Cast();
             PassAsParam(MyDaysOfWeek.Mon);
             GetLongNamesArrayToStr();
+            ElemToString();
+        }
+
+        private static void ElemToString()
+        {
+            Console.WriteLine(MyDaysOfWeek.Mon.ToString());
         }
 
         private static int CountNumElements(Type md)
