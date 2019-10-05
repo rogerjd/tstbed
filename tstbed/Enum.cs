@@ -21,11 +21,9 @@ namespace tstbed
         //[Flags]
         //Enum.GetNames(e.GetType()), GetValues()
         public enum MyDaysOfWeek { Mon, Tue, Wed, Thu, Fri, Sat, Sun };
-
         enum noZeroEnum { a = 1, b = 3 };
 
         static noZeroEnum tstEnum;
-
         public static void Test()
         {
             Console.WriteLine("Enum ****");
@@ -46,6 +44,12 @@ namespace tstbed
             PassAsParam(MyDaysOfWeek.Mon);
             GetLongNamesArrayToStr();
             ElemToString();
+            ParseEnum();
+        }
+
+        private static void ParseEnum()
+        {
+            var e = Enum.Parse(typeof(MyDaysOfWeek), "Mon");
         }
 
         private static void ElemToString()

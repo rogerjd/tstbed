@@ -16,6 +16,13 @@ namespace tstbed
         int[] n   can assign another int[] to, regardless of size
 
         it is ref type (so can modify orig in a called method)
+
+        Dimensions\Length
+            - If it's a one-dimensional array, a.Length  will give the number of elements of a.
+            - If b is a rectangular multi-dimensional array (for example, int[,] b = new int[3, 5];) b.Rank 
+                will give the number of dimensions (2) 
+                and b.GetLength(dimensionIndex) will get the length of any given dimension (0-based indexing for the dimensions
+                    - so b.GetLength(0) is 3 and b.GetLength(1) is 5).
     */
     static class ArrayTst
     {
