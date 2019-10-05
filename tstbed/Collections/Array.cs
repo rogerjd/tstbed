@@ -14,6 +14,9 @@ namespace tstbed
         could use List<T> or an ArrayList
 
         int[] n   can assign another int[] to, regardless of size
+        the size is not part of the declaration, so: int[3] n is invalid
+          
+        there is one set of {} for each dimension (in initializer)
 
         it is ref type (so can modify orig in a called method)
 
