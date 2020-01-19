@@ -16,17 +16,21 @@ namespace tstbed.Net.Http
             HttpClient client = new HttpClient();
 
             //HttpClient is preferred over HttpWebRequest due to async methods available out of the box and you would not have to worry about writing begin/end methods.
-            void HttpClientTstAsync()
+            async Task HttpClientTstAsync()
             {
-                client.BaseAddress = new Uri("https://www.nytimes.com");
+                HttpClient client2 = new HttpClient();
+                client2.BaseAddress = new Uri("https://www.nydn.com");
 //                client.BaseAddress = new Uri("http://www.google.com/robots.txt");
-                Task<string> str = client.GetStringAsync(""); //it is relative  //("https://www.nytimes.com");
+                HttpResponseMessage response = await client2.GetAsync("http://www.contoso.com");
+/*
+                Task<string> str = client.GetStringAsync(""); //it is relative  //("https://www.nydn.com");
                 Utils.WriteDetailLine(str.Result);
+*/
             }
 
             async void GetAsync()
             {
-                HttpResponseMessage msg = await client.GetAsync("");
+                HttpResponseMessage msg = await client.GetAsync("https://www.nydn.com");
                 Utils.WriteDetailLine(msg.StatusCode.ToString());
             }
 

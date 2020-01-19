@@ -126,6 +126,9 @@ namespace tstbed
                     MyEnum.Test();
                     EnumerableTest.Test();
                     break;
+                case "http":
+                    Net.Http.WebRequestTst.Test();
+                    break;
                 default:
                     Utils.WriteDetailLine("Arg 0 not found");
                     break;
