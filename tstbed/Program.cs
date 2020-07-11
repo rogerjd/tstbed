@@ -7,6 +7,7 @@ using tstbed.TestEvents;
 using System.Diagnostics;
 using tstbed.Net;
 using tstbed.Collections;
+using tstbed.Directoy_File_Path;
 
 namespace tstbed
 {
@@ -128,6 +129,9 @@ namespace tstbed
                     break;
                 case "http":
                     Net.Http.WebRequestTst.Test();
+                    break;
+                case "dir_file":
+                    Dir.Test();
                     break;
                 default:
                     Utils.WriteDetailLine("Arg 0 not found");

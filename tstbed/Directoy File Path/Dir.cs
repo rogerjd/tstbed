@@ -24,9 +24,18 @@ namespace tstbed.Directoy_File_Path
         {
             void GetDirectories()
             {
-                //returns string[] of directory names(full path) in that folder (only dirs, no files)
-                //there are overloads, eg: sub dir search
-                var dirs = Directory.GetDirectories(@"C:\prjs");
+                const string dir = @"C:\prjs";
+
+                if (Directory.Exists(dir))
+                {
+                    //returns string[] of directory names(full path) in that folder (only dirs, no files)
+                    //there are overloads, eg: sub dir search
+                    var dirs = Directory.GetDirectories(dir);
+                }
+                else
+                {
+                    Utils.WriteSubTopic("dir does not exist: " + dir);
+                }
             }
 
             //2 ways shown
