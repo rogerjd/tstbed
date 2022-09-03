@@ -1,0 +1,7 @@
+﻿Here is a grid to help keep the scenarios straight:
+
+Marker	Different from file saved on disk?	Different from file that was opened?
+Nothing		No								No
+Yellow		Yes								Yes
+Green		No								Yes
+Orange		Yes								No
