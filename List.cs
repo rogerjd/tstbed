@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xunit;
 
-namespace tstbed.Collections
+namespace tstbed
 {
     static class List
     {
@@ -15,6 +14,7 @@ namespace tstbed.Collections
         {
             Utils.WriteTopic("List");
 
+            FromRange();
             Count();
             Sort();
             Foreach();
@@ -35,6 +35,11 @@ namespace tstbed.Collections
             RemoveAll();
         }
 
+        private static void FromRange()
+        {
+            List<int> n = Enumerable.Range(2, 10).ToList();
+        }
+
         private static void Any()
         {
             Utils.WriteSubTopic("Any");
@@ -48,7 +53,7 @@ namespace tstbed.Collections
         {
             void WriteList()
             {
-                foreach(var s in l)
+                foreach (var s in l)
                 {
                     Utils.WriteDetailLine(s);
                 }
@@ -79,11 +84,13 @@ namespace tstbed.Collections
 
         private static void Insert()
         {
-            Assert.Equal(l.Count, 4);
-            l.Insert(2, "zy");
-            Assert.Equal(l[2], "zy");
-            Assert.Equal(l[3], "b");
-            Assert.Equal(l.Count, 5);
+            /*
+                        Assert.Equal(l.Count, 4);
+                        l.Insert(2, "zy");
+                        Assert.Equal(l[2], "zy");
+                        Assert.Equal(l[3], "b");
+                        Assert.Equal(l.Count, 5);
+                */
         }
 
         private static void Capacity()
@@ -165,9 +172,9 @@ namespace tstbed.Collections
             //ref: predicate
             //      return is not bool, but the item
             Console.WriteLine(l.Find(List.Finder));
-            string res = l.Find(s => { return s == "a"; });
-            Console.WriteLine(res);
-            res = "wqwq";
+            //string res = l.Find(s => { return s == "a"; });
+            //Console.WriteLine(res);
+            //res = "wqwq";
             Foreach();
         }
 
@@ -237,7 +244,7 @@ namespace tstbed.Collections
             Console.WriteLine(string.Join(" ", l2));
 
             //use Comparer IComparer (it is class, w/method)
-            l2.Sort(new MyComparer());
+            //l2.Sort(new MyComparer());
             Console.WriteLine(string.Join(" ", l2));
         }
 
@@ -257,3 +264,4 @@ namespace tstbed.Collections
         }
     }
 }
+
