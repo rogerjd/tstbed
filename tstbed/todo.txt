@@ -1,2 +1,0 @@
-﻿partial class, struct, interface or method
-      https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods
