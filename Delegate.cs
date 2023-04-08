@@ -13,7 +13,7 @@ namespace tstbed
     {
         public Delegates()
         {
-            MyDel md = null;
+            MyDel md; //this caused warning\errir = null;
             md = Tst.DelMeth;
             tst(md);
             md = Tst.DelMeth2;

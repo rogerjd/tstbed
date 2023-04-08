@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace tstbed.Collections
+﻿namespace tstbed.Collections
 {
     static class List
     {
@@ -219,7 +213,6 @@ namespace tstbed.Collections
             foreach (System.String s in l)
             {
                 Console.WriteLine(s);
-
             }
         }
 
@@ -265,10 +258,17 @@ namespace tstbed.Collections
 
     class MyComparer : Comparer<string>
     {
-        public override int Compare(string x, string y)
+        public override int Compare(string? x, string? y)
         {
+            if (x == null) //todo: is this right?
+            {
+                return -1;
+            }
+            else if (y == null)
+            {
+                return 1;
+            }
             return (x.Substring(8, 1).CompareTo(y.Substring(8, 1)));
         }
     }
 }
-
