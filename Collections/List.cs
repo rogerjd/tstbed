@@ -38,9 +38,15 @@
         private static void Any()
         {
             Utils.WriteSubTopic("Any");
-            if (l.Any(x => string.Compare(x, "c") == -1))
+            string s = "";
+            if (l.Any(x =>
             {
-                Utils.WriteDetailLine("some are less than c");
+                var z = string.Compare(x, "c") == -1;
+                s = x;
+                return z; //if it's just one line (compare) don't need return
+            }))
+            {
+                Utils.WriteDetailLine("some are less than c  " + s);
             }
         }
 
@@ -194,6 +200,7 @@
             //ref: one at a time
             Count();
             l.Add("xyz");
+            Count();
             var b = l.Remove("xyz");
             Count();
             Console.WriteLine(b);
@@ -251,7 +258,7 @@
 
         static void Sum()
         {
-            var l = new List<int>() {1, 2, 3};
+            var l = new List<int>() { 1, 2, 3 };
             Console.WriteLine($"Sum: {l.Sum()}");
         }
     }
