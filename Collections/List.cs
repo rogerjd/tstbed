@@ -31,7 +31,7 @@
         }
 
         private static void FromRange()
-        {
+        {                            //start at: 2, length of list: 10
             List<int> n = Enumerable.Range(2, 10).ToList();
         }
 
@@ -124,13 +124,21 @@
         {
             Utils.WriteSubTopic("FindAll");
 
-            bool isVowel(string s)
+            bool ContainsVowel(string s)
             {
-                return true;
+                foreach (char c in s)
+                {
+                    if ("aeiouAEIOU".Contains(c))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+                //todo: return "aeiouAEIOU".Contains(s);
             }
 
             var l2 = from x in l
-                     where isVowel(x)
+                     where ContainsVowel(x)
                      select x;
             Console.WriteLine(string.Join(" ", l2));
 

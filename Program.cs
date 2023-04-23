@@ -5,5 +5,5 @@ Console.WriteLine("Hello, World!, test bed");
 
 
 List.Test();
-//List_tst.Tester();
+DictionaryTester.Tester();
 
