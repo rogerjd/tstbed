@@ -20,6 +20,7 @@ namespace tstbed.Collections
             Add(); // add Key, Value
             Remove(); //remove key (and of course its value)
             Update();
+            Clear();
         }
 
         static void Create()
@@ -64,5 +65,12 @@ namespace tstbed.Collections
             Console.WriteLine($"Updated {tstDict["a"]}");
         }
 
+        static void Clear()
+        {
+            Console.WriteLine("Clear");
+            Count();
+            tstDict.Clear();
+            Count();
+        }        
     }
 };
