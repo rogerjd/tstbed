@@ -14,3 +14,5 @@ File_tst.Test();
 
 HashSetTst.Test();
 
+var d = new tstbed.Delegates();
+

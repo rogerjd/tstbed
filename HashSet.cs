@@ -37,7 +37,6 @@ static class HashSetTst
         Console.WriteLine("  union, count: {0} **", hs.Count());
 
         Intersection();
-
     }
 
     static void Intersection()
