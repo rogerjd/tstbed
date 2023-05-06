@@ -117,7 +117,7 @@ namespace tstbed.Directoy_File_Path
             {
                 using (StreamReader sr = new StreamReader(FilePath))
                 {
-                    string ln;
+                    string? ln;
                     while ((ln = sr.ReadLine()) != null)
                     {
                         Console.WriteLine(ln);
@@ -138,12 +138,13 @@ namespace tstbed.Directoy_File_Path
             {
                 using (StreamWriter sw = new StreamWriter(FilePath))
                 {
-                    string ln;
+                    //todo: string ln;
                     sw.AutoFlush = true;
                     for (int i = 0; i < 3; i++)
                     {
                         sw.WriteLine("line {0}", i);
                     }
+                    sw.Flush(); // not necessary, since AF = true
                 }
             }
             catch (Exception e)

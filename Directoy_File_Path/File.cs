@@ -18,7 +18,7 @@ namespace tstbed.Directoy_File_Path
 
         private static void Length()
         {
-            2.WriteDetailLine(new FileInfo("WriteAllLns.txt").Length.ToString());
+            Utils.WriteDetailLine(new FileInfo("WriteAllLns.txt").Length.ToString());
 
             var fi = new FileInfo("WriteAllLns.txt");
 //            fi.
@@ -43,7 +43,7 @@ namespace tstbed.Directoy_File_Path
             {   if (File.Exists("WriteAllLns.txt")) {
                     using (System.IO.StreamReader file = new StreamReader("WriteAllLns.txt"))
                     {
-                        string ln;
+                        string? ln;
                         while ((ln = file.ReadLine()) != null)
                         {
                             Utils.WriteDetailLine(ln);
