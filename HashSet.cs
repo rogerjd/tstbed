@@ -9,6 +9,7 @@ static class HashSetTst
 {
     public static void Test()
     {
+        // it's like a set (also see, Linq)
         Console.WriteLine("\nHASH SET ****");
 
         //ok            HashSet<int> hs = new HashSet<int> {1, 2, 4 };
@@ -34,5 +35,18 @@ static class HashSetTst
 
         hs.UnionWith(new int[] { 12 });
         Console.WriteLine("  union, count: {0} **", hs.Count());
+
+        Intersection();
+
+    }
+
+    static void Intersection()
+    {
+        HashSet<int> hsa = new System.Collections.Generic.HashSet<int>(){1, 2, 3, 4, 5};
+        HashSet<int> hsb = new System.Collections.Generic.HashSet<int>(){4, 5, 6, 7, 8};
+        var res = hsa.Intersect(hsb);
+        Console.WriteLine(string.Join(',', res));
+
+        hsa.ToList<int>().ForEach(i => Console.WriteLine(i)); //(i => i.ToString() + " ");
     }
 }

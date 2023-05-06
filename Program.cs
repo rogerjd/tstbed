@@ -12,3 +12,5 @@ IO.Test();
 
 File_tst.Test();
 
+HashSetTst.Test();
+
