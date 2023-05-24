@@ -11,6 +11,7 @@ namespace tstbed
             Concatenate(); //string interpolation
 
             Insert();
+            Remove();
         }
 
 
@@ -21,7 +22,6 @@ namespace tstbed
         //format
         //to int
         //substring
-        //insert
 
         /*
             AssignmentByValImmutable();
@@ -62,8 +62,15 @@ namespace tstbed
             string s2 = "Z";
             string s3 = s1.Insert(1, s2);
             Console.WriteLine($" Insert {s2} in {s1} at pos 1 = {s3}");
-
         }
+
+        static void Remove()
+        {
+            string s1 = "abc";
+            string s2 = s1.Remove(1, 1);
+            Console.WriteLine($"Remove from {s1} at pos 1 len 1 = {s2}");
+        }
+    
     }
 }
 
