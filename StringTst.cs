@@ -13,9 +13,23 @@ namespace tstbed
             Remove();
             Replace();
             ConcatJoin();
+            Substring();
+            IndexOf();
         }
 
+        private static void IndexOf()
+        {
+            string str = "Hello, World!";
+            int n = str.IndexOf("W");
+            Console.WriteLine(n);
+        }
 
+        private static void Substring()
+        {
+            string str = "Hello, World!";
+            Console.WriteLine(str.Substring(7, 5)); // start index, len
+            Console.WriteLine(str.Substring(7)); // start index (to end)
+        }
 
         //substring
         //index
