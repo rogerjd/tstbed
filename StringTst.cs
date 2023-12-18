@@ -15,6 +15,7 @@ namespace tstbed
             ConcatJoin();
             Substring();
             IndexOf();
+            Compare();
         }
 
         private static void IndexOf()
@@ -117,7 +118,23 @@ namespace tstbed
             res = string.Join(", ", strings);
             Console.WriteLine(res);
             res = string.Join("", strings);
-            Console.WriteLine(res);            
+            Console.WriteLine(res);
+        }
+
+        static void Compare()
+        {
+            string str1 = "abc";
+            string str2 = "ABC";
+            int n = string.Compare(str1, str2, true); // ignoreCase true (bol) -1, 0, 1 (1st is: <, =, >. compared to 2nd)
+            Console.WriteLine(n);
+
+            bool res = str1.Equals(str2); // this is case-sens
+            Console.WriteLine(res);
+            res = str1.Equals(str2, StringComparison.CurrentCultureIgnoreCase); // this is not case-sens
+            Console.WriteLine(res);
+
+            res = str1 == str2;
+            Console.WriteLine(res);
         }
     }
 }

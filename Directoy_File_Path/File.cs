@@ -41,13 +41,11 @@ namespace tstbed.Directoy_File_Path
         {
             void ReadLineByLine()
             {   if (File.Exists("WriteAllLns.txt")) {
-                    using (System.IO.StreamReader file = new StreamReader("WriteAllLns.txt"))
+                    using System.IO.StreamReader file = new StreamReader("WriteAllLns.txt");
+                    string? ln;
+                    while ((ln = file.ReadLine()) != null)
                     {
-                        string? ln;
-                        while ((ln = file.ReadLine()) != null)
-                        {
-                            Utils.WriteDetailLine(ln);
-                        }
+                        Utils.WriteDetailLine(ln);
                     }
                 }
             }
