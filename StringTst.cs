@@ -135,6 +135,9 @@ namespace tstbed
 
             res = str1 == str2;
             Console.WriteLine(res);
+
+            res = str1.ToLower() == str2.ToLower(); // case insensitive
+            Console.WriteLine(res);
         }
     }
 }
