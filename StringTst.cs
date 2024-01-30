@@ -21,7 +21,7 @@ namespace tstbed
         private static void Reverse()
         {
             string s1 = "abc";
-            var x = s1.Reverse().ToArray();     // Linq, returns, IEnumerator > []char
+            var x = s1.Reverse().ToArray();     // Linq, returns, IEnumerable > []char
             Console.WriteLine(new string(x));   // create string from []char  char array
         }
 
