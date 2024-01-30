@@ -16,6 +16,13 @@ namespace tstbed
             Substring();
             IndexOf();
             Compare();
+            Reverse();}
+
+        private static void Reverse()
+        {
+            string s1 = "abc";
+            var x = s1.Reverse().ToArray();     // Linq, returns, IEnumerator > []char
+            Console.WriteLine(new string(x));   // create string from []char
         }
 
         private static void IndexOf()

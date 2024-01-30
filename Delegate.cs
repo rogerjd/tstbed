@@ -25,6 +25,11 @@ namespace tstbed
             x("qwe");
 
             tst(z => 3); //lambda
+            tst((string z) =>
+            {
+                Console.WriteLine(z);
+                return 3;
+            }); //lambda            
         }
 
         private void tst(MyDel md)
