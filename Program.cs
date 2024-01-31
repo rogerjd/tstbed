@@ -18,6 +18,7 @@ HashSetTst.Test();
 
 new tstbed.Delegates();
 
+tstbed.Collections.Array.Test();
 
 /*
 Yes, there is a default namespace for the Program.cs file. It is the global namespace, and it is present in every C# file. The global namespace contains all of the types that are not declared in a named namespace. Any identifier in the global namespace is available for use in a named namespace.
