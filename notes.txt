@@ -1,0 +1,38 @@
+[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+sort multiple fields
+https://www.techiedelight.com/sort-list-by-multiple-fields-csharp/
+
+[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+In C#, there is a Reverse method provided by LINQ, which is available for types 
+that implement the IEnumerable<T> interface. Additionally, the List<T> class has 
+its own Reverse method. While both methods perform a similar task, they have 
+some differences in terms of implementation and behavior.
+
+Yes, that's a correct observation. The key difference between the two `Reverse` methods is in their return types:
+
+1. **`List<T>` `Reverse` Method:**
+   - Modifies the original list in-place.
+   - Returns `void` (no return value).
+
+   ```csharp
+   List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+   numbers.Reverse(); // Returns void
+   ```
+
+2. **LINQ `Reverse` Method on `IEnumerable<T>`:**
+   - Returns a new reversed sequence without modifying the original collection.
+   - Returns `IEnumerable<T>`.
+
+   ```csharp
+   List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+   var reversedEnumerable = numbers.Reverse(); // Returns IEnumerable<int>
+   ```
+
+So, if you see `numbers.Reverse();` and there is no assignment of the result (`IEnumerable<T> reversedEnumerable = numbers.Reverse();`), then it's the `List<T>` `Reverse` method that is modifying the list in-place.
+
+On the other hand, if you see an assignment like `var reversedEnumerable = numbers.Reverse();`, then it's the LINQ `Reverse` method returning a new reversed sequence without modifying the original list.
+
+This is a good way to distinguish between the two methods in code.
+[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
