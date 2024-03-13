@@ -20,13 +20,21 @@ namespace tstbed.Directoy_File_Path
 
         private static void Delete()
         {
-            File.Delete("a.txt"); //todo: test
+            File.Delete("b.txt"); //todo: test
         }
 
-         //todo: test
+        //todo: test
         private static void Rename()
         {
-            File.Move("a.txt", "b.txt");  // src, dst
+            if (!File.Exists("a.txt"))
+            {
+              //FileStream fs = File.Create("a.txt"); // create or overwrite
+              StreamWriter sw = new StreamWriter("a.txt");
+              sw.WriteLine("my file");
+              sw.Close();
+                
+            }
+            File.Move("a.txt", "b.txt", true);  // src, dst, overwrite
         }
 
         private static void Length()
@@ -34,7 +42,7 @@ namespace tstbed.Directoy_File_Path
             Utils.WriteDetailLine(new FileInfo("WriteAllLns.txt").Length.ToString());
 
             var fi = new FileInfo("WriteAllLns.txt");
-//            fi.
+            //            fi.
         }
 
         private static void Copy()
@@ -53,7 +61,9 @@ namespace tstbed.Directoy_File_Path
         private static void ReadAndOpen()
         {
             void ReadLineByLine()
-            {   if (File.Exists("WriteAllLns.txt")) {
+            {
+                if (File.Exists("WriteAllLns.txt"))
+                {
                     using System.IO.StreamReader file = new StreamReader("WriteAllLns.txt");
                     string? ln;
                     while ((ln = file.ReadLine()) != null)
