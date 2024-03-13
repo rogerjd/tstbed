@@ -14,6 +14,19 @@ namespace tstbed.Directoy_File_Path
             ReadAndOpen();
             Copy();
             Length();
+            Rename();
+            Delete();
+        }
+
+        private static void Delete()
+        {
+            File.Delete("a.txt"); //todo: test
+        }
+
+         //todo: test
+        private static void Rename()
+        {
+            File.Move("a.txt", "b.txt");  // src, dst
         }
 
         private static void Length()

@@ -9,10 +9,14 @@ namespace tstbed
     public delegate int MyDel(string s);
     delegate int MyDel2(string s);
 
+
     class Delegates
     {
+        public int NumEntries { get; } // example of a property, can only read, can be written in ctor
         public Delegates()
         {
+            NumEntries = 3;
+
             MyDel md; //this caused warning\errir = null;
             md = Tst.DelMeth;
             tst(md);
