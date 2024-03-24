@@ -16,6 +16,8 @@ namespace tstbed.Directoy_File_Path
             Length();
             Rename();
             Delete();
+
+            csv_file.Read();
         }
 
         private static void Delete()
