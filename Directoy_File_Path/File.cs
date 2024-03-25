@@ -11,6 +11,7 @@ namespace tstbed.Directoy_File_Path
     {
         static public void Test()
         {
+            CurrentPath();
             ReadAndOpen();
             Copy();
             Length();
@@ -19,6 +20,10 @@ namespace tstbed.Directoy_File_Path
 
             csv_file.Read();
         }
+
+        private static void CurrentPath()
+        {
+            Console.WriteLine(Directory.GetCurrentDirectory());        }
 
         private static void Delete()
         {
