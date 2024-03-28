@@ -238,6 +238,12 @@
         //- l.Reverse
         private static void Sort()
         {
+            int comparison(string a, string b)
+            {
+                // leave out special cases
+                return a.CompareTo(b);
+            }
+
             Utils.WriteSubTopic("Sort");
 
             //default /////////
@@ -255,6 +261,10 @@
             //use Comparer IComparer (it is class, w/method)
             //l2.Sort(new MyComparer());
             Console.WriteLine(string.Join(" ", l2));
+
+            List<string> l3 = new List<string> { "z, xyz0", "b", "s" };
+            l3.Sort(comparison);  // new way, sort proc, 3/28/24
+            Console.WriteLine(string.Join(" ", l3));
         }
 
         private static void Count()
