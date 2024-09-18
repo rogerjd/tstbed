@@ -16,7 +16,21 @@ namespace tstbed
             Substring();
             IndexOf();
             Compare();
-            Reverse();}
+            Reverse();
+            RepaceTextBetweenTags();
+        }
+        private static void RepaceTextBetweenTags()
+        {
+            const string ln = "<abc>123</abc>";
+            int n1, n2, l = 0;
+            n1 = ln.IndexOf("<abc>");
+            n2 = ln.IndexOf("</abc>");
+            l = n2 - (n1 + "<abc>".Length);
+            string s2 = ln.Remove(n1 + 5, l);
+
+            s2 = s2.Insert(n1 + "<abc>".Length, "456");
+            Console.WriteLine(s2);
+        }
 
         private static void Reverse()
         {

@@ -12,7 +12,7 @@ namespace tstbed.Directoy_File_Path
         static public void Test()
         {
             CurrentPath();
-            ReadAndOpen();
+            OpenAndRead();
             Copy();
             Length();
             Rename();
@@ -65,7 +65,7 @@ namespace tstbed.Directoy_File_Path
              - whole thing at once StringList
              - or line by line
         */
-        private static void ReadAndOpen()
+        private static void OpenAndRead()
         {
             void ReadLineByLine()
             {

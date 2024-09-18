@@ -263,7 +263,7 @@
             Console.WriteLine(string.Join(" ", l2));
 
             List<string> l3 = new List<string> { "z, xyz0", "b", "s" };
-            l3.Sort(comparison);  // new way, sort proc, 3/28/24
+            l3.Sort(comparison);  // new way, sort proc, 3/28/24    public delegate int Comparison<in T>(T x, T y);
             Console.WriteLine(string.Join(" ", l3));
         }
 
