@@ -98,7 +98,7 @@ namespace tstbed
             DateTime dt1, dt2;
             dt1 = DateTime.Today;
             dt2 = DateTime.Today.AddDays(7);
-            TimeSpan ts =  dt2 - dt1;  //ref: or, dt2.Subtract(dt1)
+            TimeSpan ts = dt2 - dt1;  //ref: or, dt2.Subtract(dt1)
             Console.WriteLine("    " + ts.TotalDays); //fractional days, with time part
             Utils.WriteDetailLine(string.Format("whole days {0}", ts.Days));
         }
@@ -118,7 +118,7 @@ namespace tstbed
             Console.WriteLine("  " + b);
             Console.WriteLine("  " + dtOut);
             Console.WriteLine("  " + dtOut.Date); //dt + 12:00:00 *this is date part, cleared time*
-            Console.WriteLine("  " + dtOut.ToShortDateString()); 
+            Console.WriteLine("  " + dtOut.ToShortDateString());
         }
     }
 }

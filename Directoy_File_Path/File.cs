@@ -23,7 +23,8 @@ namespace tstbed.Directoy_File_Path
 
         private static void CurrentPath()
         {
-            Console.WriteLine(Directory.GetCurrentDirectory());        }
+            Console.WriteLine(Directory.GetCurrentDirectory());
+        }
 
         private static void Delete()
         {
@@ -35,11 +36,11 @@ namespace tstbed.Directoy_File_Path
         {
             if (!File.Exists("a.txt"))
             {
-              //FileStream fs = File.Create("a.txt"); // create or overwrite
-              StreamWriter sw = new StreamWriter("a.txt");
-              sw.WriteLine("my file");
-              sw.Close();
-                
+                //FileStream fs = File.Create("a.txt"); // create or overwrite
+                StreamWriter sw = new StreamWriter("a.txt");
+                sw.WriteLine("my file");
+                sw.Close();
+
             }
             File.Move("a.txt", "b.txt", true);  // src, dst, overwrite
         }
@@ -90,6 +91,10 @@ namespace tstbed.Directoy_File_Path
             ReadAllLines();
 
             ReadLineByLine();
+            
+            // opens file, reads all text, then closes file
+            string fileContents = File.ReadAllText("WriteAllLns.txt");
+            Console.WriteLine(fileContents);
         }
 
     }

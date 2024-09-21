@@ -2,10 +2,10 @@ namespace tstbed.Collections
 {
     static class DictionaryTester
     {
-/* exceptions
-    KeyNotFoundException - {tstDict["z"] if key "z" is not in dict
+        /* exceptions
+            KeyNotFoundException - {tstDict["z"] if key "z" is not in dict
 
-*/        
+        */
         static Dictionary<string, int> tstDict = new Dictionary<string, int>()
         {
             {"a", 1}, {"b", 2}
@@ -71,6 +71,6 @@ namespace tstbed.Collections
             Count();
             tstDict.Clear();
             Count();
-        }        
+        }
     }
 };

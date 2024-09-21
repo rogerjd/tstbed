@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace tstbed
 {
 
@@ -19,6 +21,7 @@ namespace tstbed
             Reverse();
             RepaceTextBetweenTags();
         }
+        // see also, Replace in this file for example with RegEx
         private static void RepaceTextBetweenTags()
         {
             const string ln = "<abc>123</abc>";
@@ -115,7 +118,25 @@ namespace tstbed
             Console.WriteLine(s1);
             string s2 = s1.Replace("a", "b");
             Console.WriteLine(s2);
+
+
+            string input = "Text before <abc>First instance</abc> some text <abc>Second instance</abc> and more text.";
+            string pattern = @"<abc>(.*?)<\/abc>";
+
+            // Use a counter to customize the replacement text
+            int counter = 1;
+
+            Console.WriteLine(input);
+            // Replace with different content for each match using a custom delegate
+            string result = Regex.Replace(input, pattern, match =>
+            {
+                return $"<abc>new content {counter++}</abc>";
+            });
+
+            Console.WriteLine(result);
+
         }
+
 
         static void ConcatJoin()
         {

@@ -16,7 +16,7 @@ namespace tstbed
 
         static public void Test()
         {
-            Utils.WriteTopic("Interface"); 
+            Utils.WriteTopic("Interface");
 
             MyClass mc = new MyClass();
             mc.Tst1();
@@ -97,7 +97,7 @@ namespace tstbed
 
     //must this implements the interface it gets from the parent class? it inherits the 
     //  implementation, but can override if it wishes
-    class MyClass3: MyClass
+    class MyClass3 : MyClass
     {
 
     }

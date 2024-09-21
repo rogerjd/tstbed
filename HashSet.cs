@@ -41,8 +41,8 @@ static class HashSetTst
 
     static void Intersection()
     {
-        HashSet<int> hsa = new System.Collections.Generic.HashSet<int>(){1, 2, 3, 4, 5};
-        HashSet<int> hsb = new System.Collections.Generic.HashSet<int>(){4, 5, 6, 7, 8};
+        HashSet<int> hsa = new System.Collections.Generic.HashSet<int>() { 1, 2, 3, 4, 5 };
+        HashSet<int> hsb = new System.Collections.Generic.HashSet<int>() { 4, 5, 6, 7, 8 };
         var res = hsa.Intersect(hsb);
         Console.WriteLine(string.Join(',', res));
 

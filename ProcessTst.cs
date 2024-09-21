@@ -25,7 +25,6 @@ namespace tstbed
                 }
             };
             p.Start();
-            return;
         }
     }
 }

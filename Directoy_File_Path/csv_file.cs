@@ -19,7 +19,7 @@ namespace tstbed.Directoy_File_Path
                 string[] fields = parser.ReadFields();
                 foreach (string fld in fields)
                 {
-                    Console.WriteLine(fld)                    ;
+                    Console.WriteLine(fld);
                 }
             }
         }

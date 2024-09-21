@@ -4,7 +4,7 @@ namespace tstbed.Collections
 
     static class Array
     {
-        static int[] n = new int[3]{1, 2, 3};
+        static int[] n = new int[3] { 1, 2, 3 };
         public static void Test()
         {
             Reverse();
