@@ -19,8 +19,24 @@ namespace tstbed.Directoy_File_Path
             Delete();
 
             csv_file.Read();
+
+            FileDateTime();
         }
 
+        private static void FileDateTime()
+        {
+            FileInfo fi = new FileInfo("WriteAllLns.txt");
+            Console.WriteLine(fi.LastAccessTime);
+            Console.WriteLine(fi.LastWriteTime);
+        }
+
+/*
+Current Working Directory vs. Executable Path:
+Directory.GetCurrentDirectory() gives you the working directory at the time your 
+    application starts. In Visual Studio Code (VSC), the working directory is 
+    typically the root of your project when running or debugging, because that's 
+    where the terminal or debug configuration starts the application from.
+*/
         private static void CurrentPath()
         {
             Console.WriteLine(Directory.GetCurrentDirectory());
