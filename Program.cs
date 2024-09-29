@@ -5,6 +5,16 @@ using tstbed;
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!, test bed");
 
+//cmd ln args
+//command line arguments
+/*
+args[0] contains the first command-line argument, not the program name.
+To get the program's name or path, use Process.GetCurrentProcess().MainModule.FileName or AppDomain.CurrentDomain.FriendlyName.
+*/
+Console.WriteLine(args.Length);
+Console.WriteLine(args[0]);  // this is not the pgm name, see: launch.json and tasks.json
+//Console.WriteLine(args[1]);
+
 
 List.Test();
 StringTst.Test();
