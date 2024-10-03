@@ -16,6 +16,8 @@ Console.WriteLine(args[0]);  // this is not the pgm name, see: launch.json and t
 //Console.WriteLine(args[1]);
 
 
+DateTimeTimeSpan.Test();
+
 List.Test();
 StringTst.Test();
 DictionaryTester.Tester();
@@ -23,6 +25,7 @@ DictionaryTester.Tester();
 IO.Test();
 
 File_tst.Test();
+Directory_tst.Test();
 
 HashSetTst.Test();
 
