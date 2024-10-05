@@ -26,6 +26,7 @@ IO.Test();
 
 File_tst.Test();
 Directory_tst.Test();
+Path_tst.Test();
 
 HashSetTst.Test();
 
