@@ -8,6 +8,7 @@ namespace tstbed.Directoy_File_Path
         static public void Test()
         {
             Hello();
+            //extension = Path.GetExtension(fileName);
         }
 
         private static void Hello()
