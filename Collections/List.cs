@@ -259,7 +259,7 @@
             Console.WriteLine(string.Join(" ", l2));
 
             //use Comparer IComparer (it is class, w/method)
-            //l2.Sort(new MyComparer());
+            l2.Sort(new MyComparer());
             Console.WriteLine(string.Join(" ", l2));
 
             List<string> l3 = new List<string> { "z, xyz0", "b", "s" };

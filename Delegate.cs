@@ -17,7 +17,7 @@ namespace tstbed
         {
             NumEntries = 3;
 
-            MyDel md; //this caused warning\errir = null;
+            MyDel md; //this caused warning\error = null;
             md = Tst.DelMeth;
             tst(md);
             md = Tst.DelMeth2;
