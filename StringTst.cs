@@ -52,9 +52,15 @@ namespace tstbed
 
         private static void Substring()
         {
+            // zero based
             string str = "Hello, World!";
             Console.WriteLine(str.Substring(7, 5)); // start index, len
             Console.WriteLine(str.Substring(7)); // start index (to end)
+
+            //to use an end index, not length
+            // star = 7 W end at index 9 r; len = 3
+            Console.WriteLine(str.Substring(7, (9 - 7) + 1)); // start index, len
+
         }
 
         //substring
