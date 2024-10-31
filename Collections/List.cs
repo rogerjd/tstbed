@@ -1,5 +1,25 @@
-﻿namespace tstbed.Collections
+﻿
+namespace tstbed.Collections
 {
+
+    class Student
+    {
+        public int Grade { get; set; }
+        public string Name { get; set; }
+    }
+
+    class StudentComparer : IComparer<Student>
+    {
+        public enum SortBy
+        {
+
+        }
+        public int Compare(Student? x, Student? y)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
     static class List
     {
         static List<string> l = new List<string> { "z", "a", "b", "c" };
@@ -28,6 +48,13 @@
             Any();
             RemoveAll();
             Sum();
+            SortStudent();
+        }
+
+        private static void SortStudent()
+        {
+            List<Student> stds = new List<Student> { new Student(){Grade = 3, Name = "Abc"},
+            new Student(){Grade = 5, Name = "Jkl"} }; // collection initializer
         }
 
         private static void FromRange()
@@ -293,7 +320,7 @@
             {
                 return 1;
             }
-            return (x.Substring(8, 1).CompareTo(y.Substring(8, 1)));
+            return x.Substring(8, 1).CompareTo(y.Substring(8, 1));
         }
     }
 }
