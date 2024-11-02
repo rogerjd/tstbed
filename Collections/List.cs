@@ -71,6 +71,13 @@ namespace tstbed.Collections
             {
                 Console.WriteLine($"{std.Name} {std.Grade}");
             }
+
+            StudentComparer cmp = new StudentComparer(){sortBy = StudentComparer.SortBy.Grade};
+            stds.Sort(cmp);
+            foreach (var std in stds)
+            {
+                Console.WriteLine($"{std.Name} {std.Grade}");
+            }            
         }
 
         private static void FromRange()
