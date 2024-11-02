@@ -12,11 +12,20 @@ namespace tstbed.Collections
     {
         public enum SortBy
         {
-
+            Grade,
+            Name
         }
+
+        public SortBy sortBy;
+
         public int Compare(Student? x, Student? y)
         {
-            throw new NotImplementedException();
+            switch (sortBy)
+            {
+                case SortBy.Grade : return x.Grade.CompareTo(y.Grade);
+                case SortBy.Name: return x.Name.CompareTo(y.Name);
+                default: return 0;
+            }
         }
     }
 
@@ -53,8 +62,15 @@ namespace tstbed.Collections
 
         private static void SortStudent()
         {
-            List<Student> stds = new List<Student> { new Student(){Grade = 3, Name = "Abc"},
+            //set notes below, Linq etc
+            List<Student> stds = new List<Student> { new Student(){Grade = 6, Name = "Abc"},
             new Student(){Grade = 5, Name = "Jkl"} }; // collection initializer
+
+            var SrtdStds = stds.OrderBy(s => s.Grade).ToList();
+            foreach (var std in SrtdStds)
+            {
+                Console.WriteLine($"{std.Name} {std.Grade}");
+            }
         }
 
         private static void FromRange()
@@ -324,3 +340,101 @@ namespace tstbed.Collections
         }
     }
 }
+
+/*
+Both `LINQ` and `IComparer` are excellent options for sorting a list in C#, but the choice depends on your specific requirements and preferences.
+
+### Option 1: Using LINQ (`OrderBy` or `OrderByDescending`)
+
+LINQ is often the most concise and readable way to sort a list. If you want to keep the original list unsorted and work with a sorted version of it, LINQ is a great option.
+
+Example:
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+public class Student
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        var students = new List<Student>
+        {
+            new Student { Name = "Alice", Age = 20 },
+            new Student { Name = "Bob", Age = 22 },
+            new Student { Name = "Charlie", Age = 18 }
+        };
+
+        // Sort by Age using LINQ
+        var sortedStudents = students.OrderBy(s => s.Age).ToList();
+
+        foreach (var student in sortedStudents)
+        {
+            Console.WriteLine($"{student.Name}, Age: {student.Age}");
+        }
+    }
+}
+```
+
+In this case, `OrderBy(s => s.Age)` sorts by age in ascending order, and `ToList()` creates a sorted copy of the original list.
+
+### Option 2: Using `IComparer` with `List.Sort`
+
+If you need to sort the list in place (modifying the original list), `List.Sort` with an `IComparer` is a good choice. You can define a custom comparer to control the sorting criteria.
+
+Example:
+```csharp
+using System;
+using System.Collections.Generic;
+
+public class Student
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+
+public class StudentAgeComparer : IComparer<Student>
+{
+    public int Compare(Student x, Student y)
+    {
+        return x.Age.CompareTo(y.Age); // Ascending order
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        var students = new List<Student>
+        {
+            new Student { Name = "Alice", Age = 20 },
+            new Student { Name = "Bob", Age = 22 },
+            new Student { Name = "Charlie", Age = 18 }
+        };
+
+        // Sort in-place using IComparer
+        students.Sort(new StudentAgeComparer());
+
+        foreach (var student in students)
+        {
+            Console.WriteLine($"{student.Name}, Age: {student.Age}");
+        }
+    }
+}
+```
+
+Here, the `StudentAgeComparer` defines the sorting logic. Using `students.Sort(new StudentAgeComparer())` sorts the original list in place by age in ascending order.
+
+### Summary
+
+- **Use LINQ** if you want a concise, readable way to get a sorted copy of the list without modifying the original list.
+- **Use `IComparer` with `List.Sort`** if you need to sort the list in place or want more control over the sorting logic. 
+
+Both approaches are perfectly valid, so choose the one that best suits your needs!
+*/
