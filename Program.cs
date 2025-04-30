@@ -1,6 +1,7 @@
 ﻿using tstbed.Collections;
 using tstbed.Directoy_File_Path;
 using tstbed;
+using tstbed.Http;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!, test bed");
@@ -12,23 +13,22 @@ args[0] contains the first command-line argument, not the program name.
 To get the program's name or path, use Process.GetCurrentProcess().MainModule.FileName or AppDomain.CurrentDomain.FriendlyName.
 */
 Console.WriteLine(args.Length);
-Console.WriteLine(args[0]);  // this is not the pgm name, see: launch.json and tasks.json
+//Console.WriteLine(args[0]);  // this is not the pgm name, see: launch.json and tasks.json
 //Console.WriteLine(args[1]);
 
 
 DateTimeTimeSpan.Test();
 
 List.Test();
-StringTst.Test();
-DictionaryTester.Tester();
+//StringTst.Test();
+//DictionaryTester.Tester();
 
-IO.Test();
+//IO.Test();
 
-File_tst.Test();
-Directory_tst.Test();
-Path_tst.Test();
-
-HashSetTst.Test();
+//File_tst.Test();
+//Directory_tst.Test();
+//Path_tst.Test();
+//HashSetTst.Test();
 
 new tstbed.Delegates();
 
@@ -37,6 +37,8 @@ tstbed.Collections.Array.Test();
 StringTst.Test();
 
 ProcessTester.Test();
+
+HttpClientTst.Test();
 
 /*
 Yes, there is a default namespace for the Program.cs file. It is the global namespace, and it is present in every C# file. The global namespace contains all of the types that are not declared in a named namespace. Any identifier in the global namespace is available for use in a named namespace.
