@@ -23,7 +23,7 @@ List.Test();
 //StringTst.Test();
 //DictionaryTester.Tester();
 
-//IO.Test();
+IO.Test();
 
 //File_tst.Test();
 //Directory_tst.Test();

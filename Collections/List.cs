@@ -1,4 +1,5 @@
 ﻿
+
 namespace tstbed.Collections
 {
 
@@ -22,7 +23,7 @@ namespace tstbed.Collections
         {
             switch (sortBy)
             {
-                case SortBy.Grade : return x.Grade.CompareTo(y.Grade);
+                case SortBy.Grade: return x.Grade.CompareTo(y.Grade);
                 case SortBy.Name: return x.Name.CompareTo(y.Name);
                 default: return 0;
             }
@@ -44,6 +45,7 @@ namespace tstbed.Collections
             Modify();
             Indexer();
             Find();
+            Index();
             Dups();
             Insert();
             Remove();
@@ -60,6 +62,15 @@ namespace tstbed.Collections
             SortStudent();
         }
 
+        private static void Index()
+        {
+            Utils.WriteSubTopic("IndexOf");
+
+            Utils.WriteDetailLine($" x =  {l.IndexOf("x")}");
+            Utils.WriteDetailLine($" z = {l.IndexOf("z")}");
+            Utils.WriteDetailLine($" c = {l.IndexOf("c")}");
+        }
+
         private static void SortStudent()
         {
             //set notes below, Linq etc
@@ -72,12 +83,12 @@ namespace tstbed.Collections
                 Console.WriteLine($"{std.Name} {std.Grade}");
             }
 
-            StudentComparer cmp = new StudentComparer(){sortBy = StudentComparer.SortBy.Grade};
+            StudentComparer cmp = new StudentComparer() { sortBy = StudentComparer.SortBy.Grade };
             stds.Sort(cmp);
             foreach (var std in stds)
             {
                 Console.WriteLine($"{std.Name} {std.Grade}");
-            }            
+            }
         }
 
         private static void FromRange()
@@ -296,7 +307,7 @@ namespace tstbed.Collections
 
             Utils.WriteSubTopic("Sort");
 
-            //default /////////
+            //default ///////// primitive
             l.Sort();
             Console.WriteLine(string.Join(" ", l));
 

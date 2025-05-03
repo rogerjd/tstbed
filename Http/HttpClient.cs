@@ -8,7 +8,7 @@ public static class HttpClientTst
         Utils.WriteTopic("HttpClient tester");
 
         //GetClientReq();
-        btnHttpGetClicked();
+            
 
     }
 
