@@ -25,6 +25,8 @@ List.Test();
 
 IO.Test();
 
+tstbed.Lang.Cond.Main();
+
 //File_tst.Test();
 //Directory_tst.Test();
 //Path_tst.Test();
@@ -39,6 +41,8 @@ StringTst.Test();
 ProcessTester.Test();
 
 HttpClientTst.Test();
+
+EnumTst.Test();
 
 /*
 Yes, there is a default namespace for the Program.cs file. It is the global namespace, and it is present in every C# file. The global namespace contains all of the types that are not declared in a named namespace. Any identifier in the global namespace is available for use in a named namespace.

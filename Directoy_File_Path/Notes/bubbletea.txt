@@ -1,0 +1,115 @@
+Absolutely! Let's create a **simple functional/reactive example in C#**, inspired by the BubbleTea style: a model, an update function, and a view — all wired together with reactive streams.
+
+We’ll use:
+
+* **System.Reactive (Rx.NET)** — to handle events in a reactive way.
+* Basic **console rendering** — to simulate the view.
+* A **model-update-view loop** — like in BubbleTea.
+
+---
+
+### 📦 Prerequisites (NuGet packages to install)
+
+```bash
+dotnet add package System.Reactive
+```
+
+---
+
+### 🧪 Example: Simple Counter (Up/Down/Exit)
+
+```csharp
+using System;
+using System.Reactive.Subjects;
+using System.Reactive.Linq;
+using System.Threading.Tasks;
+
+// Define messages (events)
+enum Msg
+{
+    Increment,
+    Decrement,
+    Exit
+}
+
+// Define the model
+record Model(int Count);
+
+class Program
+{
+    static async Task Main()
+    {
+        var input = new Subject<Msg>(); // Event stream
+        var initialModel = new Model(0);
+
+        // Update function: takes current model and message, returns new model
+        Model Update(Model model, Msg msg) => msg switch
+        {
+            Msg.Increment => model with { Count = model.Count + 1 },
+            Msg.Decrement => model with { Count = model.Count - 1 },
+            _ => model
+        };
+
+        // Subscribe to model updates
+        var modelStream = input
+            .Scan(initialModel, (model, msg) => Update(model, msg))
+            .StartWith(initialModel);
+
+        var subscription = modelStream.Subscribe(model =>
+        {
+            Console.Clear();
+            Console.WriteLine("Simple Counter");
+            Console.WriteLine("----------------");
+            Console.WriteLine($" Count: {model.Count}");
+            Console.WriteLine();
+            Console.WriteLine("Press [↑] to increment, [↓] to decrement, [Esc] to exit.");
+        });
+
+        // Listen for key presses and map to messages
+        await Task.Run(() =>
+        {
+            while (true)
+            {
+                var key = Console.ReadKey(true).Key;
+
+                switch (key)
+                {
+                    case ConsoleKey.UpArrow:
+                        input.OnNext(Msg.Increment);
+                        break;
+                    case ConsoleKey.DownArrow:
+                        input.OnNext(Msg.Decrement);
+                        break;
+                    case ConsoleKey.Escape:
+                        input.OnNext(Msg.Exit);
+                        input.OnCompleted();
+                        return;
+                }
+            }
+        });
+
+        subscription.Dispose();
+    }
+}
+```
+
+---
+
+### 🧠 What This Does
+
+* `Model`: Stores the current count.
+* `Msg`: Defines possible actions (increment, decrement, exit).
+* `input`: Emits user commands.
+* `Update`: Pure function transforming state based on message.
+* `modelStream`: A stream of model states updated over time.
+* `Console`: Acts as a "view" that redraws on every update.
+
+---
+
+### ✅ Behavior
+
+* Press **↑** to increment
+* Press **↓** to decrement
+* Press **ESC** to exit
+
+This is a very light reactivity layer, much like BubbleTea but in idiomatic C#. Would you like an example with more complex UI (like menus or views)?

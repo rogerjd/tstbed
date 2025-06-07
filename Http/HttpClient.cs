@@ -8,8 +8,7 @@ public static class HttpClientTst
         Utils.WriteTopic("HttpClient tester");
 
         //GetClientReq();
-            
-
+        btnHttpGetClicked();
     }
 
     //this works
@@ -17,7 +16,7 @@ public static class HttpClientTst
     {
         HttpClient client = new HttpClient();
         //            var response = client.GetAsync("https://www.google.com").Result; sync
-        var response = client.GetAsync("https://www.google.com").Result;
+        var response = client.GetAsync("https://www.microsoft.com").Result;
         var content = response.Content.ReadAsStringAsync().Result;
         Console.WriteLine(content);
         //MessageBox.Query("Response", content, "Ok");

@@ -8,8 +8,8 @@ namespace tstbed.Collections
         */
         static Dictionary<string, int> tstDict = new Dictionary<string, int>()
         {
-            {"a", 1}, {"b", 2}
-        };
+            {"a", 1}, {"b", 2}  // { "k", "v" } is an element initializer inside a collection initializer.
+        };                      // Each { "k", "v" } is syntactic sugar for calling the Add("k", "v") method.
 
         static public void Tester()
         {
