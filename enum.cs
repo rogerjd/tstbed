@@ -8,10 +8,19 @@ static class EnumTst
         Blue
     }
 
+    enum MyColorEnum2
+    {
+        Red,
+        Greem,
+        Blue
+    }
+
+
     public static void Test()
     {
         MyColorEnum mce = MyColorEnum.Greem;
         PassParam(mce);
+//        PassParam2(mce); //Argument 1: cannot convert from 'EnumTst.MyColorEnum' to 'EnumTst.MyColorEnum2' CS1503     
 
         Console.WriteLine("foreach");
         foreach (var c in Enum.GetValues(typeof(MyColorEnum)))
@@ -26,7 +35,7 @@ static class EnumTst
         MyColorEnum color = MyColorEnum.Greem;
         // Find the position of the enum value
         int position = Array.IndexOf(Enum.GetValues(typeof(MyColorEnum)), color);
-        Console.WriteLine($"The position of {color} is {position}");        
+        Console.WriteLine($"The position of {color} is {position}");
 
     }
 
@@ -34,4 +43,9 @@ static class EnumTst
     {
         Console.WriteLine(mce);
     }
+    
+    static void PassParam2(MyColorEnum2 mce)
+    {
+        Console.WriteLine(mce);
+    }    
 }
