@@ -17,13 +17,21 @@ static class EnumTst
         foreach (var c in Enum.GetValues(typeof(MyColorEnum)))
         {
             Console.WriteLine(c);
-        };
+        }
+        ;
+
+        mce = (MyColorEnum)2;
+        int n = Array.IndexOf(Enum.GetValues(typeof(MyColorEnum)), mce);
+
+        MyColorEnum color = MyColorEnum.Greem;
+        // Find the position of the enum value
+        int position = Array.IndexOf(Enum.GetValues(typeof(MyColorEnum)), color);
+        Console.WriteLine($"The position of {color} is {position}");        
 
     }
 
     static void PassParam(MyColorEnum mce)
     {
         Console.WriteLine(mce);
-
     }
 }
